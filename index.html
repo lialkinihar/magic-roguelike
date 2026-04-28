@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magic Roguelike</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="ui">
+    <div id="coin-counter" aria-live="polite">🪙 0</div>
+    <div id="purchased-upgrades" aria-label="Купленные улучшения"></div>
+    <button id="btn-shop" type="button" aria-label="Открыть магазин">🛒</button>
+    <div id="hud">
+      <div id="hp-bar-wrap">
+        <div id="hp-bar"></div>
+        <span id="hp-text" class="hp-bar-label">— / —</span>
+      </div>
+      <div id="xp-bar-wrap" aria-label="Прогресс забега 10 минут">
+        <div id="xp-bar"></div>
+        <span class="run-boss-mark run-boss-mark--mid" aria-hidden="true">Босс</span>
+        <span class="run-boss-mark run-boss-mark--end" aria-hidden="true">Босс</span>
+      </div>
+      <div id="stats">
+        <span id="level">Ур. 1</span>
+        <span id="wave-label">Волна 1 / 10</span>
+        <span id="kills">Убийств: 0</span>
+      </div>
+    </div>
+    <div id="wave-reward-toast-wrap" aria-live="polite" aria-atomic="true"></div>
+    <div id="title-screen" class="panel">
+      <h1>Выживание</h1>
+      <p class="subtitle">Вдохновлено Vampire Survivors</p>
+      <p class="hint">Большая карта, камера следует за героем. <strong>ЛКМ</strong> — движение: удерживайте для следования за курсором или кликните в точку для авто-перемещения к позиции. <strong>Q/W/E</strong> — руны, <strong>R</strong> — загрузить руны в Invoke, <strong>Пробел</strong> — активировать комбинацию из 1/2/3 рун. Навыки направлены на курсор. Esc — пауза. Запуск: <strong>npm start</strong> или <strong>start.bat</strong>, затем http://localhost:8080</p>
+      <button id="btn-start" type="button">Играть</button>
+    </div>
+    <div id="game-over" class="panel hidden">
+      <h2>Конец забега</h2>
+      <p id="go-stats"></p>
+      <button id="btn-restart" type="button">Снова</button>
+    </div>
+    <div id="victory-screen" class="panel hidden">
+      <h2>Победа!</h2>
+      <p id="victory-stats"></p>
+      <button id="btn-victory-restart" type="button">Новый забег</button>
+    </div>
+    <div id="pause-screen" class="panel hidden" aria-hidden="true">
+      <h2>Пауза</h2>
+      <p class="pause-hint">Нажмите <strong>Esc</strong> ещё раз или кнопку ниже, чтобы продолжить.</p>
+      <button id="btn-resume" type="button">Продолжить</button>
+    </div>
+    <div id="shop-screen" class="panel hidden" aria-hidden="true">
+      <h2>Лавка странника</h2>
+      <p class="pause-hint">Монеты: <strong id="shop-coins">0</strong></p>
+      <div id="shop-items">
+        <button id="shop-buy-heal" class="shop-item-btn" type="button">
+          <span class="shop-item-icon" aria-hidden="true">🧪</span>
+          <span class="shop-item-main"><strong>Малая хил-настойка</strong><em>Восстанавливает 30 HP.</em></span>
+          <span class="shop-item-price">10🪙</span>
+        </button>
+        <button id="shop-buy-hp" class="shop-item-btn" type="button">
+          <span class="shop-item-icon" aria-hidden="true">❤️</span>
+          <span class="shop-item-main"><strong>Сердечный талисман</strong><em>+10 к максимуму HP и +10 текущего HP.</em></span>
+          <span class="shop-item-price">30🪙</span>
+        </button>
+        <button id="shop-buy-speed" class="shop-item-btn" type="button">
+          <span class="shop-item-icon" aria-hidden="true">💨</span>
+          <span class="shop-item-main"><strong>Шаг ветра</strong><em>Увеличивает скорость передвижения на 10%.</em></span>
+          <span class="shop-item-price">50🪙</span>
+        </button>
+        <button id="shop-buy-aegis" class="shop-item-btn" type="button">
+          <span class="shop-item-icon" aria-hidden="true">🛡️</span>
+          <span class="shop-item-main"><strong>Эгида феникса</strong><em>Можно купить 1 раз. При смертельном уроне воскрешает с полным HP. Осталось: <span id="shop-aegis-stock">1/1</span></em></span>
+          <span class="shop-item-price">120🪙</span>
+        </button>
+      </div>
+      <button id="btn-shop-close" type="button">Закрыть</button>
+    </div>
+    <div id="artifact-choice-screen" class="panel hidden" aria-hidden="true">
+      <h2>Выберите артефакт</h2>
+      <p class="pause-hint">Победа над элитой открыла 3 артефакта. Выберите один.</p>
+      <div id="artifact-choice-list"></div>
+    </div>
+    <div id="skill-bar" class="hidden" aria-label="Панель навыков">
+      <button id="btn-combos" type="button" aria-label="Открыть список комбинаций">📘</button>
+      <div id="skill-invoke-cd-row" class="skill-invoke-cd-row" aria-hidden="true"></div>
+      <div class="skill-bar-panel">
+        <div id="skill-slot-ult-wrap"></div>
+        <div id="skill-recent-icons" class="skill-recent-icons" aria-live="polite" aria-label="Последние скиллы"></div>
+        <div id="skill-slots"></div>
+      </div>
+      <div id="combos-panel" class="combos-panel hidden" aria-hidden="true">
+        <div class="combos-panel-head">
+          <h3>Rune Combos</h3>
+          <button id="btn-combos-close" type="button">✕</button>
+        </div>
+        <div id="combos-list" class="combos-list"></div>
+      </div>
+    </div>
+  </div>
+  <canvas id="game"></canvas>
+  <script src="game.js"></script>
+</body>
+</html>
