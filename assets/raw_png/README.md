@@ -68,7 +68,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 2. Сохранить файл в **`assets/raw_png/`** с **любым именем** (например `frost_nova_v2.png`).
 3. Открыть **`import-manifest.json`** и добавить объект:
    ```json
-   { "file": "frost_nova_v2.png", "skillId": "combo_qqw", "note": "Frost Nova QQQ" }
+   { "file": "frost_nova_v2.png", "skillId": "combo_qqw", "note": "Frost Nova QQW" }
    ```
    Поле **`skillId`** — это **`id`** из [`skills.config.js`](../../skills.config.js) (`rune_q`, `duo_qw`, `combo_eee`, …). Для печати Invoke в UI: **`invoke_seal`**. Поле **`note`** только для себя, скрипт игнорирует.
 4. Выполнить:

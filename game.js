@@ -79,9 +79,9 @@
   const KEY_TO_RUNE_ICON = { Q: "❄️", W: "⚡", E: "🔥" };
   const SORTED2 = (a, b) => [a, b].sort().join("");
   const SINGLE_RUNE_COMBOS = [
-    { id: "rune_q", sequence: "Q", name: "Ice Spear", icon: "❄️", cooldownSec: 0, archetype: "single_ice", damage: 18 },
+    { id: "rune_q", sequence: "Q", name: "Frost Shard", icon: "❄️", cooldownSec: 0, archetype: "single_ice", damage: 18 },
     { id: "rune_w", sequence: "W", name: "Chain Lightning", icon: "⚡", cooldownSec: 0, archetype: "single_lightning", damage: 20 },
-    { id: "rune_e", sequence: "E", name: "Fireball", icon: "🔥", cooldownSec: 0, archetype: "single_fire", damage: 22 },
+    { id: "rune_e", sequence: "E", name: "Meteor", icon: "🔥", cooldownSec: 0, archetype: "single_fire", damage: 22 },
   ];
   const DUAL_RUNE_COMBOS = [
     { id: "duo_qq", sequence: "QQ", name: "Frost Lance", icon: "❄️", cooldownSec: 4, archetype: "duo_qq", damage: 28 },
