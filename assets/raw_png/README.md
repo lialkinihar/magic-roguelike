@@ -44,9 +44,9 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `rune_q` | `This icon: plain ice shard / frost splinter only — cyan and white crystal, elongated jagged silhouette, no frame, no magic rings, minimal mist, no extra VFX.` |
 | `rune_w` | `This icon: chain lightning — nodes staggered (not collinear), shallow zigzag or S path; jagged bolts at angles between nodes; each node a tight lightning cocoon, NO visible circle; yellow-white, no frame, no extra VFX.` |
 | `rune_e` | `This icon: plain ordinary meteor only — gray rocky body, small orange-yellow trail, no frame, no magic rings, no extra VFX.` |
-| `duo_qq` | `This icon: large ice spear / frost lance — long lethal crystal head with cruel jagged edges, secondary ice spikes on shaft, clearly BIGGER and more dangerous than a tiny basic ice shard; cyan white deep blue shadow, thrusting diagonal; no frame, no extra VFX.` |
+| `duo_qq` | `This icon: large ice spear — ENTIRE weapon solid ice crystal only (head + shaft one frozen piece); NO metal rings, ferrule, steel, iron, bronze, or leather; secondary spikes also ice; bigger than basic ice shard; cyan/white/blue ice shadows; diagonal thrust; no frame, no extra VFX.` |
 
-**`duo_qq` (QQ)** — отдельная иконка умения: **ледяное копье** крупнее и «тяжелее», чем простой осколок **`rune_q` (Q)**.
+**`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 
