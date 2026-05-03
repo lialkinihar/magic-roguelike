@@ -3,5 +3,20 @@
     "file": "combo_qqe.png",
     "skillId": "combo_qqe",
     "note": "Enhance Armament! Release Recollection! — QQE"
+  },
+  {
+    "file": "rune_q.png",
+    "skillId": "rune_q",
+    "note": "Frost Shard — Q"
+  },
+  {
+    "file": "rune_w.png",
+    "skillId": "rune_w",
+    "note": "Chain Lightning — W"
+  },
+  {
+    "file": "rune_e.png",
+    "skillId": "rune_e",
+    "note": "Meteor — E"
   }
 ]

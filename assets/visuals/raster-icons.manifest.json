@@ -1,29 +1,29 @@
 {
-  "generatedAt": "2026-05-03T21:13:09.771Z",
+  "generatedAt": "2026-05-03T21:18:28.184Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
       "skillId": "rune_q",
       "name": "Frost Shard",
       "sequence": "Q",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_rune_w",
       "skillId": "rune_w",
       "name": "Chain Lightning",
       "sequence": "W",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_rune_e",
       "skillId": "rune_e",
       "name": "Meteor",
       "sequence": "E",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_duo_qq",
