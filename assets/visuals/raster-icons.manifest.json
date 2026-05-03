@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-03T22:02:43.529Z",
+  "generatedAt": "2026-05-03T22:05:39.509Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -62,8 +62,8 @@
       "skillId": "duo_we",
       "name": "Lightning Shockwave",
       "sequence": "WE",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_duo_ee",

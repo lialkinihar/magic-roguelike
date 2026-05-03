@@ -23,5 +23,10 @@
     "file": "duo_qq.png",
     "skillId": "duo_qq",
     "note": "Frost Spear — QQ"
+  },
+  {
+    "file": "duo_we.png",
+    "skillId": "duo_we",
+    "note": "Lightning Shockwave — WE (ice spear + lightning)"
   }
 ]
