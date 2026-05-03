@@ -73,6 +73,8 @@ heavy jpeg compression
 
 Для скиллов игры зафиксирован фон-хромакей **`#fc03f8`**. Мастера клади в **`assets/raw_png/`**, связь файл → скилл — в **`assets/raw_png/import-manifest.json`** (`file` + `skillId` из `skills.config.js`). Затем:
 
+**Два типа иконок:** маленькие **Q / W / E** в цепочке комбо (`rune_q`, `rune_w`, `rune_e`) — узнаваемые «клавиши» стихий; **большая иконка скилла** — отдельный `skillId` (`duo_*`, `combo_*`, …), полноценная картинка умения, не обязана совпадать с рамкой рун.
+
 ```bash
 npm run icons:import-raw
 npm run icons:sprite
