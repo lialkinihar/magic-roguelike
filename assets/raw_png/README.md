@@ -11,22 +11,38 @@
 - **Референс по стихиям и общему тону:** соседний файл **`invoke.png`** — лёд (циан/белый), молния (жёлто-белый), огонь (оранжево-красный с золотом), аркан (неоновый фиолетовый/розовый круг). Фон на референсе уже под тот же хромакей.
 - **Hex из кода UI (дополнительный ориентир):** [`assets/visuals/palette.js`](../visuals/palette.js) — `GAME.ice`, `lightning`, `fire`, `arcane` и т.д.
 
-### Базовые руны (`rune_q`, `rune_w`, `rune_e`)
+### Базовые руны — один стиль на тройку (`rune_q`, `rune_w`, `rune_e`)
 
-Композиция: **руна как знак** (глиф, круг, символ) + **узнаваемая стихия** на нём или внутри: **Q** — лёд / кристалл / снежинка; **W** — молния; **E** — пламя. Должно читаться в **64×64** после даунскейла (один главный фокус).
+Нужны **три иконки одной визуальной системы**: одна «линия» арта, как три варианта одного набора HUD, а не три случайных картинки.
 
-### Промпт-якоря (English, к блокам из `AI_ICON_GUIDE.md`)
+**Что унифицировать (держать одинаковым на всех трёх):**
 
-**Ice rune (rune_q):**  
-`Fantasy game skill icon, rune sigil or circular seal with clear ice motif inside — crystals or snowflake, cyan and white palette per reference, elemental frost magic`
+- **Формат знака:** один тип носителя — например круглая печать / двойное кольцо / гекс — **одинаковый масштаб** знака в кадре 500×500 (поля от края те же).
+- **Линия и свечение:** одна логика — толщина штриха, сила bloom, «неон против тёмной подложки печати»; не смешивать на Q векторную тонкую линию, на W — масляную кисть.
+- **Арканная обвязка:** лёгкий **фиолетово-розовый неон** как у круга в **`invoke.png`** (тонкие руны/гравюра по ободу) — **одинаковый приём** на всех трёх, чтобы читалась общая школа магии.
+- **Стихия только в центре:** **Q** — лёд / кристалл / снежинка (циан, белый); **W** — молния (жёлтый, белый); **E** — пламя (оранжевый, красный, золото) — палитра как на **`invoke.png`** и в [`palette.js`](../visuals/palette.js) (`GAME.ice`, `lightning`, `fire`).
+- **Читаемость 64×64:** один главный силуэт стихии внутри печати, без мелкой россыпи.
 
-**Lightning rune (rune_w):**  
-`Fantasy game skill icon, rune sigil with lightning bolt motif, bright yellow and white electric arcs, high contrast, elemental storm magic`
+**Практика:** генерировать **три картинки в одной сессии** (или подряд с одним и тем же блоком «shared style» в промпте), потом визуально сравнить рядом на тёмном фоне; при расхождении — подправить или перегенерировать слабое звено.
 
-**Fire rune (rune_e):**  
-`Fantasy game skill icon, rune sigil with flame motif, orange red and gold ember palette, elemental fire magic`
+#### Общий блок для промпта (English) — вставь перед описанием стихии для **каждой** из трёх рун
 
-Добавь в промпт хвост про **flat solid background #fc03f8** и общие техправила из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md).
+```text
+Set of three matching fantasy game skill icons, same art style and same rune-seal frame layout for all,
+consistent line weight and glow strength, thin violet-magenta arcane ring engravings like a unified magic school,
+elemental motif only in the center of the seal, square 500x500, flat solid chroma background #fc03f8 only,
+high-end mobile RPG icon quality, readable silhouette at 64px.
+```
+
+#### Дополнение под конкретную стихию (одна строка в конец)
+
+| `skillId` | Строка к добавлению |
+|-----------|----------------------|
+| `rune_q` | `This icon: ICE element — cyan and white frost, crystal or snowflake core.` |
+| `rune_w` | `This icon: LIGHTNING element — yellow and white electric bolt, sharp zigzag core.` |
+| `rune_e` | `This icon: FIRE element — orange red and gold flame core, ember glow.` |
+
+В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 
 ---
 
