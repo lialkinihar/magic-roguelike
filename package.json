@@ -3,9 +3,17 @@
   "private": true,
   "description": "Локальный сервер для открытия игры в браузере",
   "scripts": {
-    "start": "serve . -p 8080"
+    "start": "serve . -p 8080",
+    "icons:knockout": "node scripts/refine-icon-alpha.mjs",
+    "icons:alpha": "node scripts/refine-icon-alpha.mjs",
+    "icons:from-svg": "node scripts/export-source-icons-png.mjs",
+    "icons:raster-map": "node scripts/build-raster-icons-map.mjs",
+    "icons:sprite": "node scripts/build-skill-icon-sprite.mjs && node scripts/build-raster-icons-map.mjs",
+    "icons:chroma": "node scripts/chroma-to-alpha.mjs",
+    "icons:import-raw": "node scripts/import-raw-skill-png.mjs"
   },
   "devDependencies": {
-    "serve": "^14.2.4"
+    "serve": "^14.2.4",
+    "sharp": "^0.34.5"
   }
 }
