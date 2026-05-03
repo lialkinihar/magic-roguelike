@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-03T21:28:26.920Z",
+  "generatedAt": "2026-05-03T21:42:00.758Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
       "skillId": "rune_q",
-      "name": "Frost Shard",
+      "name": "Meteor",
       "sequence": "Q",
       "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
       "source": "atlas"
@@ -20,7 +20,7 @@
     {
       "visualId": "game_skill_rune_e",
       "skillId": "rune_e",
-      "name": "Meteor",
+      "name": "Frost Shard",
       "sequence": "E",
       "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
       "source": "atlas"
@@ -29,7 +29,7 @@
       "visualId": "game_skill_duo_qq",
       "skillId": "duo_qq",
       "name": "Frost Spear",
-      "sequence": "QQ",
+      "sequence": "EE",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -37,7 +37,7 @@
       "visualId": "game_skill_duo_qw",
       "skillId": "duo_qw",
       "name": "Thunderfrost Spear",
-      "sequence": "QW",
+      "sequence": "EW",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -45,7 +45,7 @@
       "visualId": "game_skill_duo_qe",
       "skillId": "duo_qe",
       "name": "Cryo Meteor",
-      "sequence": "QE",
+      "sequence": "EQ",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -61,7 +61,7 @@
       "visualId": "game_skill_duo_we",
       "skillId": "duo_we",
       "name": "Lightning Shockwave",
-      "sequence": "WE",
+      "sequence": "WQ",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -69,7 +69,7 @@
       "visualId": "game_skill_duo_ee",
       "skillId": "duo_ee",
       "name": "Great Meteor",
-      "sequence": "EE",
+      "sequence": "QQ",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -77,7 +77,7 @@
       "visualId": "game_skill_combo_qqq",
       "skillId": "combo_qqq",
       "name": "Cold Embrace",
-      "sequence": "QQQ",
+      "sequence": "EEE",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -85,7 +85,7 @@
       "visualId": "game_skill_combo_qqw",
       "skillId": "combo_qqw",
       "name": "Frost Nova",
-      "sequence": "QQW",
+      "sequence": "EEW",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -93,7 +93,7 @@
       "visualId": "game_skill_combo_qqe",
       "skillId": "combo_qqe",
       "name": "Enhance Armament! Release Recollection!",
-      "sequence": "QQE",
+      "sequence": "EEQ",
       "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
       "source": "atlas"
     },
@@ -101,7 +101,7 @@
       "visualId": "game_skill_combo_qwq",
       "skillId": "combo_qwq",
       "name": "Frost Ravage",
-      "sequence": "QWQ",
+      "sequence": "EWE",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -109,7 +109,7 @@
       "visualId": "game_skill_combo_qww",
       "skillId": "combo_qww",
       "name": "Fear Aura",
-      "sequence": "QWW",
+      "sequence": "EWW",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -117,7 +117,7 @@
       "visualId": "game_skill_combo_qwe",
       "skillId": "combo_qwe",
       "name": "Teleport",
-      "sequence": "QWE",
+      "sequence": "EWQ",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -125,7 +125,7 @@
       "visualId": "game_skill_combo_qeq",
       "skillId": "combo_qeq",
       "name": "Proximity Mine",
-      "sequence": "QEQ",
+      "sequence": "EQE",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -133,7 +133,7 @@
       "visualId": "game_skill_combo_qew",
       "skillId": "combo_qew",
       "name": "Fire Ground",
-      "sequence": "QEW",
+      "sequence": "EQW",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -141,7 +141,7 @@
       "visualId": "game_skill_combo_qee",
       "skillId": "combo_qee",
       "name": "Frost Resonator",
-      "sequence": "QEE",
+      "sequence": "EQQ",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -149,7 +149,7 @@
       "visualId": "game_skill_combo_wqq",
       "skillId": "combo_wqq",
       "name": "Frost Rain",
-      "sequence": "WQQ",
+      "sequence": "WEE",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -157,7 +157,7 @@
       "visualId": "game_skill_combo_wqw",
       "skillId": "combo_wqw",
       "name": "Solar Beam",
-      "sequence": "WQW",
+      "sequence": "WEW",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -165,7 +165,7 @@
       "visualId": "game_skill_combo_wqe",
       "skillId": "combo_wqe",
       "name": "Lightning Dash",
-      "sequence": "WQE",
+      "sequence": "WEQ",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -173,7 +173,7 @@
       "visualId": "game_skill_combo_wwq",
       "skillId": "combo_wwq",
       "name": "Energy Shield",
-      "sequence": "WWQ",
+      "sequence": "WWE",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -189,7 +189,7 @@
       "visualId": "game_skill_combo_wwe",
       "skillId": "combo_wwe",
       "name": "Black Hole",
-      "sequence": "WWE",
+      "sequence": "WWQ",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -197,7 +197,7 @@
       "visualId": "game_skill_combo_weq",
       "skillId": "combo_weq",
       "name": "Repulse",
-      "sequence": "WEQ",
+      "sequence": "WQE",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -213,7 +213,7 @@
       "visualId": "game_skill_combo_wee",
       "skillId": "combo_wee",
       "name": "Mirror Clone",
-      "sequence": "WEE",
+      "sequence": "WQQ",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -221,7 +221,7 @@
       "visualId": "game_skill_combo_eqq",
       "skillId": "combo_eqq",
       "name": "Ice Wall",
-      "sequence": "EQQ",
+      "sequence": "QEE",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -229,7 +229,7 @@
       "visualId": "game_skill_combo_eqw",
       "skillId": "combo_eqw",
       "name": "Fire Yo-Yo",
-      "sequence": "EQW",
+      "sequence": "QWE",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -237,7 +237,7 @@
       "visualId": "game_skill_combo_eqe",
       "skillId": "combo_eqe",
       "name": "Fire Step",
-      "sequence": "EQE",
+      "sequence": "QEQ",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -245,7 +245,7 @@
       "visualId": "game_skill_combo_ewq",
       "skillId": "combo_ewq",
       "name": "Gale Force",
-      "sequence": "EWQ",
+      "sequence": "QEW",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -253,7 +253,7 @@
       "visualId": "game_skill_combo_eww",
       "skillId": "combo_eww",
       "name": "Volcano Turret",
-      "sequence": "EWW",
+      "sequence": "QWW",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -261,7 +261,7 @@
       "visualId": "game_skill_combo_ewe",
       "skillId": "combo_ewe",
       "name": "Elemental Fury",
-      "sequence": "EWE",
+      "sequence": "QWQ",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -269,7 +269,7 @@
       "visualId": "game_skill_combo_eeq",
       "skillId": "combo_eeq",
       "name": "Flame Guard",
-      "sequence": "EEQ",
+      "sequence": "QQE",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -277,7 +277,7 @@
       "visualId": "game_skill_combo_eew",
       "skillId": "combo_eew",
       "name": "Mirror Shield",
-      "sequence": "EEW",
+      "sequence": "QQW",
       "rasterUrl": null,
       "source": "svg"
     },
@@ -285,7 +285,7 @@
       "visualId": "game_skill_combo_eee",
       "skillId": "combo_eee",
       "name": "Chaos Meteor",
-      "sequence": "EEE",
+      "sequence": "QQQ",
       "rasterUrl": null,
       "source": "svg"
     },
