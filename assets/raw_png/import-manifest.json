@@ -18,5 +18,10 @@
     "file": "rune_e.png",
     "skillId": "rune_e",
     "note": "Meteor — E"
+  },
+  {
+    "file": "duo_qq.png",
+    "skillId": "duo_qq",
+    "note": "Frost Spear — QQ"
   }
 ]

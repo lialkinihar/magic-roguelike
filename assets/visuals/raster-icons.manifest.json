@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-03T21:58:21.321Z",
+  "generatedAt": "2026-05-03T22:00:45.149Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -30,8 +30,8 @@
       "skillId": "duo_qq",
       "name": "Frost Spear",
       "sequence": "QQ",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_duo_qw",
