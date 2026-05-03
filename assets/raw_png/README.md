@@ -45,11 +45,11 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `rune_w` | `This icon: chain lightning — nodes staggered (not collinear), shallow zigzag or S path; jagged bolts at angles between nodes; each node a tight lightning cocoon, NO visible circle; yellow-white, no frame, no extra VFX.` |
 | `rune_e` | `This icon: plain ordinary meteor only — gray rocky body, small orange-yellow trail, no frame, no magic rings, no extra VFX.` |
 | `duo_qq` | `This icon: large ice spear — ENTIRE weapon solid ice crystal only (head + shaft one frozen piece); NO metal rings, ferrule, steel, iron, bronze, or leather; secondary spikes also ice; bigger than basic ice shard; cyan/white/blue ice shadows; diagonal thrust; no frame, no extra VFX.` |
-| `duo_we` | `This icon: same large all-ice frost spear as dual-ice lance (no metal); yellow-white forked lightning spiraling and coiling around shaft and near tip, arcs wrap the ice without hiding it; chroma #fc03f8 flat only; no frame, no fire meteor, no text.` |
+| `duo_we` | `This icon: same large all-ice frost spear (no metal). Lightning must WRAP in 3D: segments pass IN FRONT of ice and other segments go BEHIND the crystal (occluded / partially hidden by ice), spiral or corkscrew along shaft — NOT one flat sine wave painted on top of the spear; branches respect depth. Yellow-white bolts. Chroma #fc03f8 flat only; no frame, no text.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
-**`duo_we` (WE)** — **то же крупное ледяное копьё**, что и для **`duo_qq` (QQ)** по силуэту, с **обмоткой цепной молнии** вокруг древка и у острия. В `skills.config` отдельного «копья WW» нет (WW — Chain Storm); арт WE = **копьё из QQ + молния W**.
+**`duo_we` (WE)** — то же крупное ледяное копьё, что **`duo_qq` (QQ)**; молния **обвивает** ствол: часть дуг **перед** льдом, часть **за** кристаллом (пропадает за объёмом), без «волны поверх» в одной плоскости. Копьё в конфиге у QQ; WE = лёд + молния W.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 
