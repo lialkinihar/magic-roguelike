@@ -510,7 +510,23 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_eqw": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M8 16h8M16 16a6 6 0 100 12 6 6 0 000-12" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16h8M16 16a6 6 0 100 12 6 6 0 000-12" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16L4 12" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16L4 12" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="yyDisk" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#fff4c8"/>
+      <stop offset="45%" stop-color="#ff8c32"/>
+      <stop offset="100%" stop-color="#c41a08"/>
+    </radialGradient>
+    <linearGradient id="yyStr" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#ffe8a0"/>
+      <stop offset="100%" stop-color="#ff5a18"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 8 Q34 22 32 34" fill="none" stroke="url(#yyStr)" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M32 8 Q34 22 32 34" fill="none" stroke="#ffd78a" stroke-width="0.45" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="32" cy="46" r="14" fill="url(#yyDisk)" stroke="#ffb060" stroke-width="1.2"/>
+  <circle cx="32" cy="46" r="5" fill="#2a0c06" fill-opacity="0.35"/>
+</svg>`,
   },
   "game_skill_combo_eqe": {
     kind: "icon",

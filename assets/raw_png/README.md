@@ -57,6 +57,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `combo_eew` | `This icon: MIRROR SHIELD — ONE semi-transparent BLUE-CYAN FRONTAL shield surface only (thin crescent / waning-moon plate facing the viewer, convex toward camera like a shallow lens or narrow kite-shield face). Frosted glass, icy mirror highlights, cool aqua edge glow. NOT a full sphere, NOT a bubble wrapping 360°, NOT a dome surrounding from all sides — only the visible front sheet, no back shell. NO magic circle on ground, NO fire meteor. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_eqe` | `This icon: FIRE STEP — a winding narrow FIERY FOOTPATH / ember trail on the ground (orange-red-yellow flame ribbon, scorched edges, light smoke). Clearly readable HUMAN FOOTPRINTS along the path (pairs of sole shapes glowing in the fire). NOT a giant meteor, NOT lightning bolt as main subject, NOT ice. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_eqq` | `This icon: ICE WALL — HORSESHOE / U-shaped CURVED WALL made of LARGE ICE CRYSTALS only: massive jagged crystal spires and frozen shards following a smooth arc (opening of horseshoe toward bottom or front), legs on sides, cyan-white-blue palette, sharp facets and depth overlap. NOT flat brick grid, NOT tiny snowflake icon, NOT fire, NOT lightning, NOT meteor. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
+| `combo_eqw` | `This icon: FIRE YO-YO — large round yo-yo disk of fire (orange-red-yellow ember rim, glowing center). ONE very THIN CORD / string that is ALSO on fire (slim fiery filament, sparks along thread), not thick rope. Yo-yo mid-swing, readable silhouette. NOT meteor, NOT ice, NOT chain lightning. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
@@ -79,6 +80,8 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 **`combo_eqe` (EQE)** — **Fire Step**: **огненная тропинка** (узкий след пламени по земле), по ней **видны человеческие следы** (подошвы); не метеор, не лёд; фон **`#fc03f8`**.
 
 **`combo_eqq` (EQQ)** — **Ice Wall**: **подковообразная** изогнутая **стена из крупных ледяных кристаллов** (шипы, грани, лёд), без огня; фон **`#fc03f8`**.
+
+**`combo_eqw` (EQW)** — **Fire Yo-Yo**: **огненный йо-йо** (круглый диск-пламя), **нить очень тонкая** и **тоже огненная**; фон **`#fc03f8`**.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 

@@ -88,5 +88,10 @@
     "file": "combo_eqq.png",
     "skillId": "combo_eqq",
     "note": "Ice Wall — EQQ (horseshoe ice crystal wall)"
+  },
+  {
+    "file": "combo_eqw.png",
+    "skillId": "combo_eqw",
+    "note": "Fire Yo-Yo — EQW (fiery yo-yo + thin fiery cord)"
   }
 ]
