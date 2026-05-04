@@ -19,6 +19,7 @@
 **Что писать в промпте (хвост):**
 
 ```text
+Output image exactly 500 pixels wide by 500 pixels tall (500x500), square canvas, no letterboxing.
 Solid flat background only: uniform chroma green #00FF00, no gradient on backdrop,
 no environmental lighting on the background. Subject centered, no green spill on the main shapes.
 Single game skill icon, square composition, isolated subject.
@@ -50,7 +51,7 @@ no gray or white backdrop behind the icon, soft semi-transparent edges on glow a
 Один блок, не меняешь от иконки к иконке:
 
 ```text
-Square 1:1, one centered emblem, readable silhouette at small size (game HUD icon),
+Exactly 500x500 pixel square output, 1:1 canvas, one centered emblem, readable silhouette at small size (game HUD icon),
 high detail render, soft outer glow only on the magical effects, no text, no watermark, no frame.
 ```
 
@@ -65,7 +66,9 @@ heavy jpeg compression
 
 ## Размер
 
-Проси **квадрат** и **большой мастер** (например **500×500** или 1024×1024), потом **уменьшаешь до нужного** с тем же PNG и альфой. Мелкую картинку не стоит растягивать.
+**Сразу в промпте** у генератора требуй **ровно 500×500 px** итогового кадра (ровный квадрат, без полей и «почти квадрата»). Это совпадает с мастерами в репозитории — **не делай основным шагом** автоматический ресайз/pad в Node/`sharp`: при подгонке страдают кромки и хромакей.
+
+Если инструмент **не умеет** задать размер и отдал, например, 1024 или 512 — тогда один аккуратный даунскейл/пад до 500×500 вручную или скриптом; мелкую картинку **не** растягивай до 500.
 
 ---
 

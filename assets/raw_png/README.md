@@ -2,6 +2,8 @@
 
 Сюда складываются **исходные** PNG перед импортом в игру: **500×500**, **квадрат**, формат **PNG**.
 
+**Генерация у ИИ:** в промпте **сразу** проси **exactly 500×500 pixels** (или эквивалент «canvas 500 by 500»). Не опирайся на то, что агент потом «дотянет» картинку через `sharp` — это только запасной путь, если модель выдала другой размер.
+
 ## Хромакей
 
 Фон — **ровный** цвет **`#fc03f8`** (без градиента, без «сцены»). Этот цвет снимается при импорте (`npm run icons:import-raw`). Если на объекте остаётся ореол — подстрой **`RAW_CHROMA_TOLERANCE`** (по умолчанию 18) или поправь картинку.
@@ -30,7 +32,7 @@
 #### Общий блок для промпта (English) — вставь перед описанием стихии для **каждой** из трёх рун
 
 ```text
-Trio of fantasy RPG skill icons 500x500, same art style. CRITICAL: the OUTER magical seal wrapper must be
+Trio of fantasy RPG skill icons — output image EXACTLY 500 by 500 pixels (500x500 square canvas), same art style. CRITICAL: the OUTER magical seal wrapper must be
 IDENTICAL on all three images — same twin concentric rings, same carved arcane glyphs on the rings in
 violet-magenta neon, same dark bezel between rings and center, same line weight and bloom on the rings.
 ONLY the small INNER circular focal area changes per icon. Flat solid chroma background #fc03f8 only,
@@ -76,7 +78,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 
 ## Полный флоу
 
-1. Сгенерировать или отрисовать PNG **500×500**, фон **`#fc03f8`**, стиль как выше (для скиллов — см. блок «Два типа ассетов»).
+1. Сгенерировать или отрисовать PNG с фоном **`#fc03f8`**, стиль как выше; у генератора в промпте — **ровно 500×500 px** выход. Если пришёл другой квадратный размер — один раз привести к 500×500 (даунскейл или пад цветом `#fc03f8`), не считать это нормой по умолчанию.
 2. Сохранить файл в **`assets/raw_png/`** с **любым именем** (например `frost_nova_v2.png`).
 3. Открыть **`import-manifest.json`** и добавить объект:
    ```json
