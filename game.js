@@ -902,6 +902,8 @@
       invokePayload: null,
       invokeSpellCd: createInvokeCooldownState(),
       fireCones: [],
+      frostNovaRings: [],
+      frostSpikeBursts: [],
       lightningStrikeFx: [],
       aegisReviveFx: null,
       revivePending: null,
@@ -1555,6 +1557,101 @@
     state.lightningStrikeFx.push({ x: m.x, y: m.y, life: 0.32 });
   }
 
+  function distPointToSegmentSq(px, py, x1, y1, x2, y2) {
+    const lx = x2 - x1;
+    const ly = y2 - y1;
+    const ll = lx * lx + ly * ly + 1e-8;
+    const t = Math.max(0, Math.min(1, ((px - x1) * lx + (py - y1) * ly) / ll));
+    const qx = x1 + t * lx;
+    const qy = y1 + t * ly;
+    const dx = px - qx;
+    const dy = py - qy;
+    return dx * dx + dy * dy;
+  }
+
+  /** QQW Frost Nova: расходящееся кольцо холода + заморозка/замедление + шипы из земли (как QWQ). */
+  function castFrostNovaQQWInvoke(comboDmg) {
+    const p = state.player;
+    const ice = state.stats.iceSpearDamage * 1.05;
+    const ringDmg = Math.max(5, comboDmg * 0.3 + ice * 0.2);
+    const spikeDmg = Math.max(6, comboDmg * 0.36 + ice * 0.16);
+    state.frostNovaRings.push({
+      x: p.x,
+      y: p.y,
+      r: 0,
+      speed: 318,
+      maxR: 248,
+      band: 54,
+      dmg: ringDmg,
+      freezeT: 2.25,
+      hit: new Set(),
+    });
+    const n = 14;
+    for (let i = 0; i < n; i++) {
+      const ang = (i / n) * Math.PI * 2 + (i % 3) * 0.04;
+      state.frostSpikeBursts.push({
+        cx: p.x,
+        cy: p.y,
+        ang,
+        t: 0,
+        rise: 0.15,
+        hold: 0.4,
+        inner: 14,
+        len: 104 + (i % 4) * 12,
+        dmg: spikeDmg,
+        done: false,
+      });
+    }
+  }
+
+  function updateFrostNovaRings(dt) {
+    const rings = state.frostNovaRings;
+    if (!rings?.length) return;
+    for (let i = rings.length - 1; i >= 0; i--) {
+      const w = rings[i];
+      const prevR = w.r;
+      w.r = Math.min(w.maxR + w.band, w.r + w.speed * dt);
+      for (let j = state.enemies.length - 1; j >= 0; j--) {
+        const e = state.enemies[j];
+        if (w.hit.has(e.id)) continue;
+        const d = Math.hypot(e.x - w.x, e.y - w.y);
+        if (prevR < d + e.r * 0.55 && w.r >= d - e.r * 0.35) {
+          w.hit.add(e.id);
+          applyDamageEnemyIndex(j, w.dmg);
+          e.frostSlowT = Math.max(e.frostSlowT || 0, w.freezeT);
+        }
+      }
+      if (w.r >= w.maxR + w.band * 0.45) rings.splice(i, 1);
+    }
+  }
+
+  function updateFrostSpikeBursts(dt) {
+    const sp = state.frostSpikeBursts;
+    if (!sp?.length) return;
+    for (let i = sp.length - 1; i >= 0; i--) {
+      const s = sp[i];
+      s.t += dt;
+      if (!s.done && s.t >= s.rise) {
+        s.done = true;
+        const ca = Math.cos(s.ang);
+        const sa = Math.sin(s.ang);
+        const x1 = s.cx + ca * s.inner;
+        const y1 = s.cy + sa * s.inner;
+        const x2 = s.cx + ca * s.len;
+        const y2 = s.cy + sa * s.len;
+        const hitR2 = (e) => (e.r + 18) ** 2;
+        for (let j = state.enemies.length - 1; j >= 0; j--) {
+          const e = state.enemies[j];
+          if (distPointToSegmentSq(e.x, e.y, x1, y1, x2, y2) < hitR2(e)) {
+            applyDamageEnemyIndex(j, s.dmg);
+            e.frostSlowT = Math.max(e.frostSlowT || 0, 1.65);
+          }
+        }
+      }
+      if (s.t >= s.rise + s.hold) sp.splice(i, 1);
+    }
+  }
+
   /** Шаровая молния WE: шар скачет между врагами, на каждом приземлении AOE. */
   function castBallLightningInvoke(comboDamage) {
     const p = state.player;
@@ -1634,8 +1731,7 @@
         castIceVolleyInvoke(10, 1, d / 22, 1.05, 0);
         break;
       case "ice_chain":
-        castIceVolleyInvoke(4, 0.45, d / 20, 1, 1);
-        castLightningNovaInvoke(2, 0.8, 0.8);
+        castFrostNovaQQWInvoke(d);
         break;
       case "ice_burst":
       case "mine_burst":
@@ -1818,13 +1914,15 @@
     const p = state.player;
     for (const e of state.enemies) {
       e.touchCd = Math.max(0, e.touchCd - dt);
+      e.frostSlowT = Math.max(0, (e.frostSlowT || 0) - dt);
+      const frostMul = (e.frostSlowT || 0) > 0 ? 0.34 : 1;
       if (e.kind === "boss1" || e.kind === "boss2") {
         let dx = p.x - e.x;
         let dy = p.y - e.y;
         const d = Math.hypot(dx, dy) || 1;
         dx /= d;
         dy /= d;
-        const sp = e.speed * dt;
+        const sp = e.speed * frostMul * dt;
         tryMoveEnemy(e, e.x + dx * sp, e.y + dy * sp);
         e.shootCd -= dt;
         if (d <= SHOOTER_FIRE_RANGE * 1.25 && e.shootCd <= 0) {
@@ -1846,7 +1944,7 @@
         const d = Math.hypot(dx, dy) || 1;
         dx /= d;
         dy /= d;
-        const sp = e.speed * dt;
+        const sp = e.speed * frostMul * dt;
         const ring = 360;
         if (d < ring - 50) {
           tryMoveEnemy(e, e.x - dx * sp, e.y - dy * sp);
@@ -1877,7 +1975,7 @@
         const dx = p.x - e.x;
         const dy = p.y - e.y;
         const len = Math.hypot(dx, dy) || 1;
-        const sp = e.speed * dt;
+        const sp = e.speed * frostMul * dt;
         tryMoveEnemy(e, e.x + (dx / len) * sp, e.y + (dy / len) * sp);
         enemyTouchPlayer(e);
       }
@@ -2156,6 +2254,57 @@
       ctx.strokeStyle = "rgba(255, 190, 110, 0.42)";
       ctx.lineWidth = 2;
       ctx.stroke();
+    }
+
+    for (const w of state.frostNovaRings || []) {
+      const k = Math.min(1, w.r / Math.max(1, w.maxR));
+      ctx.strokeStyle = `rgba(180, 235, 255, ${0.35 + (1 - k) * 0.35})`;
+      ctx.lineWidth = 3 + (1 - k) * 2;
+      ctx.beginPath();
+      ctx.arc(w.x, w.y, Math.max(4, w.r), 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.strokeStyle = `rgba(220, 248, 255, ${0.2 + (1 - k) * 0.25})`;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(w.x, w.y, Math.max(2, w.r - w.band * 0.35), 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = `rgba(160, 220, 255, ${0.06 + (1 - k) * 0.1})`;
+      ctx.beginPath();
+      ctx.arc(w.x, w.y, w.r + 6, 0, Math.PI * 2);
+      ctx.arc(w.x, w.y, Math.max(0, w.r - w.band), 0, Math.PI * 2, true);
+      ctx.fill("evenodd");
+    }
+
+    for (const s of state.frostSpikeBursts || []) {
+      const prog = Math.min(1, s.t / s.rise);
+      const h = s.len * prog;
+      if (h < 2) continue;
+      const ca = Math.cos(s.ang);
+      const sa = Math.sin(s.ang);
+      const bx = s.cx + ca * s.inner;
+      const by = s.cy + sa * s.inner;
+      const tipX = s.cx + ca * (s.inner + h);
+      const tipY = s.cy + sa * (s.inner + h);
+      const nx = -sa;
+      const ny = ca;
+      const hw = 5 + prog * 4;
+      ctx.fillStyle = `rgba(200, 240, 255, ${0.35 + prog * 0.35})`;
+      ctx.strokeStyle = `rgba(90, 160, 210, ${0.45 + prog * 0.35})`;
+      ctx.lineWidth = 1.4;
+      ctx.beginPath();
+      ctx.moveTo(bx + nx * hw, by + ny * hw);
+      ctx.lineTo(tipX, tipY);
+      ctx.lineTo(bx - nx * hw, by - ny * hw);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = `rgba(255, 255, 255, ${0.2 * prog})`;
+      ctx.beginPath();
+      ctx.moveTo(bx + nx * (hw * 0.35), by + ny * (hw * 0.35));
+      ctx.lineTo(tipX - ca * h * 0.25, tipY - sa * h * 0.25);
+      ctx.lineTo(bx - nx * (hw * 0.35), by - ny * (hw * 0.35));
+      ctx.closePath();
+      ctx.fill();
     }
 
     if (state.events && state.events.active) {
@@ -2506,6 +2655,8 @@
       updatePlayerShots(simDt);
       updateEnemyBullets(simDt);
       updateFireCones(simDt);
+      updateFrostNovaRings(simDt);
+      updateFrostSpikeBursts(simDt);
       updateLightningStrikeFx(simDt);
       updateAegisReviveFx(simDt);
       invokeCooldownTick(simDt);
