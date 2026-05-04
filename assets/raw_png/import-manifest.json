@@ -5,6 +5,11 @@
     "note": "Enhance Armament! Release Recollection! — QQE"
   },
   {
+    "file": "combo_qee.png",
+    "skillId": "combo_qee",
+    "note": "Frost Resonator — QEE (ice crystal in frozen patch + cold ripples)"
+  },
+  {
     "file": "rune_q.png",
     "skillId": "rune_q",
     "note": "Frost Shard — Q"

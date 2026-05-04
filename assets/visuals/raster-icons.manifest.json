@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T10:39:37.821Z",
+  "generatedAt": "2026-05-04T11:17:30.181Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -142,8 +142,8 @@
       "skillId": "combo_qee",
       "name": "Frost Resonator",
       "sequence": "QEE",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_wqq",
