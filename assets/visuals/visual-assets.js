@@ -397,7 +397,30 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_qeq": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 8l3 6 6 2-6 2-3 6-3-6-6-2 6-2z" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8l3 6 6 2-6 2-3 6-3-6-6-2 6-2z" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6a10 10 0 100 20 10 10 0 000-20z" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6a10 10 0 100 20 10 10 0 000-20z" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="qeqFire" cx="38%" cy="38%" r="60%">
+      <stop offset="0%" stop-color="#fff4a8"/>
+      <stop offset="35%" stop-color="#ff8c42"/>
+      <stop offset="85%" stop-color="#c42810"/>
+      <stop offset="100%" stop-color="#5a1208"/>
+    </radialGradient>
+    <linearGradient id="qeqIce" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8fbff"/>
+      <stop offset="100%" stop-color="#4a9ec8"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="34" r="14" fill="url(#qeqFire)"/>
+  <path d="M22 30 Q20 24 24 20" fill="none" stroke="#4a0800" stroke-width="0.6" opacity="0.4"/>
+  <path d="M38 38 Q44 36 46 30" fill="none" stroke="#4a0800" stroke-width="0.55" opacity="0.35"/>
+  <path d="M26 14 L30 28 L22 26 Z" fill="url(#qeqIce)" stroke="#7ec8e8" stroke-width="0.6"/>
+  <path d="M44 18 L38 30 L46 28 Z" fill="url(#qeqIce)" stroke="#a8e8ff" stroke-width="0.55"/>
+  <path d="M14 28 L26 32 L18 36 Z" fill="url(#qeqIce)" stroke="#6ec0e8" stroke-width="0.55"/>
+  <path d="M50 34 L40 36 L44 26 Z" fill="url(#qeqIce)" stroke="#b8f0ff" stroke-width="0.5"/>
+  <path d="M32 8 L34 24 L28 22 Z" fill="url(#qeqIce)" stroke="#d8f8ff" stroke-width="0.55"/>
+  <path d="M32 48 L28 38 L36 38 Z" fill="url(#qeqIce)" stroke="#5aa8c8" stroke-width="0.5"/>
+  <path d="M8 32 L22 30 L20 38 Z" fill="url(#qeqIce)" stroke="#7ec8e8" stroke-width="0.5"/>
+</svg>`,
   },
   "game_skill_combo_qew": {
     kind: "icon",

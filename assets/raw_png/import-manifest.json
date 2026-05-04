@@ -10,6 +10,11 @@
     "note": "Frost Resonator — QEE (ice crystal in frozen patch + cold ripples)"
   },
   {
+    "file": "combo_qeq.png",
+    "skillId": "combo_qeq",
+    "note": "Proximity Mine — QEQ (fire core + ice shrapnel studs)"
+  },
+  {
     "file": "rune_q.png",
     "skillId": "rune_q",
     "note": "Frost Shard — Q"

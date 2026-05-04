@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T11:17:30.181Z",
+  "generatedAt": "2026-05-04T11:24:33.282Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -126,8 +126,8 @@
       "skillId": "combo_qeq",
       "name": "Proximity Mine",
       "sequence": "QEQ",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_qew",
