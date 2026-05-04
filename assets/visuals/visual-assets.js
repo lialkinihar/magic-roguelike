@@ -567,7 +567,21 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_wqe": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M18 4L10 18h6l-2 10 12-16h-7l3-8" stroke="#7ecbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 4L10 18h6l-2 10 12-16h-7l3-8" stroke="#7ecbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16h10M18 16l-3-3M18 16l-3 3" stroke="#7ecbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 16h10M18 16l-3-3M18 16l-3 3" stroke="#7ecbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.35" transform="rotate(-28 32 36)">
+    <path d="M8 44 L14 40 L10 48 M12 38 L18 36 L14 46" stroke="#7ecbff" stroke-width="1.2"/>
+    <path d="M6 48 L12 44 L8 52" stroke="#ffe8a0" stroke-width="0.9"/>
+  </g>
+  <path d="M14 46 Q22 28 38 18 Q46 14 52 12" fill="none" stroke="#7ecbff" stroke-width="1.4" opacity="0.55"/>
+  <path d="M18 44 Q26 30 40 22 Q48 18 54 16" fill="none" stroke="#ffe8a0" stroke-width="1" opacity="0.45"/>
+  <path d="M22 42 Q34 26 44 20" fill="none" stroke="#ffffff" stroke-width="0.65" opacity="0.4"/>
+  <path d="M36 14 L34 10 L38 10 Z" fill="#1a2030" fill-opacity="0.45" stroke="#c9d8ff" stroke-width="0.9"/>
+  <path d="M36 14 L40 32 L34 30 L32 24 L30 30 L26 32 Z" fill="none" stroke="#b8d8ff" stroke-width="1.5" opacity="0.9"/>
+  <path d="M38 16 L44 8 M44 8 L46 34" stroke="#ffe8a0" stroke-width="1.3" opacity="0.95"/>
+  <path d="M28 34 L24 40 M32 36 L30 42 M36 34 L40 40" stroke="#7ecbff" stroke-width="1.1" opacity="0.85"/>
+  <path d="M30 26 L34 22 L38 28 L32 32 Z" fill="none" stroke="#7ecbff" stroke-width="0.9" opacity="0.7"/>
+  <path d="M24 30 L42 18 M26 34 L44 22" stroke="#7ecbff" stroke-width="0.55" opacity="0.5"/>
+</svg>`,
   },
   "game_skill_combo_wwq": {
     kind: "icon",

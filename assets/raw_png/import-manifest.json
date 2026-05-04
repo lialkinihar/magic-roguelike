@@ -153,5 +153,10 @@
     "file": "combo_wee.png",
     "skillId": "combo_wee",
     "note": "Mirror Clone — WEE (two teleport-style mage silhouettes: solid real + translucent magical duplicate)"
+  },
+  {
+    "file": "combo_wqe.png",
+    "skillId": "combo_wqe",
+    "note": "Lightning Dash — WQE (mage wrapped in lightning, flying/leaping forward with speed streaks)"
   }
 ]

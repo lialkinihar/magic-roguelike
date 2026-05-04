@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T12:43:14.961Z",
+  "generatedAt": "2026-05-04T12:48:31.181Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -166,8 +166,8 @@
       "skillId": "combo_wqe",
       "name": "Lightning Dash",
       "sequence": "WQE",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_wwq",
