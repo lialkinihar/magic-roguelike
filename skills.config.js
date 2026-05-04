@@ -6,7 +6,7 @@ const SKILL_DESCRIPTIONS = {
   duo_qw: "[Thunderfrost Spear] Вылетает обычное ледяное копье; при первом попадании из цели стартует обычная цепная молния.",
   duo_qe: "[Cryo Meteor] Падает обычный метеор; после удара вместе с волной выпускает 5 обычных ледяных копий в стороны.",
   duo_ww: "[Chain Storm] Усиленная молния: +15% урон, 15 отскоков и дальность отскоков/начального луча x1.5.",
-  duo_we: "[Lightning Shockwave] Запускается обычная цепная молния; каждое попадание создает ударную волну как у метеора.",
+  duo_we: "[Ball Lightning] Шаровая молния: светящийся плазменный шар перескакивает с врага на врага; при каждом приземлении / у узла наносит AOE-урон по области вокруг точки. Не цепная молния по «проводке» между целями без объёма удара.",
   duo_ee: "[Great Meteor] Усиленный метеор: +50% урон и +100% к размеру; ударные волны также масштабируются от увеличенного размера.",
   combo_qqq: "[Cold Embrace] Ледяной панцирь: герой обездвижен и неуязвим, накапливает входящий урон, затем взрывается волной и отталкивает обычных врагов к краю волны.",
   combo_qqw: "[Frost Nova] Морозное кольцо: расходящаяся волна вокруг героя, урон и обездвиживание врагов.",
@@ -67,7 +67,7 @@ export const SKILLS_CONFIG = {
     { id: "duo_qw", visualId: "game_skill_duo_qw", sequence: "QW", name: "Thunderfrost Spear", icon: "⚡", cooldownSec: 6.5, archetype: "duo_qw", damage: 24, runeTier: 2, functionType: "tacticalControl", desc: SKILL_DESCRIPTIONS.duo_qw },
     { id: "duo_qe", visualId: "game_skill_duo_qe", sequence: "QE", name: "Cryo Meteor", icon: "❄️", cooldownSec: 6.5, archetype: "duo_qe", damage: 22, runeTier: 2, functionType: "tacticalBurst", desc: SKILL_DESCRIPTIONS.duo_qe },
     { id: "duo_ww", visualId: "game_skill_duo_ww", sequence: "WW", name: "Chain Storm", icon: "⚡", cooldownSec: 6.5, archetype: "duo_ww", damage: 33, runeTier: 2, functionType: "tacticalControl", desc: SKILL_DESCRIPTIONS.duo_ww },
-    { id: "duo_we", visualId: "game_skill_duo_we", sequence: "WE", name: "Lightning Shockwave", icon: "⚡", cooldownSec: 6.5, archetype: "duo_we", damage: 20, runeTier: 2, functionType: "tacticalBurst", desc: SKILL_DESCRIPTIONS.duo_we },
+    { id: "duo_we", visualId: "game_skill_duo_we", sequence: "WE", name: "Ball Lightning", icon: "⚡", cooldownSec: 6.5, archetype: "duo_we", damage: 20, runeTier: 2, functionType: "tacticalBurst", desc: SKILL_DESCRIPTIONS.duo_we },
     { id: "duo_ee", visualId: "game_skill_duo_ee", sequence: "EE", name: "Great Meteor", icon: "🔥", cooldownSec: 6.5, archetype: "duo_ee", damage: 23, runeTier: 2, functionType: "tacticalZone", desc: SKILL_DESCRIPTIONS.duo_ee },
   ],
   invokeCombos: [

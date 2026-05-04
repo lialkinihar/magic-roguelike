@@ -88,7 +88,7 @@
     { id: "duo_qw", sequence: "QW", name: "Static Spike", icon: "⚡", cooldownSec: 5, archetype: "duo_qw", damage: 24 },
     { id: "duo_qe", sequence: "QE", name: "Steam Burst", icon: "🔥", cooldownSec: 5.5, archetype: "duo_qe", damage: 30 },
     { id: "duo_ww", sequence: "WW", name: "Storm Arc", icon: "⚡", cooldownSec: 5.5, archetype: "duo_ww", damage: 26 },
-    { id: "duo_we", sequence: "WE", name: "Plasma Chain", icon: "⚡", cooldownSec: 6.5, archetype: "duo_we", damage: 33 },
+    { id: "duo_we", sequence: "WE", name: "Ball Lightning", icon: "⚡", cooldownSec: 6.5, archetype: "duo_we", damage: 33 },
     { id: "duo_ee", sequence: "EE", name: "Flame Wave", icon: "🔥", cooldownSec: 6, archetype: "duo_ee", damage: 31 },
   ];
   const INVOKE_COMBOS = [
