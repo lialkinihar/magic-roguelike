@@ -143,7 +143,9 @@ function invokeById(comboId) {
         `${neon(["M6 58L56 4L44 44Z", "M6 58L40 8L34 50Z"], G.ice)}${neon(["M28 38L34 20L36 36Z", "M38 34L44 16L46 32Z"], G.ice)}`
       );
     case "combo_qww":
-      return svg(`${neon([P.ring], G.arcane)}${neon([P.skull], G.arcane)}`);
+      return svg(
+        `${neon(["M16 8a8 6 0 1016 0 8 6 0 00-16 0z", "M16 4a12 10 0 1024 0 12 10 0 00-24 0z", "M16 2a14 12 0 1028 0 14 12 0 00-28 0z"], G.arcane)}${neon(["M4 10Q16 6 28 10", "M4 22Q16 26 28 22"], G.lightning)}`
+      );
     case "combo_qwe":
       return svg(
         `${neon(["M12 18L12 38M8 22L16 22M10 38L14 42M14 16L18 12M16 24L20 20"], G.ice)}${neon(["M6 26L10 22M4 32L8 28"], G.lightning)}${neon(["M18 28L22 32M16 32L20 36"], G.fire)}${neon(["M24 34h20"], G.arcane)}${neon(["M48 18L48 38M44 22L52 22M46 38L50 42M48 14L48 10"], G.arcane)}`
@@ -175,7 +177,9 @@ function invokeById(comboId) {
     case "combo_wew":
       return svg(`${neon([P.bolt], G.lightning)}${neon(["M16 7v18M7 16h18"], G.lightning)}`);
     case "combo_wee":
-      return svg(`${neon([P.person], G.arcane)}${neon(["M10 12a3 3 0 100 6 3 3 0 000-6zm-4 14c0-4 3-6 5-6"], G.arcane)}`);
+      return svg(
+        `${neon(["M10 6L8 4L12 4Z M10 6V28M7 9h6M8 28L10 32", "M11 7L14 3V26"], G.arcane)}${neon(["M22 6L20 4L24 4Z M22 6V28M19 9h6M20 28L22 32", "M23 7L26 3V26"], G.lightning)}`
+      );
     case "combo_eqq":
       return svg(`${neon(["M6 12h20M6 18h20M6 24h20M6 12v12M12 12v12M18 12v12M26 12v12"], G.ice)}${neon([P.snowflake], G.ice)}`);
     case "combo_eqw":

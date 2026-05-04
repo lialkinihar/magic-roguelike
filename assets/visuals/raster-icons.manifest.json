@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T12:31:49.283Z",
+  "generatedAt": "2026-05-04T12:43:14.961Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -110,8 +110,8 @@
       "skillId": "combo_qww",
       "name": "Fear Aura",
       "sequence": "QWW",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_qwe",
@@ -214,8 +214,8 @@
       "skillId": "combo_wee",
       "name": "Mirror Clone",
       "sequence": "WEE",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_eqq",

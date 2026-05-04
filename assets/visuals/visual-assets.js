@@ -427,7 +427,27 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_qww": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 6a10 10 0 100 20 10 10 0 000-20z" stroke="#c9a6ff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6a10 10 0 100 20 10 10 0 000-20z" stroke="#c9a6ff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 14a5 5 0 1010 0 10 10 0 00-10 0zm1 8v4h6v-4" stroke="#c9a6ff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 14a5 5 0 1010 0 10 10 0 00-10 0zm1 8v4h6v-4" stroke="#c9a6ff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="qwwVoid" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#1a0a28" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="#4a2080" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#fc03f8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#qwwVoid)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="32" cy="32" rx="9" ry="6" stroke="#5a3088" stroke-width="1.3" transform="rotate(-10 32 32)" opacity="0.9"/>
+    <ellipse cx="33" cy="31" rx="9" ry="6" stroke="#7ec8ff" stroke-width="0.55" transform="rotate(-10 32 32)" opacity="0.45"/>
+    <ellipse cx="31" cy="33" rx="17" ry="11" stroke="#8b4ec8" stroke-width="1.1" transform="rotate(6 32 32)" opacity="0.85"/>
+    <ellipse cx="32" cy="32" rx="17" ry="11" stroke="#b898ff" stroke-width="0.45" transform="rotate(6 32 32)" opacity="0.4"/>
+    <ellipse cx="32" cy="32" rx="25" ry="15" stroke="#c9a6ff" stroke-width="1" transform="rotate(-4 32 32)" opacity="0.75"/>
+    <ellipse cx="34" cy="31" rx="25" ry="15" stroke="#6ec0e8" stroke-width="0.5" transform="rotate(-4 32 32)" opacity="0.35"/>
+  </g>
+  <path d="M6 22 Q32 10 58 24" fill="none" stroke="#7a4898" stroke-width="0.7" opacity="0.5"/>
+  <path d="M8 42 Q32 54 56 40" fill="none" stroke="#6a4088" stroke-width="0.65" opacity="0.45"/>
+  <path d="M14 12 L16 16 M50 48 L48 44 M10 50 L13 46" stroke="#d0a8ff" stroke-width="0.75" stroke-linecap="round" opacity="0.55"/>
+</svg>`,
   },
   "game_skill_combo_qwe": {
     kind: "icon",
@@ -613,7 +633,32 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_wee": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 10a3 3 0 100 6 3 3 0 000-6zm-6 14c0-4 4-6 6-6s6 2 6 6" stroke="#c9a6ff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 10a3 3 0 100 6 3 3 0 000-6zm-6 14c0-4 4-6 6-6s6 2 6 6" stroke="#c9a6ff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12a3 3 0 100 6 3 3 0 000-6zm-4 14c0-4 3-6 5-6" stroke="#c9a6ff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 12a3 3 0 100 6 3 3 0 000-6zm-4 14c0-4 3-6 5-6" stroke="#c9a6ff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="cweeSh" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c9a6ff" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#7ec8ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#c9a6ff" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="64" height="64" fill="url(#cweeSh)" opacity="0.4"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#d8c4ff">
+    <path d="M20 12 L18 8 L22 8 Z" stroke-width="1.1" fill="#1a1428" fill-opacity="0.35"/>
+    <path d="M20 12 L20 40 M16 16 L24 16 M18 40 L22 44" stroke-width="1.7"/>
+    <path d="M22 14 L28 6 L28 38" stroke-width="1.2" opacity="0.9"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.42" stroke="#b8a0e8" stroke-dasharray="2.2 1.8">
+    <path d="M45 12 L43 8 L47 8 Z" stroke-width="1" fill="#7ec8ff" fill-opacity="0.12"/>
+    <path d="M45 12 L45 40 M41 16 L49 16 M43 40 L47 44" stroke-width="1.5"/>
+    <path d="M47 14 L53 6 L53 38" stroke-width="1"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.22" stroke="#7ec8ff">
+    <path d="M46 12 L46 40 M42 16 L50 16 M44 40 L48 44"/>
+    <path d="M48 14 L54 6 L54 38"/>
+  </g>
+  <circle cx="50" cy="22" r="1.1" fill="#c9a6ff" opacity="0.55"/><circle cx="54" cy="30" r="0.9" fill="#7ec8ff" opacity="0.5"/>
+  <circle cx="48" cy="34" r="0.8" fill="#e8d8ff" opacity="0.45"/>
+</svg>`,
   },
   "game_skill_combo_eqq": {
     kind: "icon",

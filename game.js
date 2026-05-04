@@ -96,7 +96,7 @@
     { id: "combo_qqw", sequence: "QQW", name: "Stormfrost", icon: "❄️", cooldownSec: 8.5, archetype: "ice_chain", damage: 18 },
     { id: "combo_qqe", sequence: "QQE", name: "Thermal Shock", icon: "❄️", cooldownSec: 9.5, archetype: "ice_burst", damage: 24 },
     { id: "combo_qwq", sequence: "QWQ", name: "Absolute Zero", icon: "❄️", cooldownSec: 26, archetype: "absolute_zero", damage: 26 },
-    { id: "combo_qww", sequence: "QWW", name: "Frost Storm", icon: "⚡", cooldownSec: 10, archetype: "cone_lightning", damage: 19 },
+    { id: "combo_qww", sequence: "QWW", name: "Fear Aura", icon: "⚡", cooldownSec: 10, archetype: "cone_lightning", damage: 19 },
     { id: "combo_qwe", sequence: "QWE", name: "Teleport", icon: "✨", cooldownSec: 10, archetype: "tri_burst", damage: 20 },
     { id: "combo_qeq", sequence: "QEQ", name: "Ice Mine", icon: "❄️", cooldownSec: 8.5, archetype: "mine_burst", damage: 28 },
     { id: "combo_qew", sequence: "QEW", name: "Closed Circuit", icon: "⚡", cooldownSec: 9.5, archetype: "zone_tick", damage: 16 },
@@ -110,7 +110,7 @@
     { id: "combo_wwe", sequence: "WWE", name: "Plasma Chain", icon: "⚡", cooldownSec: 11, archetype: "chain_heavy", damage: 22 },
     { id: "combo_weq", sequence: "WEQ", name: "Supercool", icon: "⚡", cooldownSec: 9.5, archetype: "freeze_burst", damage: 23 },
     { id: "combo_wew", sequence: "WEW", name: "Overload", icon: "⚡", cooldownSec: 10, archetype: "delayed_burst", damage: 34 },
-    { id: "combo_wee", sequence: "WEE", name: "Arc Torch", icon: "🔥", cooldownSec: 10.5, archetype: "fire_cone", damage: 20 },
+    { id: "combo_wee", sequence: "WEE", name: "Mirror Clone", icon: "👤", cooldownSec: 10.5, archetype: "fire_cone", damage: 20 },
 
     { id: "combo_eqq", sequence: "EQQ", name: "Crystallization", icon: "🔥", cooldownSec: 9, archetype: "fire_ice", damage: 24 },
     { id: "combo_eqw", sequence: "EQW", name: "Spark Blast", icon: "🔥", cooldownSec: 9.5, archetype: "fire_chain", damage: 25 },

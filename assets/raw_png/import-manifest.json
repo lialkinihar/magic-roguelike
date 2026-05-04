@@ -40,6 +40,11 @@
     "note": "Absolute Zero — QWQ (cold cone LL→UR, frozen flora, ice crystals)"
   },
   {
+    "file": "combo_qww.png",
+    "skillId": "combo_qww",
+    "note": "Fear Aura — QWW (expanding dread waves, reality warp / glitch wrongness, violet mist)"
+  },
+  {
     "file": "rune_q.png",
     "skillId": "rune_q",
     "note": "Frost Shard — Q"
@@ -143,5 +148,10 @@
     "file": "combo_eww.png",
     "skillId": "combo_eww",
     "note": "Volcano Turret — EWW (small volcano + fireballs from crater)"
+  },
+  {
+    "file": "combo_wee.png",
+    "skillId": "combo_wee",
+    "note": "Mirror Clone — WEE (two teleport-style mage silhouettes: solid real + translucent magical duplicate)"
   }
 ]
