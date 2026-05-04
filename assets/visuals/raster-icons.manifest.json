@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T12:13:53.510Z",
+  "generatedAt": "2026-05-04T12:24:34.520Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -118,8 +118,8 @@
       "skillId": "combo_qwe",
       "name": "Teleport",
       "sequence": "QWE",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_qeq",

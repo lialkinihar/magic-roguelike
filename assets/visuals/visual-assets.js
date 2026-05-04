@@ -428,23 +428,26 @@ export const VISUAL_ASSETS = {
     family: "game",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <radialGradient id="cqweb" cx="50%" cy="50%" r="62%">
-      <stop offset="0%" stop-color="#d2b5ff" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#151028" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="cqweStar" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f0deff"/>
-      <stop offset="100%" stop-color="#b08cff"/>
+    <linearGradient id="cqweL" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#7ec8ff" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#c9a6ff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffb060" stop-opacity="0.35"/>
     </linearGradient>
   </defs>
-  <circle cx="32" cy="32" r="24" fill="url(#cqweb)"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M32 10l5 14 14 5-14 5-5 14-5-14-14-5 14-5z" stroke="#c9a6ff" stroke-width="6" opacity="0.24"/>
-    <path d="M32 10l5 14 14 5-14 5-5 14-5-14-14-5 14-5z" stroke="url(#cqweStar)" stroke-width="3.7"/>
+  <path d="M8 36 Q32 28 56 36" fill="none" stroke="url(#cqweL)" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.85">
+    <path d="M12 18 L12 38 M8 22 L16 22 M10 38 L14 42" stroke="#a8d8ff" stroke-width="1.6"/>
+    <path d="M14 16 L18 12 M16 24 L20 20 M10 30 L6 34 M14 34 L18 38" stroke="#7ec8ff" stroke-width="1.2"/>
+    <path d="M6 26 L10 22 M4 32 L8 28" stroke="#ffe8a0" stroke-width="1"/>
+    <path d="M18 28 L22 32 M16 32 L20 36" stroke="#ff9a5a" stroke-width="1"/>
   </g>
-  <circle cx="32" cy="14" r="2.5" fill="#6edbff"/>
-  <circle cx="18" cy="30" r="2.5" fill="#7ecbff"/>
-  <circle cx="46" cy="30" r="2.5" fill="#ff8c42"/>
+  <circle cx="24" cy="34" r="1.4" fill="#7ec8ff"/><circle cx="28" cy="30" r="1.2" fill="#ffe8a0"/>
+  <circle cx="32" cy="36" r="1.3" fill="#ff9a5a"/><circle cx="36" cy="32" r="1.2" fill="#a8d8ff"/>
+  <circle cx="40" cy="35" r="1.4" fill="#7ec8ff"/><circle cx="44" cy="31" r="1.1" fill="#ffe8a0"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M48 18 L48 38 M44 22 L52 22 M46 38 L50 42" stroke="#c9a6ff" stroke-width="1.8" opacity="0.95"/>
+    <path d="M48 14 L48 10 M44 12 L52 12" stroke="#d8c4ff" stroke-width="1.2" opacity="0.7"/>
+  </g>
 </svg>`,
   },
   "game_skill_combo_qeq": {

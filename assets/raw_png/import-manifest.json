@@ -30,6 +30,11 @@
     "note": "Frost Nova — QQW (circular ice avalanche burst 360°)"
   },
   {
+    "file": "combo_qwe.png",
+    "skillId": "combo_qwe",
+    "note": "Teleport — QWE (wizard silhouette dissolves to elemental particles, particles converge to reform silhouette)"
+  },
+  {
     "file": "combo_qwq.png",
     "skillId": "combo_qwq",
     "note": "Absolute Zero — QWQ (cold cone LL→UR, frozen flora, ice crystals)"
