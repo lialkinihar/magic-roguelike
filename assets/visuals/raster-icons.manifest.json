@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T11:35:20.887Z",
+  "generatedAt": "2026-05-04T11:40:13.049Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -86,8 +86,8 @@
       "skillId": "combo_qqw",
       "name": "Frost Nova",
       "sequence": "QQW",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_qqe",

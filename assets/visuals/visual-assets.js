@@ -371,7 +371,26 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_qqw": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 6a10 10 0 100 20 10 10 0 000-20z" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6a10 10 0 100 20 10 10 0 000-20z" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4v24M10 8l12 16M22 8L10 24M8 16h16" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4v24M10 8l12 16M22 8L10 24M8 16h16" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="qqwBurst" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8fcff" stop-opacity="0.5"/>
+      <stop offset="40%" stop-color="#7ec8ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#4a8ec8" stop-opacity="0.08"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="26" fill="url(#qqwBurst)"/>
+  <circle cx="32" cy="32" r="6" fill="#b8e8ff" fill-opacity="0.35"/>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#d8f8ff" stroke-width="1.4" stroke-opacity="0.55"/>
+  <circle cx="32" cy="32" r="16" fill="none" stroke="#a8e8ff" stroke-width="1" stroke-opacity="0.5"/>
+  <circle cx="32" cy="32" r="10" fill="none" stroke="#e8fcff" stroke-width="0.75" stroke-opacity="0.45"/>
+  <g fill="none" stroke="#6edbff" stroke-width="1.2" stroke-linecap="round" opacity="0.65">
+    <path d="M32 6 L32 14 M32 50 L32 58 M6 32 L14 32 M50 32 L58 32 M12 12 L18 18 M44 44 L52 52 M52 12 L44 18 M12 52 L18 44"/>
+  </g>
+  <g fill="none" stroke="#e8fcff" stroke-width="0.65" stroke-linecap="round" opacity="0.5">
+    <path d="M32 8 L34 16 M32 48 L30 56 M8 32 L16 30 M56 32 L48 34 M14 20 L20 24 M48 42 L42 38 M48 20 L42 26 M14 44 L20 40"/>
+  </g>
+</svg>`,
   },
   "game_skill_combo_qqe": {
     kind: "icon",

@@ -25,6 +25,11 @@
     "note": "Cold Embrace — QQQ (ice cocoon of large scales + faint inner silhouette)"
   },
   {
+    "file": "combo_qqw.png",
+    "skillId": "combo_qqw",
+    "note": "Frost Nova — QQW (circular ice avalanche burst 360°)"
+  },
+  {
     "file": "rune_q.png",
     "skillId": "rune_q",
     "note": "Frost Shard — Q"
