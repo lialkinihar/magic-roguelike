@@ -668,23 +668,27 @@ export const VISUAL_ASSETS = {
     family: "game",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <radialGradient id="cwweb" cx="50%" cy="50%" r="62%">
-      <stop offset="0%" stop-color="#c8a6ff" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#130f24" stop-opacity="0"/>
+    <radialGradient id="cwweVoid" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000008"/>
+      <stop offset="55%" stop-color="#0a0818"/>
+      <stop offset="85%" stop-color="#1a1040" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#fc03f8" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="cwweRing" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e8d8ff"/>
-      <stop offset="100%" stop-color="#a788ff"/>
+    <linearGradient id="cwweDisk" x1="30%" y1="30%" x2="70%" y2="70%">
+      <stop offset="0%" stop-color="#f0e8ff"/>
+      <stop offset="40%" stop-color="#c9a6ff"/>
+      <stop offset="100%" stop-color="#4a3088"/>
     </linearGradient>
   </defs>
-  <circle cx="32" cy="32" r="24" fill="url(#cwweb)"/>
-  <circle cx="32" cy="32" r="14" fill="#080711" opacity="0.85"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="32" cy="32" r="17" stroke="#c9a6ff" stroke-width="6" opacity="0.22"/>
-    <circle cx="32" cy="32" r="17" stroke="url(#cwweRing)" stroke-width="3.7"/>
-    <path d="M42 24c-3-4-9-5-13-2-5 3-6 10-2 14" stroke="#e9dcff" stroke-width="2.4"/>
-    <path d="M22 40c3 4 9 5 13 2 5-3 6-10 2-14" stroke="#bfa0ff" stroke-width="2.4"/>
-  </g>
+  <circle cx="32" cy="32" r="28" fill="url(#cwweVoid)"/>
+  <path d="M52 16 Q38 28 32 32 Q26 28 12 16" fill="none" stroke="#7ec8ff" stroke-width="1.5" stroke-linecap="round" opacity="0.75"/>
+  <path d="M56 32 Q40 34 32 32 Q24 30 8 32" fill="none" stroke="#ffe8a0" stroke-width="1.2" stroke-linecap="round" opacity="0.8"/>
+  <path d="M48 48 Q36 36 32 32 Q28 36 18 50" fill="none" stroke="#ff8c42" stroke-width="1.35" stroke-linecap="round" opacity="0.72"/>
+  <path d="M14 20 Q26 26 32 32" fill="none" stroke="#a8e8ff" stroke-width="0.9" opacity="0.55"/>
+  <path d="M50 44 Q40 36 32 32" fill="none" stroke="#ffb060" stroke-width="0.85" opacity="0.5"/>
+  <circle cx="32" cy="32" r="12" fill="#020208"/>
+  <circle cx="32" cy="32" r="13.5" fill="none" stroke="url(#cwweDisk)" stroke-width="1.6" opacity="0.95"/>
+  <circle cx="32" cy="32" r="11" fill="none" stroke="#ffffff" stroke-width="0.45" opacity="0.35"/>
 </svg>`,
   },
   "game_skill_combo_weq": {

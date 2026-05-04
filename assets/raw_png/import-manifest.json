@@ -168,5 +168,10 @@
     "file": "combo_wqw.png",
     "skillId": "combo_wqw",
     "note": "Solar Beam — WQW (wider plasma beam, lava-like interior, forward motion, few lightning forks)"
+  },
+  {
+    "file": "combo_wwe.png",
+    "skillId": "combo_wwe",
+    "note": "Black Hole — WWE (void center, ice/lightning/fire streams spiral inward and are consumed)"
   }
 ]

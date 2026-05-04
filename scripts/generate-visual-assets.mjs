@@ -173,7 +173,9 @@ function invokeById(comboId) {
     case "combo_www":
       return svg(`${neon([P.anchor], G.lightning)}${neon([P.bolt], G.lightning)}`);
     case "combo_wwe":
-      return svg(`${neon([P.spiral, P.ring], G.arcane)}${neon(["M16 6v4M16 22v4"], G.arcane)}`);
+      return svg(
+        `${neon([P.spiral], G.arcane)}${neon(["M28 6Q20 16 16 24Q12 16 8 8", "M8 24Q14 18 16 16"], G.ice)}${neon(["M24 4Q18 14 16 22", "M4 16Q12 14 16 16"], G.lightning)}${neon(["M6 28Q12 20 16 18", "M26 28Q22 20 16 18"], G.fire)}${neon([P.ring], G.arcane)}`
+      );
     case "combo_weq":
       return svg(
         `${neon(["M16 16L6 16M6 16l3-3M6 16l3 3", "M16 16L26 16M26 16l-3-3M26 16l-3 3", "M16 16L16 6M16 6l-3 3M16 6l3 3", "M16 16L16 26M16 26l-3-3M16 26l3-3"], G.arcane)}`

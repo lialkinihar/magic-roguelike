@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T13:02:10.791Z",
+  "generatedAt": "2026-05-04T13:07:40.743Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -190,8 +190,8 @@
       "skillId": "combo_wwe",
       "name": "Black Hole",
       "sequence": "WWE",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_weq",
