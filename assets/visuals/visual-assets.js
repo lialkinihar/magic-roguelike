@@ -678,19 +678,26 @@ export const VISUAL_ASSETS = {
     </radialGradient>
   </defs>
   <circle cx="32" cy="32" r="28" fill="url(#cwwwG)"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#ffe8a0" stroke-width="1.15" opacity="0.9">
-    <path d="M32 30 L8 8 M32 30 L56 10 M32 30 L4 32 M32 30 L60 34 M32 30 L10 56 M32 30 L54 54 M32 30 L32 4 M32 30 L32 60 M32 30 L18 6 M32 30 L48 8"/>
+  <g fill="none" stroke-linejoin="miter" stroke-linecap="square">
+    <path d="M32 33 L29 30 L34 27 L30 24 L35 21 L31 18 L36 15 L32 12 L37 9 L33 6 L38 3 L34 2 L30 4 L27 7 L29 10 L26 13 L28 16 L25 19 L27 22 L24 25 L26 28 L23 31 L20 28 L17 25 L14 22 L11 19 L8 16 L6 12 L4 8" stroke="#ffe8a0" stroke-width="1.35" opacity="0.95"/>
+    <path d="M32 33 L35 30 L31 27 L36 24 L33 21 L38 18 L35 15 L40 12 L37 9 L42 6 L39 4 L44 2 L48 4 L50 8 L47 11 L49 14 L46 17 L48 20 L45 23 L47 26 L44 29 L46 32 L50 30 L54 28 L56 24 L58 20" stroke="#ffe8a0" stroke-width="1.25" opacity="0.92"/>
+    <path d="M32 33 L35 31 L33 35 L36 38 L34 42 L37 45 L35 49 L38 52 L36 56 L40 58 L44 56 L46 52 L48 48 L50 44 L52 40 L54 36" stroke="#ffe8a0" stroke-width="1.2" opacity="0.9"/>
+    <path d="M32 33 L29 35 L31 38 L28 41 L30 44 L27 47 L29 50 L26 53 L28 56 L24 58 L20 56 L16 52 L12 48 L10 44 L8 40 L6 36 L4 32" stroke="#ffe8a0" stroke-width="1.2" opacity="0.9"/>
+    <path d="M32 33 L29 32 L31 29 L27 30 L25 27 L22 29 L19 27 L16 29 L13 27 L10 29 L7 28 L4 30 L6 33 L4 36" stroke="#ffe8a0" stroke-width="1.15" opacity="0.88"/>
+    <path d="M32 33 L35 32 L33 29 L39 30 L41 27 L45 28 L48 26 L52 27 L56 26 L60 28 L58 32 L60 36" stroke="#ffe8a0" stroke-width="1.15" opacity="0.88"/>
+    <path d="M32 33 L30 31 L33 28 L29 26 L32 23 L28 21 L31 18 L27 16 L30 13 L26 11 L29 8 L25 6 L28 4 L32 2" stroke="#ffe8a0" stroke-width="1.1" opacity="0.86"/>
+    <path d="M32 33 L34 31 L31 28 L35 26 L32 23 L36 21 L33 18 L37 16 L34 13 L38 11 L35 8 L39 6 L36 4 L32 2" stroke="#ffe8a0" stroke-width="1.1" opacity="0.86"/>
   </g>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#7ecbff" stroke-width="0.75" opacity="0.75">
-    <path d="M32 30 L12 14 M32 30 L52 16 M32 30 L14 48 M32 30 L50 46 M32 30 L6 24 M32 30 L58 26"/>
+  <g fill="none" stroke-linejoin="miter" stroke-linecap="square" stroke="#7ecbff" stroke-width="0.65" opacity="0.8">
+    <path d="M32 33 L29 30 L34 27 L30 24 L35 21 L31 18 L36 15 L32 12 L37 9 L33 6 L38 3 L34 2 L30 4 L27 7 L29 10 L26 13 L28 16 L25 19 L27 22 L24 25 L26 28 L23 31 L20 28 L17 25 L14 22 L11 19 L8 16 L6 12 L4 8"/>
+    <path d="M32 33 L35 30 L31 27 L36 24 L33 21 L38 18 L35 15 L40 12 L37 9 L42 6 L39 4 L44 2 L48 4 L50 8 L47 11 L49 14 L46 17 L48 20 L45 23 L47 26 L44 29 L46 32 L50 30 L54 28 L56 24 L58 20"/>
   </g>
-  <path d="M32 44 L32 24" stroke="url(#cwwwA)" stroke-width="3.2" stroke-linecap="round"/>
-  <path d="M22 42 h20" stroke="#8ec8e8" stroke-width="2.8" stroke-linecap="round"/>
-  <path d="M26 24 h12" stroke="#b8e8ff" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M32 22 L32 12 M28 12 h8" stroke="#d8f8ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="32" cy="12" r="3.5" fill="none" stroke="#7ecbff" stroke-width="1.4"/>
-  <path d="M30 12 L28 8 L36 8 L34 12" fill="#5a7090" stroke="#c9f0ff" stroke-width="0.6" opacity="0.85"/>
-  <path d="M31 24 L30 20 M33 24 L34 20 M30 28 L29 32 M33 28 L34 32" stroke="#ffe8a0" stroke-width="0.55" opacity="0.65"/>
+  <path d="M32 44 L33 41 L31 38 L33 35 L31 32 L33 29 L32 26 L31 23 L33 20 L32 17 L33 14 L32 12" stroke="url(#cwwwA)" stroke-width="2.4" stroke-linejoin="miter"/>
+  <path d="M22 40 L24 39 L26 40 L28 39 L30 40 L32 39 L34 40 L36 39 L38 40 L40 39 L42 40" stroke="#b8e8ff" stroke-width="1.9" stroke-linejoin="miter" fill="none" stroke-linecap="square"/>
+  <path d="M26 24 L28 23 L30 24 L32 23 L34 24 L36 23 L38 24" stroke="#d8f8ff" stroke-width="1.5" stroke-linejoin="miter" fill="none" stroke-linecap="square"/>
+  <path d="M27 12 L29 10 L31 12 L33 10 L35 12 L37 10 L35 8 L33 10 L31 8 L29 10 L27 12" stroke="#ffe8a0" stroke-width="1.1" fill="none" stroke-linejoin="miter"/>
+  <path d="M32 12 L31 9 L33 7 L32 5 L33 3 L32 1" stroke="#ffe8a0" stroke-width="1" fill="none" stroke-linejoin="miter"/>
+  <path d="M30 12 L28 8 L36 8 L34 12" fill="#4a6080" stroke="#c9f0ff" stroke-width="0.55" opacity="0.9"/>
 </svg>`,
   },
   "game_skill_combo_wwe": {
