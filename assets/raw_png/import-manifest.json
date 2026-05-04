@@ -38,5 +38,10 @@
     "file": "duo_we.png",
     "skillId": "duo_we",
     "note": "Ball Lightning — WE (sphere jumping, AOE hops)"
+  },
+  {
+    "file": "duo_ee.png",
+    "skillId": "duo_ee",
+    "note": "Great Meteor — EE (larger than E, lava veins)"
   }
 ]

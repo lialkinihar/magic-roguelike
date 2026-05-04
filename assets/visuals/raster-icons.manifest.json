@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T08:11:29.808Z",
+  "generatedAt": "2026-05-04T08:30:21.174Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -70,8 +70,8 @@
       "skillId": "duo_ee",
       "name": "Great Meteor",
       "sequence": "EE",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_qqq",
