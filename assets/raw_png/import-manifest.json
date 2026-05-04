@@ -48,5 +48,10 @@
     "file": "duo_ee.png",
     "skillId": "duo_ee",
     "note": "Great Meteor — EE (larger than E, lava veins)"
+  },
+  {
+    "file": "combo_eee.png",
+    "skillId": "combo_eee",
+    "note": "Comet of Destruction — EEE"
   }
 ]

@@ -120,7 +120,7 @@
     { id: "combo_ewe", sequence: "EWE", name: "Electro Flash", icon: "⚡", cooldownSec: 10, archetype: "player_nova", damage: 26 },
     { id: "combo_eeq", sequence: "EEQ", name: "Burning Front", icon: "🔥", cooldownSec: 10.5, archetype: "wide_cone", damage: 21 },
     { id: "combo_eew", sequence: "EEW", name: "Solar Discharge", icon: "🔥", cooldownSec: 10.5, archetype: "fire_chain_heavy", damage: 28 },
-    { id: "combo_eee", sequence: "EEE", name: "Fire Cone", icon: "🔥", cooldownSec: 11, archetype: "fire_cone", damage: 24 },
+    { id: "combo_eee", sequence: "EEE", name: "Comet of Destruction", icon: "☄️", cooldownSec: 11, archetype: "fire_cone", damage: 24 },
   ];
   const INVOKE_COMBO_BY_SEQUENCE = Object.fromEntries(INVOKE_COMBOS.map((c) => [c.sequence, c]));
   const SINGLE_COMBO_BY_SEQUENCE = Object.fromEntries(SINGLE_RUNE_COMBOS.map((c) => [c.sequence, c]));

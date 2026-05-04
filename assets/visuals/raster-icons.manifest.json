@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T08:47:33.595Z",
+  "generatedAt": "2026-05-04T09:05:13.083Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -284,10 +284,10 @@
     {
       "visualId": "game_skill_combo_eee",
       "skillId": "combo_eee",
-      "name": "Chaos Meteor",
+      "name": "Comet of Destruction",
       "sequence": "EEE",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_invoke_seal_circle",

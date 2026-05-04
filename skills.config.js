@@ -35,7 +35,8 @@ const SKILL_DESCRIPTIONS = {
   combo_ewe: "[Elemental Fury] Элементальный вихрь (каналинг): 5с герой вращается (1 оборот/с), получает +20% скорости и не может кастовать другие скиллы; каждые 0.1с во все стороны вылетает случайный базовый снаряд (ледяной осколок Q / цепная молния W / метеор E).",
   combo_eeq: "[Flame Guard] Огненный щит: бафф на 10с, снижает входящий урон на 50% и наносит периодический урон огнем врагам вокруг героя в радиусе 100.",
   combo_eew: "[Mirror Shield] Прозрачный узкий серп на 10 с (как убывающая луна): выпуклость к врагам, вырез со стороны героя; зона зафиксирована в мире по направлению к курсору. Юниты проходят сквозь. Вражеские снаряды в зоне отражаются с остатком дальности и бьют только врагов; ваши при проходе +15% урона и дальности (один раз на снаряд). Новый каст снимает старую зону.",
-  combo_eee: "[Chaos Meteor] Великий метеор: огромный метеор падает в точку, создает ударную волну и затем катится еще 400, оставляя за собой огненный след.",
+  combo_eee:
+    "[Comet of Destruction] Комета гибели: огромное тело падает в точку с явной угрозой масштаба; ударная волна, затем катится ещё 400, оставляя огненный след.",
 };
 
 export const SKILLS_CONFIG = {
@@ -109,6 +110,6 @@ export const SKILLS_CONFIG = {
     { id: "combo_ewe", visualId: "game_skill_combo_ewe", sequence: "EWE", name: "Elemental Fury", icon: "⚡", cooldownSec: 25, archetype: "player_nova", damage: 26, runeTier: 3, functionType: "advancedHybrid", desc: SKILL_DESCRIPTIONS.combo_ewe },
     { id: "combo_eeq", visualId: "game_skill_combo_eeq", sequence: "EEQ", name: "Flame Guard", icon: "🔥", cooldownSec: 20, archetype: "wide_cone", damage: 21, runeTier: 3, functionType: "advancedDefense", desc: SKILL_DESCRIPTIONS.combo_eeq },
     { id: "combo_eew", visualId: "game_skill_combo_eew", sequence: "EEW", name: "Mirror Shield", icon: "🔷", cooldownSec: 16, archetype: "projectile_prism", damage: 0, runeTier: 3, functionType: "advancedArea", desc: SKILL_DESCRIPTIONS.combo_eew },
-    { id: "combo_eee", visualId: "game_skill_combo_eee", sequence: "EEE", name: "Chaos Meteor", icon: "🔥", cooldownSec: 26, archetype: "fire_cone", damage: 24, runeTier: 3, functionType: "advancedArea", desc: SKILL_DESCRIPTIONS.combo_eee },
+    { id: "combo_eee", visualId: "game_skill_combo_eee", sequence: "EEE", name: "Comet of Destruction", icon: "☄️", cooldownSec: 26, archetype: "fire_cone", damage: 24, runeTier: 3, functionType: "advancedArea", desc: SKILL_DESCRIPTIONS.combo_eee },
   ],
 };

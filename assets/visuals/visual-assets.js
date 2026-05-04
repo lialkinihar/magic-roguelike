@@ -518,6 +518,29 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_eee": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M8 8l8 8M16 16c4 0 8 4 8 8M24 24l4 4" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 8l8 8M16 16c4 0 8 4 8 8M24 24l4 4" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="codBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6a5048"/>
+      <stop offset="50%" stop-color="#3a2820"/>
+      <stop offset="100%" stop-color="#1a100c"/>
+    </linearGradient>
+    <linearGradient id="codPlasma" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#fff8e8"/>
+      <stop offset="40%" stop-color="#ff9a3a"/>
+      <stop offset="100%" stop-color="#c41a08"/>
+    </linearGradient>
+    <linearGradient id="codTail" x1="100%" y1="30%" x2="0%" y2="70%">
+      <stop offset="0%" stop-color="#ff6b2a" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#ff3a18" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ff2200" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M52 6L22 38" stroke="url(#codTail)" stroke-width="14" stroke-linecap="round"/>
+  <path d="M50 8L24 36" stroke="#ffb060" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+  <path d="M46 10c10 8 8 22-2 30-10 8-22 6-28-4-6-10-2-22 8-28 10-6 22-4 22 2z" fill="url(#codBody)" stroke="#2a1810" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M40 14c6 4 4 14-2 18-6 4-12 2-14-4-2-6 2-12 8-12 6 0 8 2 8-2z" fill="url(#codPlasma)" opacity="0.95"/>
+  <path d="M38 20l2 6M34 22l6 2M36 28l-4 4" fill="none" stroke="#ffea6a" stroke-width="1.3" stroke-linecap="round" opacity="0.9"/>
+</svg>`,
   },
 };
