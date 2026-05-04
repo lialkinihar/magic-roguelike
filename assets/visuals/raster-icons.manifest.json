@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T12:48:31.181Z",
+  "generatedAt": "2026-05-04T12:53:53.179Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -150,8 +150,8 @@
       "skillId": "combo_wqq",
       "name": "Frost Rain",
       "sequence": "WQQ",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_wqw",

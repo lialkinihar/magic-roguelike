@@ -557,7 +557,29 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_wqq": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M8 22c0-3 2-5 5-5 1-3 4-5 8-5 4 0 7 2 8 6 3 0 5 2 5 5 0 3-2 5-5 5H13c-3 0-5-2-5-6" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 22c0-3 2-5 5-5 1-3 4-5 8-5 4 0 7 2 8 6 3 0 5 2 5 5 0 3-2 5-5 5H13c-3 0-5-2-5-6" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 26v4M16 26v4M20 26v4" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 26v4M16 26v4M20 26v4" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="cwqqCloud" x1="30%" y1="0%" x2="70%" y2="100%">
+      <stop offset="0%" stop-color="#e8f4ff"/>
+      <stop offset="55%" stop-color="#b8d8e8"/>
+      <stop offset="100%" stop-color="#7eb0d0"/>
+    </linearGradient>
+  </defs>
+  <path d="M14 28 Q18 14 32 12 Q46 10 52 22 Q58 24 56 32 Q54 38 44 38 Q42 42 32 42 Q20 42 18 38 Q8 36 10 28 Q12 24 14 28 Z" fill="url(#cwqqCloud)" stroke="#8ec8e0" stroke-width="0.9" opacity="0.92"/>
+  <path d="M22 22 L24 18 L26 22 L25 26 Z" fill="#d8f8ff" stroke="#6ec0e8" stroke-width="0.5" opacity="0.95"/>
+  <path d="M38 20 L41 15 L43 21 L40 25 Z" fill="#c8f0ff" stroke="#5ab0d8" stroke-width="0.45" opacity="0.9"/>
+  <path d="M30 24 L32 19 L35 25 L31 28 Z" fill="#e8fcff" stroke="#7ec8e8" stroke-width="0.45" opacity="0.88"/>
+  <path d="M46 26 L48 22 L50 28 L47 30 Z" fill="#b8e8ff" stroke="#4a9ec8" stroke-width="0.4" opacity="0.85"/>
+  <path d="M18 26 L20 23 L22 28 L19 30 Z" fill="#d0f0ff" stroke="#6ec0e8" stroke-width="0.4" opacity="0.82"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#7ec8ff">
+    <path d="M20 44 L18 56 M18 52 L22 54" stroke-width="0.85" opacity="0.9"/>
+    <path d="M28 40 L26 54 M25 50 L30 52" stroke-width="0.75" opacity="0.85"/>
+    <path d="M34 42 L33 56" stroke-width="0.7" opacity="0.8"/>
+    <path d="M40 40 L42 52 M41 48 L44 50" stroke-width="0.8" opacity="0.88"/>
+    <path d="M46 44 L48 54" stroke-width="0.65" opacity="0.78"/>
+    <path d="M24 46 L22 58 M32 44 L30 58 M38 46 L40 56" stroke-width="0.55" opacity="0.65"/>
+  </g>
+</svg>`,
   },
   "game_skill_combo_wqw": {
     kind: "icon",

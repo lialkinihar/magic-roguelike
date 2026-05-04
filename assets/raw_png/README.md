@@ -71,6 +71,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `combo_eww` | `This icon: VOLCANO TURRET — a SMALL compact volcanic cone (triangular / low pyramid, dark cracked rock, orange-red lava glow in the crater). Multiple ROUND FIREBALLS with short flame trails launch upward and outward from the crater in different arcs — clearly fire projectiles. Light vent smoke. NOT lightning bolts, NOT ice, NOT giant sky meteor, NOT magic summoning circle on ground. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_wee` | `This icon: MIRROR CLONE — TWO stylized WIZARD silhouettes side by side (hooded cloak, vertical staff — same visual archetype as the teleport QWE mage). LEFT: SOLID opaque silhouette, reads as the REAL mage. RIGHT: same pose clearly ARTIFICIAL / summoned copy — lower opacity, faint offset ghost edge, dashed or sparkling outline, soft arcane shimmer particles (violet-cyan), subtle wireframe or scanline hint — NOT readable text, NOT a giant mirror as main subject. Same stance and scale for both. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_wqe` | `This icon: LIGHTNING DASH — ONE stylized WIZARD silhouette (hood, staff) READABLE in frame, body angled as if FLYING or LEAPING forward through the air (diagonal motion, forward lean). The mage is WRAPPED in BRIGHT CHAIN LIGHTNING — multiple jagged arcs spiraling around the figure, yellow-white and cyan-white electric glow, lightning dominates the composition. Behind: MOTION STREAKS / speed trail / motion blur suggesting velocity. NOT a lone bolt without a mage, NOT meteor, NOT fire, NO summoning circle on ground. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
+| `combo_wqq` | `This icon: FROST RAIN — a SMALL compact WEATHER CLOUD (soft billowy cumulus, pale gray-white with cool cyan-blue tint) in the upper area — modest size, NOT a giant storm filling the frame. SHARP ICE CRYSTALS and SHARDS are EMBEDDED in / protruding from the cloud body (cyan-white-blue facets visible in the cloud). Below: multiple SMALL ICE SPLINTERS and SHARDS FALLING downward with motion streaks — reads as icy hail from the cloud. ICE AND CLOUD ONLY — NO lightning bolts, NO fire, NO meteor, NO character, NO ground summoning circle. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
@@ -121,6 +122,8 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 **`combo_wee` (WEE)** — **Mirror Clone**: **два силуэта мага** как на телепорте (капюшон, посох); **слева** — **обычный**, плотный силуэт; **справа** — **магический двойник** (полупрозрачный, контур/«глюк», частицы), явно **искусственная** копия; фон **`#fc03f8`**.
 
 **`combo_wqe` (WQE)** — **Lightning Dash**: силуэт **мага**, **обмотанный молнией**; **косой рывок / полёт** вперёд; за фигурой **скоростные шлейфы**; фон **`#fc03f8`**.
+
+**`combo_wqq` (WQQ)** — **Frost Rain**: **небольшое облако** с **воткнутыми / встроенными ледяными осколками**; **снизу падают** мелкие **ледяные осколки** (град); без молнии и огня; фон **`#fc03f8`**.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 

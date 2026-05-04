@@ -158,5 +158,10 @@
     "file": "combo_wqe.png",
     "skillId": "combo_wqe",
     "note": "Lightning Dash — WQE (mage wrapped in lightning, flying/leaping forward with speed streaks)"
+  },
+  {
+    "file": "combo_wqq.png",
+    "skillId": "combo_wqq",
+    "note": "Frost Rain — WQQ (small cloud with embedded ice shards, falling ice splinters)"
   }
 ]
