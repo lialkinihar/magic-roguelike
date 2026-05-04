@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T13:07:40.743Z",
+  "generatedAt": "2026-05-04T13:13:15.652Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -174,8 +174,8 @@
       "skillId": "combo_wwq",
       "name": "Energy Shield",
       "sequence": "WWQ",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_www",

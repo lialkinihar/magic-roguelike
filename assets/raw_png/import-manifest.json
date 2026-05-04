@@ -173,5 +173,10 @@
     "file": "combo_wwe.png",
     "skillId": "combo_wwe",
     "note": "Black Hole — WWE (void center, ice/lightning/fire streams spiral inward and are consumed)"
+  },
+  {
+    "file": "combo_wwq.png",
+    "skillId": "combo_wwq",
+    "note": "Energy Shield — WWQ (conformal energy skin tight on mage silhouette, second skin)"
   }
 ]
