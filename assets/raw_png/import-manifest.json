@@ -163,5 +163,10 @@
     "file": "combo_wqq.png",
     "skillId": "combo_wqq",
     "note": "Frost Rain — WQQ (small cloud with embedded ice shards, falling ice splinters)"
+  },
+  {
+    "file": "combo_wqw.png",
+    "skillId": "combo_wqw",
+    "note": "Solar Beam — WQW (focused plasma beam, few side lightning forks)"
   }
 ]

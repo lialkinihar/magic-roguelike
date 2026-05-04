@@ -103,7 +103,7 @@
     { id: "combo_qee", sequence: "QEE", name: "Steam Rift", icon: "🔥", cooldownSec: 10.5, archetype: "fire_burst", damage: 27 },
 
     { id: "combo_wqq", sequence: "WQQ", name: "Frost Rain", icon: "⚡", cooldownSec: 8.5, archetype: "chain_nova", damage: 18 },
-    { id: "combo_wqw", sequence: "WQW", name: "Focus Beam", icon: "⚡", cooldownSec: 8, archetype: "lightning_bolt", damage: 30 },
+    { id: "combo_wqw", sequence: "WQW", name: "Solar Beam", icon: "⚡", cooldownSec: 8, archetype: "lightning_bolt", damage: 30 },
     { id: "combo_wqe", sequence: "WQE", name: "Lightning Dash", icon: "⚡", cooldownSec: 9, archetype: "lightning_burst", damage: 24 },
     { id: "combo_wwq", sequence: "WWQ", name: "Polar Arc", icon: "⚡", cooldownSec: 9.5, archetype: "chain_ice", damage: 20 },
     { id: "combo_www", sequence: "WWW", name: "Storm Judgment", icon: "⚡", cooldownSec: 10, archetype: "lightning_nova", damage: 34 },

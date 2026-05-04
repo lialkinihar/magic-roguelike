@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T12:53:53.179Z",
+  "generatedAt": "2026-05-04T12:58:39.430Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -158,8 +158,8 @@
       "skillId": "combo_wqw",
       "name": "Solar Beam",
       "sequence": "WQW",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_wqe",

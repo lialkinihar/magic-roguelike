@@ -584,7 +584,22 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_wqw": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M6 16h20" stroke="#7ecbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 16h20" stroke="#7ecbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6a10 10 0 100 20 10 10 0 000-20z" stroke="#7ecbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6a10 10 0 100 20 10 10 0 000-20z" stroke="#7ecbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6v6M6 16h6M20 16h6" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6v6M6 16h6M20 16h6" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="cwqwBeam" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#7ecbff" stop-opacity="0.2"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#c9a6ff" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <path d="M4 38 L58 22" stroke="#7ecbff" stroke-width="10" stroke-linecap="round" opacity="0.22"/>
+  <path d="M6 37 L56 24" stroke="url(#cwqwBeam)" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+  <path d="M10 36 L54 25" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
+  <path d="M22 30 L18 22 L20 20" fill="none" stroke="#ffe8a0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  <path d="M36 28 L40 20 L38 18" fill="none" stroke="#ffe8a0" stroke-width="0.95" stroke-linecap="round" opacity="0.85"/>
+  <path d="M44 26 L48 18" fill="none" stroke="#7ecbff" stroke-width="0.85" stroke-linecap="round" opacity="0.8"/>
+  <path d="M28 32 L24 36 L26 38" fill="none" stroke="#ffffff" stroke-width="0.7" stroke-linecap="round" opacity="0.65"/>
+</svg>`,
   },
   "game_skill_combo_wqe": {
     kind: "icon",
