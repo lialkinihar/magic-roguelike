@@ -401,13 +401,21 @@ export const VISUAL_ASSETS = {
     kind: "icon",
     family: "game",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect x="6" y="44" width="52" height="10" rx="2" fill="#b8e8ff" fill-opacity="0.45" stroke="#6ec0e8" stroke-width="0.8"/>
-  <path d="M8 44 L12 38 L16 42 L20 36 L24 40 L28 35 L32 39 L36 34 L40 38 L44 33 L48 37 L52 32 L56 44 Z" fill="#d8f8ff" fill-opacity="0.7" stroke="#7ec8e8" stroke-width="0.6"/>
-  <line x1="10" y1="42" x2="12" y2="40" stroke="#a8d8e8" stroke-width="0.4"/><line x1="22" y1="39" x2="24" y2="37" stroke="#a8d8e8" stroke-width="0.4"/><line x1="38" y1="36" x2="40" y2="35" stroke="#a8d8e8" stroke-width="0.4"/>
-  <rect x="38" y="10" width="8" height="28" rx="1.5" fill="#e8fcff" fill-opacity="0.85" stroke="#4a8ec8" stroke-width="0.9"/>
-  <rect x="39.2" y="32" width="5.6" height="4" rx="0.5" fill="#38bdf8"/>
-  <line x1="37" y1="14" x2="36" y2="14" stroke="#64748b" stroke-width="0.5"/><line x1="37" y1="18" x2="36" y2="18" stroke="#64748b" stroke-width="0.5"/><line x1="37" y1="22" x2="36" y2="22" stroke="#64748b" stroke-width="0.5"/><line x1="37" y1="26" x2="36" y2="26" stroke="#64748b" stroke-width="0.5"/><line x1="37" y1="30" x2="36" y2="30" stroke="#64748b" stroke-width="0.5"/>
-  <path d="M42 34 L42 36 L44 36 L44 34 Z" fill="#0ea5e9"/>
+  <defs>
+    <linearGradient id="qwqCone" x1="0%" y1="100%" x2="92%" y2="8%">
+      <stop offset="0%" stop-color="#e8fcff" stop-opacity="0.5"/>
+      <stop offset="55%" stop-color="#9ee0ff" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#4a9ec8" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <path d="M6 58 L56 4 L50 20 L44 44 Z" fill="url(#qwqCone)" stroke="#b8e8ff" stroke-width="1" stroke-opacity="0.65"/>
+  <path d="M6 58 L40 8 L34 50 Z" fill="#d8f8ff" fill-opacity="0.18"/>
+  <path d="M22 46 L24 34 L26 46 M30 44 L32 32 L34 44 M18 50 L20 40 L22 50" stroke="#a8e8ff" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+  <path d="M28 38 L30 22 L32 26 L34 20 L36 36 Z" fill="#c8e8f8" fill-opacity="0.55" stroke="#7ec8e8" stroke-width="0.6"/>
+  <path d="M38 34 L40 18 L42 22 L44 16 L46 32 Z" fill="#b8dff5" fill-opacity="0.5" stroke="#6ec0e8" stroke-width="0.55"/>
+  <path d="M42 12 L43 8 L44 12 L43 14 Z" fill="#e8fcff" opacity="0.9"/><path d="M48 18 L49.5 14 L51 18 L49.5 20 Z" fill="#d8f8ff" opacity="0.85"/>
+  <path d="M36 10 L37 6 L38 10 L37 12 Z" fill="#ffffff" opacity="0.75"/><path d="M52 10 L53 7 L54 10 L53 12 Z" fill="#e8fcff" opacity="0.8"/>
+  <path d="M44 22 L45 19 L46 22 L45 24 Z" fill="#b8e8ff" opacity="0.9"/><path d="M30 14 L31 11 L32 14 L31 16 Z" fill="#ffffff" opacity="0.7"/>
 </svg>`,
   },
   "game_skill_combo_qww": {
