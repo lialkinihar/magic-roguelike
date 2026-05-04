@@ -46,11 +46,14 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `rune_e` | `This icon: plain ordinary meteor only — gray rocky body, small orange-yellow trail, no frame, no magic rings, no extra VFX.` |
 | `duo_qq` | `This icon: large ice spear — ENTIRE weapon solid ice crystal only (head + shaft one frozen piece); NO metal rings, ferrule, steel, iron, bronze, or leather; secondary spikes also ice; bigger than basic ice shard; cyan/white/blue ice shadows; diagonal thrust; no frame, no extra VFX.` |
 | `duo_qw` | `This icon: rough brutal frost spear — NOT smooth wand or polished hex rod: jagged chipped facets, irregular splinters and side spikes on shaft, deep cracks, coarse glacier ice texture, asymmetric weapon silhouette. Still 100% ice, NO metal. Lightning wraps in 3D with occlusion (in front / behind ice), spiral, NOT flat overlay. Yellow-white. Chroma #fc03f8 only; no frame, no text.` |
+| `duo_qe` | `This icon: METEOR fully COVERED in ICE — dark rock core mostly hidden under thick white-blue frost crust, jagged ice plates and icicles on surface, cyan crystal highlights, frozen comet; dominant frost, NO bare flaming meteor, NO lightning, NO spear. Trail mostly ice shards / cold vapor. Chroma #fc03f8 only; no frame, no text.` |
 | `duo_we` | `This icon: compact PLASMA glob / ionized energy clot (glowing violet-cyan-white turbulent core, soft halo) — NOT ice spear, NOT meteor rock. Yellow-white lightning coils AROUND the plasma: segments in FRONT and segments BEHIND partially occluded by the glow, spiral wrap, NOT flat overlay on a disk. No metal, no ice weapon. Chroma #fc03f8 flat only; no frame, no text.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
 **`duo_qw` (QW)** — ледяное копьё **грубое, ломаное** (сколы, шипы, трещины), не гладкий жезл; целиком лёд, молния с **обмоткой** и окклюзией. Thunderfrost Spear.
+
+**`duo_qe` (QE)** — **метеор**, почти целиком **в льду и инее** (кора, шипы, кристаллы; камень лишь в щелях). Cryo Meteor.
 
 **`duo_we` (WE)** — **плазменный сгусток** (заряженный шар / клубок ионизированного свечения), **обвитый молнией** с окклюзией (часть дуг перед сгустком, часть за ним). Не копьё.
 

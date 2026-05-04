@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T08:05:12.805Z",
+  "generatedAt": "2026-05-04T08:08:35.535Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -46,8 +46,8 @@
       "skillId": "duo_qe",
       "name": "Cryo Meteor",
       "sequence": "QE",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_duo_ww",

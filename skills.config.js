@@ -65,7 +65,7 @@ export const SKILLS_CONFIG = {
   dualRuneCombos: [
     { id: "duo_qq", visualId: "game_skill_duo_qq", sequence: "QQ", name: "Frost Spear", icon: "❄️", cooldownSec: 6.5, archetype: "duo_qq", damage: 22, runeTier: 2, functionType: "tacticalBurst", desc: SKILL_DESCRIPTIONS.duo_qq },
     { id: "duo_qw", visualId: "game_skill_duo_qw", sequence: "QW", name: "Thunderfrost Spear", icon: "⚡", cooldownSec: 6.5, archetype: "duo_qw", damage: 24, runeTier: 2, functionType: "tacticalControl", desc: SKILL_DESCRIPTIONS.duo_qw },
-    { id: "duo_qe", visualId: "game_skill_duo_qe", sequence: "QE", name: "Cryo Meteor", icon: "🔥", cooldownSec: 6.5, archetype: "duo_qe", damage: 22, runeTier: 2, functionType: "tacticalBurst", desc: SKILL_DESCRIPTIONS.duo_qe },
+    { id: "duo_qe", visualId: "game_skill_duo_qe", sequence: "QE", name: "Cryo Meteor", icon: "❄️", cooldownSec: 6.5, archetype: "duo_qe", damage: 22, runeTier: 2, functionType: "tacticalBurst", desc: SKILL_DESCRIPTIONS.duo_qe },
     { id: "duo_ww", visualId: "game_skill_duo_ww", sequence: "WW", name: "Chain Storm", icon: "⚡", cooldownSec: 6.5, archetype: "duo_ww", damage: 33, runeTier: 2, functionType: "tacticalControl", desc: SKILL_DESCRIPTIONS.duo_ww },
     { id: "duo_we", visualId: "game_skill_duo_we", sequence: "WE", name: "Lightning Shockwave", icon: "⚡", cooldownSec: 6.5, archetype: "duo_we", damage: 20, runeTier: 2, functionType: "tacticalBurst", desc: SKILL_DESCRIPTIONS.duo_we },
     { id: "duo_ee", visualId: "game_skill_duo_ee", sequence: "EE", name: "Great Meteor", icon: "🔥", cooldownSec: 6.5, archetype: "duo_ee", damage: 23, runeTier: 2, functionType: "tacticalZone", desc: SKILL_DESCRIPTIONS.duo_ee },
