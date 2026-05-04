@@ -55,6 +55,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `combo_eee` | `This icon: COMET OF DESTRUCTION (triple-E invoke) — MASSIVE apocalyptic comet / world-killer meteor, extreme sense of threat and kinetic doom: jagged dark charred rock, enormous scale in frame, blinding plasma shock at the nose, long violent inferno tail with debris and smoke wisps, subtle heat distortion only on the comet NOT on background. NO magic summoning circle, NO rune ring, NO floor glyph, NO mandala, NO UI hoop — flat chroma #fc03f8 only behind the subject. Cinematic premium mobile RPG skill art, readable at 64px. NOT a small cute meteor, NOT ice, NOT lightning. Exactly 500x500 px output. No text, no watermark, no letterboxing.` |
 | `combo_eeq` | `This icon: FLAME GUARD — circular FIRE SHIELD like a DOME WITH THE TOP CUT FLAT (truncated sphere / spherical segment): flat horizontal top opening, curved fiery walls down to a circular base ring, semi-transparent orange-red-yellow shell, NOT a closed full hemisphere bubble. Flames only at the BOTTOM around the base rim. Reads as vertical barrier wall, not a roof. NO magic summoning glyph, NO ice, NO lightning as main read. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_eew` | `This icon: MIRROR SHIELD — ONE semi-transparent BLUE-CYAN FRONTAL shield surface only (thin crescent / waning-moon plate facing the viewer, convex toward camera like a shallow lens or narrow kite-shield face). Frosted glass, icy mirror highlights, cool aqua edge glow. NOT a full sphere, NOT a bubble wrapping 360°, NOT a dome surrounding from all sides — only the visible front sheet, no back shell. NO magic circle on ground, NO fire meteor. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
+| `combo_eqe` | `This icon: FIRE STEP — a winding narrow FIERY FOOTPATH / ember trail on the ground (orange-red-yellow flame ribbon, scorched edges, light smoke). Clearly readable HUMAN FOOTPRINTS along the path (pairs of sole shapes glowing in the fire). NOT a giant meteor, NOT lightning bolt as main subject, NOT ice. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
@@ -73,6 +74,8 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 **`combo_eeq` (EEQ)** — **Flame Guard**: **круговой огненный щит** — как у купола **срезана верхушка** (плоское верхнее «окно», стенки дугой вниз к кольцу основания), полупрозрачный огонь; **внизу** по периметру — **пламя**; без магической печати, фон **`#fc03f8`**.
 
 **`combo_eew` (EEW)** — **Mirror Shield**: **сине-голубой полупрозрачный щит** — только **передняя** изогнутая поверхность (узкий серп / лист стекла к врагам), **не** сфера и **не** оболочка «вокруг со всех сторон»; фон **`#fc03f8`**.
+
+**`combo_eqe` (EQE)** — **Fire Step**: **огненная тропинка** (узкий след пламени по земле), по ней **видны человеческие следы** (подошвы); не метеор, не лёд; фон **`#fc03f8`**.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 

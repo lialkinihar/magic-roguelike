@@ -503,7 +503,20 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_eqe": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 24c4-4 8-6 12-6M14 26c4-4 8-5 12-4" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 24c4-4 8-6 12-6M14 26c4-4 8-5 12-4" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="fsPath" x1="0%" y1="80%" x2="100%" y2="20%">
+      <stop offset="0%" stop-color="#ff3a12" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#ff8c32" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#ffd060" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+  <path d="M8 46 Q22 38 28 28 T52 12" fill="none" stroke="url(#fsPath)" stroke-width="10" stroke-linecap="round"/>
+  <ellipse cx="22" cy="40" rx="5" ry="3.2" transform="rotate(-25 22 40)" fill="#2a1010" fill-opacity="0.55" stroke="#ffb060" stroke-width="0.8"/>
+  <ellipse cx="30" cy="32" rx="5" ry="3.2" transform="rotate(-25 30 32)" fill="#2a1010" fill-opacity="0.55" stroke="#ffb060" stroke-width="0.8"/>
+  <ellipse cx="38" cy="24" rx="5" ry="3.2" transform="rotate(-25 38 24)" fill="#2a1010" fill-opacity="0.5" stroke="#ffb060" stroke-width="0.8"/>
+  <ellipse cx="46" cy="17" rx="4.5" ry="2.8" transform="rotate(-25 46 17)" fill="#2a1010" fill-opacity="0.45" stroke="#ffb060" stroke-width="0.8"/>
+</svg>`,
   },
   "game_skill_combo_ewq": {
     kind: "icon",

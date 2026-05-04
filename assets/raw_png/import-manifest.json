@@ -78,5 +78,10 @@
     "file": "combo_eew.png",
     "skillId": "combo_eew",
     "note": "Mirror Shield — EEW (frontal cyan sheet, not full bubble)"
+  },
+  {
+    "file": "combo_eqe.png",
+    "skillId": "combo_eqe",
+    "note": "Fire Step — EQE (fiery path + human footprints)"
   }
 ]
