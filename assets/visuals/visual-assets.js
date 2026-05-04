@@ -587,18 +587,34 @@ export const VISUAL_ASSETS = {
     svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="cwqwBeam" x1="0%" y1="50%" x2="100%" y2="50%">
-      <stop offset="0%" stop-color="#7ecbff" stop-opacity="0.2"/>
-      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#c9a6ff" stop-opacity="0.35"/>
+      <stop offset="0%" stop-color="#7ecbff" stop-opacity="0.35"/>
+      <stop offset="35%" stop-color="#ffb060" stop-opacity="0.75"/>
+      <stop offset="55%" stop-color="#fff4d8" stop-opacity="0.95"/>
+      <stop offset="75%" stop-color="#ff9a4a" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#c9a6ff" stop-opacity="0.45"/>
+    </linearGradient>
+    <linearGradient id="cwqwLava" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6a28" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#ffe8a0" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#ff4500" stop-opacity="0.45"/>
     </linearGradient>
   </defs>
-  <path d="M4 38 L58 22" stroke="#7ecbff" stroke-width="10" stroke-linecap="round" opacity="0.22"/>
-  <path d="M6 37 L56 24" stroke="url(#cwqwBeam)" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
-  <path d="M10 36 L54 25" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
-  <path d="M22 30 L18 22 L20 20" fill="none" stroke="#ffe8a0" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-  <path d="M36 28 L40 20 L38 18" fill="none" stroke="#ffe8a0" stroke-width="0.95" stroke-linecap="round" opacity="0.85"/>
-  <path d="M44 26 L48 18" fill="none" stroke="#7ecbff" stroke-width="0.85" stroke-linecap="round" opacity="0.8"/>
-  <path d="M28 32 L24 36 L26 38" fill="none" stroke="#ffffff" stroke-width="0.7" stroke-linecap="round" opacity="0.65"/>
+  <g opacity="0.35" stroke-linecap="round">
+    <path d="M2 42 L14 36 M4 46 L18 38 M6 50 L22 40" stroke="#7ecbff" stroke-width="1.1"/>
+    <path d="M0 44 L10 39" stroke="#b8e8ff" stroke-width="0.75" opacity="0.7"/>
+  </g>
+  <path d="M2 40 L56 24" stroke="#7ecbff" stroke-width="16" stroke-linecap="round" opacity="0.18"/>
+  <path d="M4 39 L58 23" stroke="url(#cwqwBeam)" stroke-width="11" stroke-linecap="round" opacity="0.92"/>
+  <path d="M8 37 L54 25" stroke="url(#cwqwLava)" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+  <path d="M12 36 L52 26" stroke="#fff8e8" stroke-width="3.2" stroke-linecap="round" opacity="0.65"/>
+  <path d="M14 35 Q28 30 50 24" fill="none" stroke="#ff8c42" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+  <path d="M18 36 Q32 31 52 25" fill="none" stroke="#ffd080" stroke-width="0.9" stroke-linecap="round" opacity="0.45"/>
+  <path d="M22 34 L20 30 L24 28 M30 32 L28 28 L32 26 M38 30 L36 26 L40 24" fill="none" stroke="#ffe8a0" stroke-width="0.85" stroke-linecap="round" opacity="0.7"/>
+  <path d="M10 37 L54 25" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity="0.55"/>
+  <path d="M24 31 L20 23 L22 21" fill="none" stroke="#ffe8a0" stroke-width="1.05" stroke-linejoin="round" opacity="0.88"/>
+  <path d="M36 29 L40 21 L38 19" fill="none" stroke="#ffe8a0" stroke-width="0.95" stroke-linecap="round" opacity="0.82"/>
+  <path d="M44 27 L48 19" fill="none" stroke="#7ecbff" stroke-width="0.9" stroke-linecap="round" opacity="0.78"/>
+  <path d="M30 33 L26 37 L28 39" fill="none" stroke="#ffffff" stroke-width="0.65" stroke-linecap="round" opacity="0.6"/>
 </svg>`,
   },
   "game_skill_combo_wqe": {

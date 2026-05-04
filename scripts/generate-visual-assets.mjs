@@ -162,7 +162,7 @@ function invokeById(comboId) {
       );
     case "combo_wqw":
       return svg(
-        `${neon(["M4 16h24", "M4 14h24", "M4 18h24"], G.lightning)}${neon(["M10 10L8 6M18 22L16 18M22 8L26 12"], G.lightning)}`
+        `${neon(["M2 16h26", "M2 13h26", "M2 19h26", "M2 10h26"], G.lightning)}${neon(["M4 16h22", "M6 16h18"], G.fire)}${neon(["M8 10L6 6M18 22L15 17M22 8L26 12"], G.lightning)}`
       );
     case "combo_wqe":
       return svg(
