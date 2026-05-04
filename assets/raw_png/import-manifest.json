@@ -98,5 +98,10 @@
     "file": "combo_ewe.png",
     "skillId": "combo_ewe",
     "note": "Elemental Fury — EWE (tri-element vortex + outward projectiles)"
+  },
+  {
+    "file": "combo_ewq.png",
+    "skillId": "combo_ewq",
+    "note": "Gale Force — EWQ (rectangular zone + wind along far edge)"
   }
 ]

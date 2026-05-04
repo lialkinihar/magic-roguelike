@@ -549,7 +549,20 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_ewq": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M6 12h16M8 16h18M10 20h16M26 16l-4-3M26 16l-4 3" stroke="#c9a6ff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12h16M8 16h18M10 20h16M26 16l-4-3M26 16l-4 3" stroke="#c9a6ff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="gfMist" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#b8f0ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#4a7a9a" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <path d="M8 20 L52 14 L56 44 L12 50 Z" fill="url(#gfMist)" stroke="#9ae8ff" stroke-width="1" stroke-opacity="0.5"/>
+  <path d="M14 22 L48 17" fill="none" stroke="#d8f8ff" stroke-width="1" stroke-opacity="0.4"/>
+  <path d="M12 26 L50 20 M11 30 L51 24 M10 34 L52 28 M9 38 L53 32" fill="none" stroke="#e8fbff" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M12 26 L50 20 M11 30 L51 24 M10 34 L52 28 M9 38 L53 32" fill="none" stroke="#6edbff" stroke-width="0.55" stroke-linecap="round" transform="translate(2 1)"/>
+  <path d="M14 18 L48 13" fill="none" stroke="#c9f6ff" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+  <path d="M16 16 L46 12 M15 19 L47 15" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-opacity="0.7"/>
+</svg>`,
   },
   "game_skill_combo_eww": {
     kind: "icon",

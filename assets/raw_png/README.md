@@ -59,6 +59,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `combo_eqq` | `This icon: ICE WALL — HORSESHOE / U-shaped CURVED WALL made of LARGE ICE CRYSTALS only: massive jagged crystal spires and frozen shards following a smooth arc (opening of horseshoe toward bottom or front), legs on sides, cyan-white-blue palette, sharp facets and depth overlap. NOT flat brick grid, NOT tiny snowflake icon, NOT fire, NOT lightning, NOT meteor. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_eqw` | `This icon: FIRE YO-YO — ONLY the yo-yo + thin fiery string in frame: large round fire disk, very thin flaming cord (may exit top edge). NO hand, NO arm, NO fingers, NO glove, NO body parts. NOT meteor, NOT ice, NOT chain lightning. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_ewe` | `This icon: ELEMENTAL FURY — central VORTEX visibly mixing THREE elements: fire (orange-red), ice (cyan-white frost/crystal), lightning (yellow-white zigzag) as one braided spiral core. Around it projectiles FLY OUTWARD: small FIREBALLS, ICE SHARDS, and LIGHTNING bolts in multiple directions. NO full character silhouette, NO single plain meteor. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
+| `combo_ewq` | `This icon: GALE FORCE — RECTANGULAR wind zone (clear rectangle border or soft translucent floor tile). Wind streams and speed lines all ONE direction, concentrated ALONG THE FAR LONG SIDE of the rectangle (the back edge from camera), then sweeping forward — parallel gust ribbons, cyan-white-aqua mist, dust streaks. NOT fire, NOT lightning, NOT ice crystals wall, NOT circular tornado only. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
@@ -85,6 +86,8 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 **`combo_eqw` (EQW)** — **Fire Yo-Yo**: **только йо-йо** (огненный диск) и **тонкая огненная нить**; **без руки** и без частей тела в кадре; фон **`#fc03f8`**.
 
 **`combo_ewe` (EWE)** — **Elemental Fury**: **вихрь из трёх стихий** (огонь, лёд, молния в одном завихрении); **вокруг** разлетаются **огненные шары**, **ледяные осколки** и **молнии**; без целого персонажа в кадре; фон **`#fc03f8`**.
+
+**`combo_ewq` (EWQ)** — **Gale Force**: **прямоугольная область**; **потоки ветра** направлены **в одну сторону** и идут **вдоль дальней** (от зрителя) **стороны** прямоугольника; фон **`#fc03f8`**.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 
