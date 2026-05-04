@@ -73,5 +73,10 @@
     "file": "combo_eeq.png",
     "skillId": "combo_eeq",
     "note": "Flame Guard — EEQ (fire dome + base flames)"
+  },
+  {
+    "file": "combo_eew.png",
+    "skillId": "combo_eew",
+    "note": "Mirror Shield — EEW (frontal cyan sheet, not full bubble)"
   }
 ]

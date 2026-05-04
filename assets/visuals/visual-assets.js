@@ -546,7 +546,21 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_eew": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 6l10 18H6z" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6l10 18H6z" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 24l8-8 8 8" stroke="#c9a6ff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 24l8-8 8 8" stroke="#c9a6ff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="msFront" x1="0%" y1="30%" x2="100%" y2="70%">
+      <stop offset="0%" stop-color="#b8f0ff" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#6edbff" stop-opacity="0.38"/>
+      <stop offset="100%" stop-color="#3a9ecf" stop-opacity="0.28"/>
+    </linearGradient>
+    <linearGradient id="msEdge" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#e8fbff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#4ebfff" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+  <path d="M14 48C14 22 28 10 48 12C42 28 38 42 36 52C28 50 20 50 14 48z" fill="url(#msFront)" stroke="url(#msEdge)" stroke-width="1.6"/>
+  <path d="M20 44C24 28 34 18 44 16" fill="none" stroke="#e8fbff" stroke-width="1.1" stroke-opacity="0.5" stroke-linecap="round"/>
+</svg>`,
   },
   "game_skill_combo_eee": {
     kind: "icon",
