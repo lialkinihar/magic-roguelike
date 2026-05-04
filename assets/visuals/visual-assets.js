@@ -555,13 +555,18 @@ export const VISUAL_ASSETS = {
       <stop offset="0%" stop-color="#b8f0ff" stop-opacity="0.35"/>
       <stop offset="100%" stop-color="#4a7a9a" stop-opacity="0.12"/>
     </linearGradient>
+    <linearGradient id="gfCol" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e8fbff" stop-opacity="0.5"/>
+      <stop offset="45%" stop-color="#9ae8ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#6edbff" stop-opacity="0.2"/>
+    </linearGradient>
   </defs>
-  <path d="M8 20 L52 14 L56 44 L12 50 Z" fill="url(#gfMist)" stroke="#9ae8ff" stroke-width="1" stroke-opacity="0.5"/>
-  <path d="M14 22 L48 17" fill="none" stroke="#d8f8ff" stroke-width="1" stroke-opacity="0.4"/>
-  <path d="M12 26 L50 20 M11 30 L51 24 M10 34 L52 28 M9 38 L53 32" fill="none" stroke="#e8fbff" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M12 26 L50 20 M11 30 L51 24 M10 34 L52 28 M9 38 L53 32" fill="none" stroke="#6edbff" stroke-width="0.55" stroke-linecap="round" transform="translate(2 1)"/>
-  <path d="M14 18 L48 13" fill="none" stroke="#c9f6ff" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
-  <path d="M16 16 L46 12 M15 19 L47 15" fill="none" stroke="#ffffff" stroke-width="0.9" stroke-opacity="0.7"/>
+  <path d="M8 20 L52 14 L56 44 L12 50 Z" fill="url(#gfMist)" stroke="#9ae8ff" stroke-width="1" stroke-opacity="0.45"/>
+  <ellipse cx="22" cy="32" rx="5" ry="14" fill="url(#gfCol)" transform="rotate(-8 22 32)"/>
+  <ellipse cx="32" cy="31" rx="5.5" ry="15" fill="url(#gfCol)" transform="rotate(-6 32 31)" opacity="0.85"/>
+  <ellipse cx="42" cy="30" rx="5" ry="14" fill="url(#gfCol)" transform="rotate(-4 42 30)" opacity="0.75"/>
+  <path d="M16 18 L46 13 M14 24 L48 19 M12 30 L50 25 M10 36 L52 31 M9 42 L54 37" fill="none" stroke="#e8fbff" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+  <path d="M17 20 L47 15 M15 27 L49 22 M13 33 L51 28 M11 39 L53 34" fill="none" stroke="#6edbff" stroke-width="0.7" stroke-linecap="round" opacity="0.9"/>
 </svg>`,
   },
   "game_skill_combo_eww": {

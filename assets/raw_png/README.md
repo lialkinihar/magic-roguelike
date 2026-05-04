@@ -59,7 +59,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `combo_eqq` | `This icon: ICE WALL — HORSESHOE / U-shaped CURVED WALL made of LARGE ICE CRYSTALS only: massive jagged crystal spires and frozen shards following a smooth arc (opening of horseshoe toward bottom or front), legs on sides, cyan-white-blue palette, sharp facets and depth overlap. NOT flat brick grid, NOT tiny snowflake icon, NOT fire, NOT lightning, NOT meteor. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_eqw` | `This icon: FIRE YO-YO — ONLY the yo-yo + thin fiery string in frame: large round fire disk, very thin flaming cord (may exit top edge). NO hand, NO arm, NO fingers, NO glove, NO body parts. NOT meteor, NOT ice, NOT chain lightning. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_ewe` | `This icon: ELEMENTAL FURY — central VORTEX visibly mixing THREE elements: fire (orange-red), ice (cyan-white frost/crystal), lightning (yellow-white zigzag) as one braided spiral core. Around it projectiles FLY OUTWARD: small FIREBALLS, ICE SHARDS, and LIGHTNING bolts in multiple directions. NO full character silhouette, NO single plain meteor. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
-| `combo_ewq` | `This icon: GALE FORCE — RECTANGULAR wind zone (clear rectangle border or soft translucent floor tile). Wind streams and speed lines all ONE direction, concentrated ALONG THE FAR LONG SIDE of the rectangle (the back edge from camera), then sweeping forward — parallel gust ribbons, cyan-white-aqua mist, dust streaks. NOT fire, NOT lightning, NOT ice crystals wall, NOT circular tornado only. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
+| `combo_ewq` | `This icon: GALE FORCE — RECTANGULAR wind zone (clear rectangle or floor tile in perspective). NO leaves, NO foliage, NO organic debris. Wind is VOLUMETRIC: thick tubular gusts, layered translucent mist shells, soft 3D depth — not only thin flat speed lines. Wind fills the FULL VERTICAL HEIGHT of the zone (bottom to top), not only near the ground: vertical mist columns through the whole prism. ONE horizontal flow direction, concentrated along the FAR LONG SIDE then sweeping forward — cyan-white-aqua mist, subtle dust only. NOT fire, NOT lightning, NOT ice wall, NOT circular tornado only. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
@@ -87,7 +87,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 
 **`combo_ewe` (EWE)** — **Elemental Fury**: **вихрь из трёх стихий** (огонь, лёд, молния в одном завихрении); **вокруг** разлетаются **огненные шары**, **ледяные осколки** и **молнии**; без целого персонажа в кадре; фон **`#fc03f8`**.
 
-**`combo_ewq` (EWQ)** — **Gale Force**: **прямоугольная область**; **потоки ветра** направлены **в одну сторону** и идут **вдоль дальней** (от зрителя) **стороны** прямоугольника; фон **`#fc03f8`**.
+**`combo_ewq` (EWQ)** — **Gale Force**: **прямоугольная зона**; **без листьев и мусора**; **объёмные** потоки (туманные «столбы», слои), ветер **на всю высоту** зоны, не только у «пола»; общий унос **в одну сторону**, усиление у **дальней** стороны; фон **`#fc03f8`**.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 
