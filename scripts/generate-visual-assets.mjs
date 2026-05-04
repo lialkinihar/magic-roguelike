@@ -131,7 +131,9 @@ function invoke(seq3) {
 function invokeById(comboId) {
   switch (comboId) {
     case "combo_qqq":
-      return svg(`${neon([P.shield], G.ice)}${neon([P.snowflake], G.ice)}`);
+      return svg(
+        `${neon([P.shield], G.ice)}${neon(["M16 8L14 6L18 6Z M13 10h6M15 10v9M17 10L20 6M20 6v11"], G.ice)}${neon([P.snowflake], G.ice)}`
+      );
     case "combo_qqw":
       return svg(`${neon([P.ring], G.ice)}${neon([P.snowflake], G.ice)}`);
     case "combo_qqe":

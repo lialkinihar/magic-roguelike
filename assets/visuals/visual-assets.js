@@ -361,7 +361,13 @@ export const VISUAL_ASSETS = {
     </linearGradient>
   </defs>
   <ellipse cx="32" cy="36" rx="18" ry="20" fill="url(#qqqIn)"/>
-  <ellipse cx="32" cy="36" rx="7" ry="12" fill="#1a3040" fill-opacity="0.12"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#0e2030" stroke-opacity="0.42" stroke-width="1.05">
+    <path d="M32 25 L27 17 L37 17 Z" fill="#0a1824" fill-opacity="0.28" stroke="#0e2030"/>
+    <path d="M25 29 h14"/>
+    <path d="M29 29 L29 43"/>
+    <path d="M35 29 L41 21"/>
+    <path d="M41 21 L41 42"/>
+  </g>
   <path d="M14 38 Q18 12 32 10 Q46 12 50 38 Q48 52 32 54 Q16 52 14 38 Z" fill="url(#qqqSc)" fill-opacity="0.35" stroke="#a8e8ff" stroke-width="1"/>
   <path d="M18 40 Q22 18 32 16 Q42 18 46 40 Q44 48 32 50 Q20 48 18 40 Z" fill="url(#qqqSc)" fill-opacity="0.5" stroke="#d8f8ff" stroke-width="0.85"/>
   <path d="M22 42 Q26 24 32 22 Q38 24 42 42 Q40 46 32 47 Q24 46 22 42 Z" fill="url(#qqqSc)" fill-opacity="0.65" stroke="#e8fcff" stroke-width="0.75"/>
