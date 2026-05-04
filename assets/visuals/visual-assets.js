@@ -559,7 +559,23 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_ewe": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 6a10 10 0 100 20 10 10 0 000-20z" stroke="#c9a6ff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6a10 10 0 100 20 10 10 0 000-20z" stroke="#c9a6ff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4v24M10 8l12 16M22 8L10 24M8 16h16" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4v24M10 8l12 16M22 8L10 24M8 16h16" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 4L10 18h6l-2 10 12-16h-7l3-8" stroke="#7ecbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 4L10 18h6l-2 10 12-16h-7l3-8" stroke="#7ecbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="ewV" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#ff8c42"/>
+      <stop offset="50%" stop-color="#6edbff"/>
+      <stop offset="100%" stop-color="#ffe8a0"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 18c14 0 18 14 14 22-6 10-18 8-24-2-4-8 2-20 10-20z" fill="none" stroke="url(#ewV)" stroke-width="3.2" opacity="0.55"/>
+  <path d="M32 22c10 0 12 10 8 16-4 8-14 6-18-2-3-6 2-14 10-14z" fill="none" stroke="#c9a6ff" stroke-width="2" opacity="0.45"/>
+  <path d="M32 26c6 0 8 8 4 12-4 6-10 4-12-2-2-4 2-10 8-10z" fill="#1a1030" fill-opacity="0.35" stroke="#9ae8ff" stroke-width="1"/>
+  <circle cx="14" cy="20" r="3" fill="#ff6b2a" opacity="0.9"/>
+  <circle cx="50" cy="22" r="2.8" fill="#ff8c42" opacity="0.85"/>
+  <path d="M8 44l6-8 4 8M52 40l-5-7-3 9" stroke="#7ecbff" stroke-width="1.6" fill="none"/>
+  <path d="M48 12L42 18M12 28l8-2M44 48l-6-5" stroke="#6edbff" stroke-width="1.4" fill="none"/>
+  <path d="M20 10l4 6-7 2M54 34l-9 2 5 6" fill="none" stroke="#d8f6ff" stroke-width="1.2"/>
+</svg>`,
   },
   "game_skill_combo_eeq": {
     kind: "icon",

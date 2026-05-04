@@ -93,5 +93,10 @@
     "file": "combo_eqw.png",
     "skillId": "combo_eqw",
     "note": "Fire Yo-Yo — EQW (fiery yo-yo + thin fiery cord)"
+  },
+  {
+    "file": "combo_ewe.png",
+    "skillId": "combo_ewe",
+    "note": "Elemental Fury — EWE (tri-element vortex + outward projectiles)"
   }
 ]

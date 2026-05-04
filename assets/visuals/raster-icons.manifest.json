@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T10:03:41.550Z",
+  "generatedAt": "2026-05-04T10:12:06.802Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -262,8 +262,8 @@
       "skillId": "combo_ewe",
       "name": "Elemental Fury",
       "sequence": "EWE",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_eeq",
