@@ -11,10 +11,11 @@ const SKILL_DESCRIPTIONS = {
   combo_qqq:
     "[Cold Embrace] Ледяной панцирь: герой обездвижен и неуязвим, накапливает входящий урон, затем взрывается волной и отталкивает обычных врагов к краю волны. Иконка: кокон из крупных ледяных чешуек, внутри едва видна тень — защитная оболочка, не тюрьма.",
   combo_qqw:
-    "[Frost Nova] Морозное кольцо: расходящаяся волна холода вокруг героя, урон и сильное замедление (заморозка движения); одновременно из земли вокруг героя вырастают ледяные шипы как у QWQ (Frost Ravage). Иконка: круговая ледяная лавина во все стороны от центра.",
+    "[Frost Nova] Морозное кольцо: расходящаяся волна холода вокруг героя, урон и сильное замедление (заморозка движения); одновременно из земли вокруг героя вырастают ледяные шипы. Иконка: круговая ледяная лавина во все стороны от центра.",
   combo_qqe:
     "[Enhance Armament! Release Recollection!] Волна холода 3 с (800); лозы; DoT −10/0.1 с. Розы заполняют диск зоны; после скилла остаются как ледяные розы‑мины (наступление героя/врага или взрыв через 10 с).",
-  combo_qwq: "[Frost Ravage] Ледяные пики: 3 расходящиеся волны шипов из земли вокруг героя; внешние волны плотнее, каждая волна слегка отталкивает обычных врагов к следующей.",
+  combo_qwq:
+    "[Absolute Zero] Резко понижает температуру в огромном секторе: от героя к курсору уходит волна холода (полукруг 180°, дальность 1200); под волной на земле остаётся ледяной след 20 с. Враги, задетые волной или наступившие на след, получают не снимаемый дебафф «абсолютный ноль»: нет восстановления HP, настолько холодно, что «замерзает мана» — каждый выстрел/каст и каждые 10 единиц пройденного пути наносят владельцу урон; ближний бой по герою также наносит владельцу урон от холода. Иконка: целиком промерзшая земля, над ней термометр на нуле.",
   combo_qww: "[Fear Aura] Аура страха: вокруг героя расширяется круг, затем аура держится 3с; страх на врагах длится 5с.",
   combo_qwe: "[Teleport] Телепорт: мгновенный перенос к точке курсора в пределах дальности.",
   combo_qeq:
@@ -100,7 +101,19 @@ export const SKILLS_CONFIG = {
       functionType: "advancedArea",
       desc: SKILL_DESCRIPTIONS.combo_qqe,
     },
-    { id: "combo_qwq", visualId: "game_skill_combo_qwq", sequence: "QWQ", name: "Frost Ravage", icon: "❄️", cooldownSec: 18, archetype: "ice_bolt", damage: 26, runeTier: 3, functionType: "advancedArea", desc: SKILL_DESCRIPTIONS.combo_qwq },
+    {
+      id: "combo_qwq",
+      visualId: "game_skill_combo_qwq",
+      sequence: "QWQ",
+      name: "Absolute Zero",
+      icon: "❄️",
+      cooldownSec: 26,
+      archetype: "absolute_zero",
+      damage: 26,
+      runeTier: 3,
+      functionType: "advancedArea",
+      desc: SKILL_DESCRIPTIONS.combo_qwq,
+    },
     { id: "combo_qww", visualId: "game_skill_combo_qww", sequence: "QWW", name: "Fear Aura", icon: "⚡", cooldownSec: 21, archetype: "cone_lightning", damage: 19, runeTier: 3, functionType: "advancedControl", desc: SKILL_DESCRIPTIONS.combo_qww },
     { id: "combo_qwe", visualId: "game_skill_combo_qwe", sequence: "QWE", name: "Teleport", icon: "✨", cooldownSec: 9, archetype: "tri_burst", damage: 20, runeTier: 3, functionType: "advancedDisplacement", desc: SKILL_DESCRIPTIONS.combo_qwe },
     { id: "combo_qeq", visualId: "game_skill_combo_qeq", sequence: "QEQ", name: "Proximity Mine", icon: "❄️", cooldownSec: 10, archetype: "mine_burst", damage: 28, runeTier: 3, functionType: "advancedArea", desc: SKILL_DESCRIPTIONS.combo_qeq },

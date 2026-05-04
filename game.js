@@ -95,7 +95,7 @@
     { id: "combo_qqq", sequence: "QQQ", name: "Ice Volley", icon: "❄️", cooldownSec: 9, archetype: "ice_volley", damage: 22 },
     { id: "combo_qqw", sequence: "QQW", name: "Stormfrost", icon: "❄️", cooldownSec: 8.5, archetype: "ice_chain", damage: 18 },
     { id: "combo_qqe", sequence: "QQE", name: "Thermal Shock", icon: "❄️", cooldownSec: 9.5, archetype: "ice_burst", damage: 24 },
-    { id: "combo_qwq", sequence: "QWQ", name: "Static Spike", icon: "❄️", cooldownSec: 8, archetype: "ice_bolt", damage: 26 },
+    { id: "combo_qwq", sequence: "QWQ", name: "Absolute Zero", icon: "❄️", cooldownSec: 26, archetype: "absolute_zero", damage: 26 },
     { id: "combo_qww", sequence: "QWW", name: "Frost Storm", icon: "⚡", cooldownSec: 10, archetype: "cone_lightning", damage: 19 },
     { id: "combo_qwe", sequence: "QWE", name: "Elemental Prism", icon: "✨", cooldownSec: 10, archetype: "tri_burst", damage: 20 },
     { id: "combo_qeq", sequence: "QEQ", name: "Ice Mine", icon: "❄️", cooldownSec: 8.5, archetype: "mine_burst", damage: 28 },
@@ -904,6 +904,7 @@
       fireCones: [],
       frostNovaRings: [],
       frostSpikeBursts: [],
+      absZeroZones: [],
       lightningStrikeFx: [],
       aegisReviveFx: null,
       revivePending: null,
@@ -1652,6 +1653,132 @@
     }
   }
 
+  function angleWrapDiff(a, b) {
+    let d = a - b;
+    while (d > Math.PI) d -= Math.PI * 2;
+    while (d < -Math.PI) d += Math.PI * 2;
+    return d;
+  }
+
+  function enemyInAbsZeroCone(ex, ey, z, radius) {
+    const dx = ex - z.ox;
+    const dy = ey - z.oy;
+    const dist = Math.hypot(dx, dy);
+    if (dist > radius) return false;
+    const ang = Math.atan2(dy, dx);
+    return Math.abs(angleWrapDiff(ang, z.dirAng)) <= z.halfA + 0.06;
+  }
+
+  function markEnemyAbsoluteZero(e, procBase) {
+    if (!e.absZero) {
+      e.absZero = true;
+      e._absTrX = e.x;
+      e._absTrY = e.y;
+      e._absMovePain = 0;
+    }
+    const pb = procBase || 8;
+    e.absZeroProcDmg = Math.max(e.absZeroProcDmg || 0, pb);
+    e.absZeroNoRegen = true;
+  }
+
+  function applyAbsZeroSelfDamageOnShoot(e) {
+    if (!e.absZero) return;
+    const idx = state.enemies.indexOf(e);
+    if (idx < 0) return;
+    const dmg = e.absZeroProcDmg || 8;
+    applyDamageEnemyIndex(idx, dmg);
+  }
+
+  function castAbsoluteZeroInvoke(comboDmg) {
+    const p = state.player;
+    const m = getWorldMouseXY();
+    const dirAng = Math.atan2(m.y - p.y, m.x - p.x);
+    const ice = state.stats.iceSpearDamage;
+    const proc = Math.max(7, comboDmg * 0.26 + ice * 0.2);
+    const waveHitDmg = Math.max(12, comboDmg * 0.58 + ice * 0.32);
+    state.absZeroZones.push({
+      ox: p.x,
+      oy: p.y,
+      dirAng,
+      halfA: Math.PI / 2,
+      maxR: 1200,
+      waveR: 0,
+      waveSpeed: 2800,
+      mode: "wave",
+      patchT: 0,
+      procDmg: proc,
+      waveHitDmg,
+      debuffGave: new Set(),
+      waveHit: new Set(),
+    });
+  }
+
+  function updateAbsoluteZeroZones(dt) {
+    const zones = state.absZeroZones;
+    if (!zones?.length) return;
+    for (let i = zones.length - 1; i >= 0; i--) {
+      const z = zones[i];
+      if (z.mode === "wave") {
+        const prev = z.waveR;
+        z.waveR = Math.min(z.maxR, z.waveR + z.waveSpeed * dt);
+        for (let j = state.enemies.length - 1; j >= 0; j--) {
+          const e = state.enemies[j];
+          if (!enemyInAbsZeroCone(e.x, e.y, z, z.waveR + e.r * 0.55)) continue;
+          const d = Math.hypot(e.x - z.ox, e.y - z.oy);
+          if (d <= z.waveR + e.r * 0.5 && !z.debuffGave.has(e.id)) {
+            z.debuffGave.add(e.id);
+            markEnemyAbsoluteZero(e, z.procDmg);
+          }
+          if (!z.waveHit.has(e.id) && prev < d + e.r * 0.65 && z.waveR >= d - e.r * 0.35) {
+            z.waveHit.add(e.id);
+            applyDamageEnemyIndex(j, z.waveHitDmg);
+          }
+        }
+        if (z.waveR >= z.maxR) {
+          z.mode = "patch";
+          z.patchT = 20;
+        }
+      } else {
+        z.patchT -= dt;
+        if (z.patchT <= 0) zones.splice(i, 1);
+      }
+    }
+  }
+
+  function applyAbsoluteZeroPatchDebuffs() {
+    const zones = state.absZeroZones;
+    if (!zones?.length) return;
+    for (const z of zones) {
+      if (z.mode !== "patch") continue;
+      for (let j = state.enemies.length - 1; j >= 0; j--) {
+        const e = state.enemies[j];
+        if (!enemyInAbsZeroCone(e.x, e.y, z, z.maxR + e.r * 0.45)) continue;
+        if (!z.debuffGave.has(e.id)) {
+          z.debuffGave.add(e.id);
+          markEnemyAbsoluteZero(e, z.procDmg);
+        }
+      }
+    }
+  }
+
+  function updateAbsoluteZeroEnemyProcs() {
+    for (let j = 0; j < state.enemies.length; j++) {
+      const e = state.enemies[j];
+      if (!e.absZero) continue;
+      const ox = e._absTrX !== undefined ? e._absTrX : e.x;
+      const oy = e._absTrY !== undefined ? e._absTrY : e.y;
+      const step = Math.hypot(e.x - ox, e.y - oy);
+      e._absTrX = e.x;
+      e._absTrY = e.y;
+      e._absMovePain = (e._absMovePain || 0) + step;
+      const pd = e.absZeroProcDmg || 8;
+      while (e._absMovePain >= 10) {
+        e._absMovePain -= 10;
+        applyDamageEnemyIndex(j, pd * 0.62);
+      }
+    }
+  }
+
   /** Шаровая молния WE: шар скачет между врагами, на каждом приземлении AOE. */
   function castBallLightningInvoke(comboDamage) {
     const p = state.player;
@@ -1739,8 +1866,8 @@
         castBurstAtCursor(d, 92);
         castIceVolleyInvoke(3, 0.3, 0.7, 0.9, 0);
         break;
-      case "ice_bolt":
-        castDirectedShot("ice", d, 1.15, 1.1, { pierceBonus: 2 });
+      case "absolute_zero":
+        castAbsoluteZeroInvoke(d);
         break;
       case "cone_lightning":
         castFireConeInvoke(d / 24, 0.75, 1.05, 0.95);
@@ -1901,6 +2028,10 @@
     if (d < p.r + e.r * 0.85 && e.touchCd <= 0) {
       state.stats.hp -= e.dmg;
       e.touchCd = 0.6;
+      if (e.absZero) {
+        const ji = state.enemies.indexOf(e);
+        if (ji >= 0) applyDamageEnemyIndex(ji, e.absZeroProcDmg || 8);
+      }
       if (state.stats.hp <= 0) {
         if (!tryConsumeAegisOnFatalHit()) {
           state.stats.hp = 0;
@@ -1936,6 +2067,7 @@
             life: 3.8,
             dmg: e.bulletDmg,
           });
+          applyAbsZeroSelfDamageOnShoot(e);
         }
         enemyTouchPlayer(e);
       } else if (e.kind === "shooter" || e.kind === "sniper") {
@@ -1969,6 +2101,7 @@
             life: 3.4,
             dmg: e.bulletDmg,
           });
+          applyAbsZeroSelfDamageOnShoot(e);
         }
         enemyTouchPlayer(e);
       } else {
@@ -2154,6 +2287,38 @@
       ctx.strokeStyle = "rgba(90, 70, 130, 0.55)";
       ctx.lineWidth = 2;
       ctx.strokeRect(b.x + 1, b.y + 1, b.w - 2, b.h - 2);
+    }
+
+    for (const z of state.absZeroZones || []) {
+      const R = z.mode === "wave" ? z.waveR : z.maxR;
+      if (R < 8) continue;
+      const alpha =
+        z.mode === "patch" ? 0.08 + (z.patchT / 20) * 0.16 : 0.1 + Math.min(0.12, (z.waveR / z.maxR) * 0.15);
+      const steps = Math.max(18, Math.ceil(R / 70));
+      ctx.beginPath();
+      ctx.moveTo(z.ox, z.oy);
+      for (let si = 0; si <= steps; si++) {
+        const t = -z.halfA + (2 * z.halfA * si) / steps;
+        ctx.lineTo(z.ox + Math.cos(z.dirAng + t) * R, z.oy + Math.sin(z.dirAng + t) * R);
+      }
+      ctx.closePath();
+      ctx.fillStyle = `rgba(170, 228, 255, ${alpha})`;
+      ctx.fill();
+      ctx.strokeStyle = `rgba(210, 248, 255, ${alpha * 1.1})`;
+      ctx.lineWidth = z.mode === "wave" ? 3 : 2;
+      ctx.stroke();
+      if (z.mode === "patch" && z.patchT > 0.5) {
+        ctx.strokeStyle = `rgba(255, 255, 255, ${0.04 * Math.sin(state.stats.time * 8)})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(z.ox, z.oy);
+        for (let si = 0; si <= steps; si++) {
+          const t = -z.halfA + (2 * z.halfA * si) / steps;
+          ctx.lineTo(z.ox + Math.cos(z.dirAng + t) * (R * 0.92), z.oy + Math.sin(z.dirAng + t) * (R * 0.92));
+        }
+        ctx.closePath();
+        ctx.stroke();
+      }
     }
 
     for (const g of state.gems) {
@@ -2651,7 +2816,10 @@
       updateEventSystem(simDt);
 
       playerInput(simDt);
+      updateAbsoluteZeroZones(simDt);
       updateEnemies(simDt);
+      applyAbsoluteZeroPatchDebuffs();
+      updateAbsoluteZeroEnemyProcs();
       updatePlayerShots(simDt);
       updateEnemyBullets(simDt);
       updateFireCones(simDt);

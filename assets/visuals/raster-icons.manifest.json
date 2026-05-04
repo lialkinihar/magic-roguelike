@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T11:40:13.049Z",
+  "generatedAt": "2026-05-04T12:08:01.640Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -100,10 +100,10 @@
     {
       "visualId": "game_skill_combo_qwq",
       "skillId": "combo_qwq",
-      "name": "Frost Ravage",
+      "name": "Absolute Zero",
       "sequence": "QWQ",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_qww",

@@ -30,6 +30,11 @@
     "note": "Frost Nova — QQW (circular ice avalanche burst 360°)"
   },
   {
+    "file": "combo_qwq.png",
+    "skillId": "combo_qwq",
+    "note": "Absolute Zero — QWQ (frozen ground + thermometer at zero)"
+  },
+  {
     "file": "rune_q.png",
     "skillId": "rune_q",
     "note": "Frost Shard — Q"

@@ -400,7 +400,15 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_qwq": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M7 18l3-6 3 6 3-6 3 6 3-6 3 6 3-6 3 6" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 18l3-6 3 6 3-6 3 6 3-6 3 6 3-6 3 6" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 26l3-6 3 6 3-6 3 6 3-6 3 6 3-6 3 6" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 26l3-6 3 6 3-6 3 6 3-6 3 6 3-6 3 6" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="6" y="44" width="52" height="10" rx="2" fill="#b8e8ff" fill-opacity="0.45" stroke="#6ec0e8" stroke-width="0.8"/>
+  <path d="M8 44 L12 38 L16 42 L20 36 L24 40 L28 35 L32 39 L36 34 L40 38 L44 33 L48 37 L52 32 L56 44 Z" fill="#d8f8ff" fill-opacity="0.7" stroke="#7ec8e8" stroke-width="0.6"/>
+  <line x1="10" y1="42" x2="12" y2="40" stroke="#a8d8e8" stroke-width="0.4"/><line x1="22" y1="39" x2="24" y2="37" stroke="#a8d8e8" stroke-width="0.4"/><line x1="38" y1="36" x2="40" y2="35" stroke="#a8d8e8" stroke-width="0.4"/>
+  <rect x="38" y="10" width="8" height="28" rx="1.5" fill="#e8fcff" fill-opacity="0.85" stroke="#4a8ec8" stroke-width="0.9"/>
+  <rect x="39.2" y="32" width="5.6" height="4" rx="0.5" fill="#38bdf8"/>
+  <line x1="37" y1="14" x2="36" y2="14" stroke="#64748b" stroke-width="0.5"/><line x1="37" y1="18" x2="36" y2="18" stroke="#64748b" stroke-width="0.5"/><line x1="37" y1="22" x2="36" y2="22" stroke="#64748b" stroke-width="0.5"/><line x1="37" y1="26" x2="36" y2="26" stroke="#64748b" stroke-width="0.5"/><line x1="37" y1="30" x2="36" y2="30" stroke="#64748b" stroke-width="0.5"/>
+  <path d="M42 34 L42 36 L44 36 L44 34 Z" fill="#0ea5e9"/>
+</svg>`,
   },
   "game_skill_combo_qww": {
     kind: "icon",
