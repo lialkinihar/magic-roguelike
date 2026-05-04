@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T11:24:33.282Z",
+  "generatedAt": "2026-05-04T11:28:41.138Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -134,8 +134,8 @@
       "skillId": "combo_qew",
       "name": "Fire Ground",
       "sequence": "QEW",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_qee",

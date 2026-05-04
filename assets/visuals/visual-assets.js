@@ -425,7 +425,27 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_qew": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 24c4 2 12 2 16 0 4-2 8-2 12 0" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 24c4 2 12 2 16 0 4-2 8-2 12 0" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="qewLava" cx="42%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#fff4a0"/>
+      <stop offset="35%" stop-color="#ff8c42"/>
+      <stop offset="70%" stop-color="#d42810"/>
+      <stop offset="100%" stop-color="#4a1008"/>
+    </radialGradient>
+    <radialGradient id="qewBub" cx="35%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#fff8c8"/>
+      <stop offset="55%" stop-color="#ff6a28"/>
+      <stop offset="100%" stop-color="#a01808"/>
+    </radialGradient>
+  </defs>
+  <path d="M12 40 Q10 48 18 52 Q28 56 38 52 Q50 48 52 40 Q54 32 46 28 Q36 24 26 26 Q14 28 12 36 Z" fill="url(#qewLava)" stroke="#8a2008" stroke-width="0.8" opacity="0.9"/>
+  <ellipse cx="28" cy="38" rx="5" ry="3.2" fill="url(#qewBub)" stroke="#ffd080" stroke-width="0.45" opacity="0.95"/>
+  <ellipse cx="38" cy="36" rx="3.8" ry="2.4" fill="url(#qewBub)" stroke="#ffe8a0" stroke-width="0.4" opacity="0.9"/>
+  <ellipse cx="32" cy="42" rx="4.2" ry="2.8" fill="url(#qewBub)" stroke="#ffc060" stroke-width="0.4" opacity="0.85"/>
+  <ellipse cx="22" cy="44" rx="2.6" ry="1.6" fill="url(#qewBub)" stroke="#ffd8a0" stroke-width="0.35" opacity="0.8"/>
+  <path d="M20 34 Q32 30 44 34" fill="none" stroke="#fff4a0" stroke-width="0.7" stroke-linecap="round" opacity="0.5"/>
+</svg>`,
   },
   "game_skill_combo_qee": {
     kind: "icon",

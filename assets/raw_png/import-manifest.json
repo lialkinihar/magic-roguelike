@@ -15,6 +15,11 @@
     "note": "Proximity Mine — QEQ (fire core + ice shrapnel studs)"
   },
   {
+    "file": "combo_qew.png",
+    "skillId": "combo_qew",
+    "note": "Fire Ground — QEW (liquid fire puddle + lava bubbles)"
+  },
+  {
     "file": "rune_q.png",
     "skillId": "rune_q",
     "note": "Frost Shard — Q"
