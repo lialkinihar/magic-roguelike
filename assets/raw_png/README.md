@@ -45,12 +45,12 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `rune_w` | `This icon: chain lightning — nodes staggered (not collinear), shallow zigzag or S path; jagged bolts at angles between nodes; each node a tight lightning cocoon, NO visible circle; yellow-white, no frame, no extra VFX.` |
 | `rune_e` | `This icon: plain ordinary meteor only — gray rocky body, small orange-yellow trail, no frame, no magic rings, no extra VFX.` |
 | `duo_qq` | `This icon: large ice spear — ENTIRE weapon solid ice crystal only (head + shaft one frozen piece); NO metal rings, ferrule, steel, iron, bronze, or leather; secondary spikes also ice; bigger than basic ice shard; cyan/white/blue ice shadows; diagonal thrust; no frame, no extra VFX.` |
-| `duo_qw` | `This icon: DIFFERENT ice spear than QQ — slender needle-like frost rapier / hex-prism crystal shaft, refined smaller head (icicle lance), NOT same bulky jagged silhouette as dual-QQ spear. 100% ice only, NO metal. Lightning wraps in 3D with occlusion (segments in front of and behind ice), spiral along shaft, NOT flat overlay. Yellow-white. Chroma #fc03f8 only; no frame, no text.` |
+| `duo_qw` | `This icon: rough brutal frost spear — NOT smooth wand or polished hex rod: jagged chipped facets, irregular splinters and side spikes on shaft, deep cracks, coarse glacier ice texture, asymmetric weapon silhouette. Still 100% ice, NO metal. Lightning wraps in 3D with occlusion (in front / behind ice), spiral, NOT flat overlay. Yellow-white. Chroma #fc03f8 only; no frame, no text.` |
 | `duo_we` | `This icon: same large all-ice frost spear (no metal). Lightning must WRAP in 3D: segments pass IN FRONT of ice and other segments go BEHIND the crystal (occluded / partially hidden by ice), spiral or corkscrew along shaft — NOT one flat sine wave painted on top of the spear; branches respect depth. Yellow-white bolts. Chroma #fc03f8 flat only; no frame, no text.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
-**`duo_qw` (QW)** — **другое** ледяное копьё (узкое «игольное» / призматическое), не копировать силуэт **`duo_qq` (QQ)**; целиком лёд, молния **обвивает** с окклюзией (перед/за льдом). Thunderfrost Spear.
+**`duo_qw` (QW)** — ледяное копьё **грубое, ломаное** (сколы, шипы, трещины), не гладкий жезл; целиком лёд, молния с **обмоткой** и окклюзией. Thunderfrost Spear.
 
 **`duo_we` (WE)** — то же крупное ледяное копьё, что **`duo_qq` (QQ)**; молния **обвивает** ствол: часть дуг **перед** льдом, часть **за** кристаллом (пропадает за объёмом), без «волны поверх» в одной плоскости. Копьё в конфиге у QQ; WE = лёд + молния W.
 
