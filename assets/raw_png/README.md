@@ -80,6 +80,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | Назначение | `skillId` / `visualId` | Где в UI |
 |------------|-------------------------|----------|
 | **Клавиши комбинации** (маленькие повторяющиеся Q/W/E в ряд) | `rune_q`, `rune_w`, `rune_e` | подписи комбо (`QQE`, `WQW`, …), тултипы, строка у кулдауна Invoke |
+| **Глифы QWE в полоске комбо** (отдельный арт, не иконки скиллов) | мастера `frost_rune`, `lightning_rune`, `fire_rune` → в атласе `game_combo_rune_frost` / `_lightning` / `_fire` | UI строки комбинации; в коде см. `KEY_TO_COMBO_RUNE_VISUAL_ID` в [`icons.js`](../../icons.js) |
 | **Иконка самого скилла** (большая плитка, слот, превью) | `duo_*`, `combo_*`, `invoke_seal` | плитка комбо, артефакты, большой слот навыка |
 
 Три руны **уже зафиксированы** как единый стиль оболочки + разный центр; дальше генерируй **`duo_qq` … `duo_ee`** и **`combo_qqq` … `combo_eee`** (и при необходимости **`invoke_seal`**) — это **отдельные** картинки: цельная иллюстрация умения в кадре 500×500, та же палитра **`invoke.png`** и хромакей **`#fc03f8`**, читаемость **в 64×64** как иконка навыка, а не как узкая «клавиша».
@@ -96,7 +97,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
    ```json
    { "file": "frost_nova_v2.png", "skillId": "combo_qqw", "note": "Frost Nova QQW" }
    ```
-   Поле **`skillId`** — это **`id`** из [`skills.config.js`](../../skills.config.js) (`rune_q`, `duo_qw`, `combo_eee`, …). Для печати Invoke в UI: **`invoke_seal`**. Поле **`note`** только для себя, скрипт игнорирует.
+   Поле **`skillId`** — это **`id`** из [`skills.config.js`](../../skills.config.js) (`rune_q`, `duo_qw`, `combo_eee`, …) **или** один из глифов комбо: **`frost_rune`**, **`lightning_rune`**, **`fire_rune`** (мастера в `raw_png`, те же правила хромакея). Для печати Invoke в UI: **`invoke_seal`**. Поле **`note`** только для себя, скрипт игнорирует.
 4. Выполнить:
    ```bash
    npm run icons:import-raw

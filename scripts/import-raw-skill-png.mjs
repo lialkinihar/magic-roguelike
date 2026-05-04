@@ -24,12 +24,16 @@ const skillsSourceDir = join(root, "assets", "visuals", "raster", "skills-source
 const DEFAULT_CHROMA = process.env.RAW_CHROMA_HEX || "fc03f8";
 const DEFAULT_TOLERANCE = Number(process.env.RAW_CHROMA_TOLERANCE || 18) || 18;
 
+/** Мастера для полоски QWE в комбо (не `rune_q` — это иконки скиллов). Файлы: `frost_rune.png` и т.д. */
+const COMBO_RUNE_GLYPH_IDS = ["frost_rune", "lightning_rune", "fire_rune"];
+
 function allSkillIds() {
   const ids = new Set();
   for (const row of SKILLS_CONFIG.singleRuneCombos) ids.add(row.id);
   for (const row of SKILLS_CONFIG.dualRuneCombos) ids.add(row.id);
   for (const row of SKILLS_CONFIG.invokeCombos) ids.add(row.id);
   ids.add("invoke_seal");
+  for (const id of COMBO_RUNE_GLYPH_IDS) ids.add(id);
   return ids;
 }
 

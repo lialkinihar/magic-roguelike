@@ -132,6 +132,15 @@ for (const [skillId, meta] of bySkillId) {
   pushEntry(INVOKE_SEAL_VISUAL, "invoke_seal", "Invoke seal (UI)", "—", url, source);
 }
 
+for (const row of [
+  { visualId: "game_combo_rune_frost", name: "Combo rune glyph (Q / frost)", sequence: "Q" },
+  { visualId: "game_combo_rune_lightning", name: "Combo rune glyph (W / lightning)", sequence: "W" },
+  { visualId: "game_combo_rune_fire", name: "Combo rune glyph (E / fire)", sequence: "E" },
+]) {
+  const { source, url } = manifestSourceAndUrl(row.visualId);
+  pushEntry(row.visualId, null, row.name, row.sequence, url, source);
+}
+
 writeFileSync(outManifest, JSON.stringify(manifest, null, 2), "utf8");
 
 console.log("OK", outJs, keys.length, "raster entries");

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T09:17:34.578Z",
+  "generatedAt": "2026-05-04T09:22:44.269Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -296,6 +296,30 @@
       "sequence": "—",
       "rasterUrl": null,
       "source": "svg"
+    },
+    {
+      "visualId": "game_combo_rune_frost",
+      "skillId": null,
+      "name": "Combo rune glyph (Q / frost)",
+      "sequence": "Q",
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
+    },
+    {
+      "visualId": "game_combo_rune_lightning",
+      "skillId": null,
+      "name": "Combo rune glyph (W / lightning)",
+      "sequence": "W",
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
+    },
+    {
+      "visualId": "game_combo_rune_fire",
+      "skillId": null,
+      "name": "Combo rune glyph (E / fire)",
+      "sequence": "E",
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     }
   ]
 }

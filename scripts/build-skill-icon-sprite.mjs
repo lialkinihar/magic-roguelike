@@ -19,14 +19,23 @@ const outGen = join(root, "assets", "visuals", "skill-icons-atlas.gen.js");
 const CELL = Number(process.env.ICON_ATLAS_CELL || 64) || 64;
 const INVOKE_SEAL_VISUAL = "game_invoke_seal_circle";
 
+/** skills-source/*.png basename → atlas / registry visualId (глифы Q/W/E в строке комбо) */
+const COMBO_RUNE_GLYPH_MAP = new Map([
+  ["frost_rune", "game_combo_rune_frost"],
+  ["lightning_rune", "game_combo_rune_lightning"],
+  ["fire_rune", "game_combo_rune_fire"],
+]);
+
 /** @type {Map<string, string>} id → visualId */
 const idToVisual = new Map();
 for (const row of SKILLS_CONFIG.singleRuneCombos) idToVisual.set(row.id, row.visualId);
 for (const row of SKILLS_CONFIG.dualRuneCombos) idToVisual.set(row.id, row.visualId);
 for (const row of SKILLS_CONFIG.invokeCombos) idToVisual.set(row.id, row.visualId);
+for (const [fileId, visualId] of COMBO_RUNE_GLYPH_MAP) idToVisual.set(fileId, visualId);
 
 const ORDER = [
   ...SKILLS_CONFIG.singleRuneCombos.map((r) => r.id),
+  ...COMBO_RUNE_GLYPH_MAP.keys(),
   ...SKILLS_CONFIG.dualRuneCombos.map((r) => r.id),
   ...SKILLS_CONFIG.invokeCombos.map((r) => r.id),
   "invoke_seal",
@@ -55,7 +64,7 @@ function presentIdsInOrder() {
   }
   for (const n of names) {
     const id = n.slice(0, -4);
-    if (!out.includes(id) && id !== "invoke_seal") {
+    if (!out.includes(id) && id !== "invoke_seal" && !COMBO_RUNE_GLYPH_MAP.has(id)) {
       console.warn(`[sprite] skip unknown file (not in skill list): ${n}`);
     }
   }

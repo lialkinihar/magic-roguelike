@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Icons Preview</title>
+  <style>
+    :root {
+      --bg: #090513;
+      --panel: #120a22;
+      --panel-2: #1a1030;
+      --border: rgba(144, 112, 210, 0.45);
+      --text: #ece6ff;
+      --muted: #a89acb;
+      --accent: #c4a8ff;
+      --ok: #8ff0b2;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      background: radial-gradient(1200px 800px at 20% -10%, #261444 0%, var(--bg) 55%);
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, sans-serif;
+    }
+
+    .wrap {
+      width: min(1300px, 96vw);
+      margin: 0 auto;
+      padding: 20px 0 28px;
+    }
+
+    .head {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #efe8ff;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.4;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      gap: 10px;
+      align-items: center;
+      background: rgba(15, 9, 28, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px;
+      position: sticky;
+      top: 8px;
+      z-index: 20;
+      backdrop-filter: blur(4px);
+    }
+
+    .toolbar input,
+    .toolbar select,
+    .toolbar button {
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid rgba(143, 111, 210, 0.55);
+      background: #120a22;
+      color: var(--text);
+      font: inherit;
+      padding: 0 10px;
+    }
+
+    .toolbar button {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .toolbar button:hover {
+      filter: brightness(1.08);
+    }
+
+    .stats {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .stats .ok {
+      color: var(--ok);
+      font-weight: 700;
+    }
+
+    .groups {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .group {
+      background: rgba(14, 8, 25, 0.82);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .group-title {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 10px;
+    }
+
+    .card {
+      border: 1px solid rgba(124, 96, 184, 0.5);
+      border-radius: 10px;
+      background: linear-gradient(180deg, rgba(32, 20, 55, 0.8), rgba(24, 15, 40, 0.8));
+      padding: 10px;
+      min-height: 108px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      cursor: pointer;
+      transition: border-color 0.14s ease, transform 0.1s ease, filter 0.14s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(175, 147, 242, 0.9);
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+
+    .icon-box {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      border: 1px solid rgba(166, 134, 230, 0.5);
+      /* Opaque dark base so transparent PNGs read as in-game UI, not checkerboard */
+      background-color: #0c0718;
+      background-image: radial-gradient(
+        circle at 40% 30%,
+        rgba(88, 60, 140, 0.45) 0%,
+        #0a0614 75%
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 3px;
+      flex-shrink: 0;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .icon-box svg {
+      width: 56px;
+      height: 56px;
+      max-width: 56px;
+      max-height: 56px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .icon-box img.visual-icon {
+      width: 56px;
+      height: 56px;
+      max-width: 56px;
+      max-height: 56px;
+      object-fit: contain;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .icon-box .visual-icon--atlas {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+    }
+
+    .meta {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+      text-align: center;
+    }
+
+    .id {
+      color: #f1ebff;
+      font-size: 0.76rem;
+      font-weight: 600;
+      line-height: 1.25;
+      word-break: break-all;
+    }
+
+    .tags {
+      color: var(--muted);
+      font-size: 0.69rem;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 860px) {
+      .toolbar {
+        grid-template-columns: 1fr 1fr;
+      }
+      .toolbar button {
+        grid-column: span 2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="head">
+      <h1 class="title">Preview: All Visual Icons</h1>
+      <div class="sub">
+        Клик по карточке копирует `asset id` в буфер обмена. Фильтры помогают согласовать весь набор перед финальной отрисовкой.
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Поиск по id (например: game_skill_combo)" />
+      <select id="family">
+        <option value="">Family: all</option>
+      </select>
+      <select id="kind">
+        <option value="">Kind: all</option>
+      </select>
+      <button id="reset" type="button">Сбросить фильтры</button>
+    </section>
+
+    <div id="stats" class="stats"></div>
+    <section id="groups" class="groups"></section>
+  </main>
+
+  <script type="module">
+    import { VISUAL_ASSETS } from "./registry.js";
+    import { SKILLS_CONFIG } from "../../skills.config.js";
+    import { VISUAL_RASTER_URLS } from "./raster-icons.js";
+    import {
+      SKILL_ICON_ATLAS_URL,
+      SKILL_ICON_ATLAS_WIDTH,
+      SKILL_ICON_ATLAS_HEIGHT,
+      SKILL_ICON_ATLAS_REGIONS,
+    } from "./skill-icons-atlas.gen.js";
+
+    const entries = Object.entries(VISUAL_ASSETS).map(([id, data]) => ({ id, ...data }));
+
+    const searchEl = document.getElementById("search");
+    const familyEl = document.getElementById("family");
+    const kindEl = document.getElementById("kind");
+    const resetEl = document.getElementById("reset");
+    const groupsEl = document.getElementById("groups");
+    const statsEl = document.getElementById("stats");
+
+    const unique = (arr) => [...new Set(arr)].sort((a, b) => a.localeCompare(b));
+
+    function fillSelect(select, values) {
+      for (const v of values) {
+        const opt = document.createElement("option");
+        opt.value = v;
+        opt.textContent = `${select.id}: ${v}`;
+        select.appendChild(opt);
+      }
+    }
+
+    fillSelect(familyEl, unique(entries.map((e) => e.family)));
+    fillSelect(kindEl, unique(entries.map((e) => e.kind)));
+
+    const skillLabelById = new Map();
+    const allSkills = [
+      ...(SKILLS_CONFIG?.singleRuneCombos || []),
+      ...(SKILLS_CONFIG?.dualRuneCombos || []),
+      ...(SKILLS_CONFIG?.invokeCombos || []),
+    ];
+    for (const skill of allSkills) {
+      if (!skill?.id || !skill?.name || !skill?.sequence) continue;
+      skillLabelById.set(`game_skill_${skill.id}`, `${skill.name} [${skill.sequence}]`);
+    }
+
+    const comboRuneTitle = {
+      game_combo_rune_frost: "Комбо-руна Q (лёд) — frost_rune",
+      game_combo_rune_lightning: "Комбо-руна W (молния) — lightning_rune",
+      game_combo_rune_fire: "Комбо-руна E (огонь) — fire_rune",
+    };
+
+    function assetGroupId(id) {
+      if (id.startsWith("game_combo_rune_")) return "game_combo_rune";
+      if (id.startsWith("game_skill_rune_")) return "game_skill_rune";
+      if (id.startsWith("game_skill_duo_")) return "game_skill_duo";
+      if (id.startsWith("game_skill_combo_")) return "game_skill_combo";
+      if (id.startsWith("game_")) return "game_other";
+      if (id.startsWith("app_")) return "app";
+      return "misc";
+    }
+
+    const groupTitleMap = {
+      game_combo_rune: "Combo — руны в строке QWE",
+      game_skill_rune: "Game Skills — Rune",
+      game_skill_duo: "Game Skills — Duo",
+      game_skill_combo: "Game Skills — Invoke Combo",
+      game_other: "Game — Other Icons",
+      app: "App — UI Icons",
+      misc: "Misc",
+    };
+
+    function copyText(text) {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) return;
+      navigator.clipboard.writeText(text).catch(() => {});
+    }
+
+    function itemTitle(item) {
+      return comboRuneTitle[item.id] || skillLabelById.get(item.id) || item.id;
+    }
+
+    function renderCard(item) {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.title = `Copy id: ${item.id}`;
+      card.addEventListener("click", () => copyText(item.id));
+
+      const box = document.createElement("div");
+      box.className = "icon-box";
+      const atlasReg =
+        SKILL_ICON_ATLAS_URL && SKILL_ICON_ATLAS_REGIONS[item.id]
+          ? SKILL_ICON_ATLAS_REGIONS[item.id]
+          : null;
+      const rasterSrc = VISUAL_RASTER_URLS[item.id];
+      if (atlasReg) {
+        const div = document.createElement("div");
+        div.className = "visual-icon visual-icon--atlas";
+        div.setAttribute("role", "img");
+        div.style.backgroundImage = `url("${SKILL_ICON_ATLAS_URL}")`;
+        div.style.backgroundRepeat = "no-repeat";
+        div.style.backgroundSize = `${SKILL_ICON_ATLAS_WIDTH}px ${SKILL_ICON_ATLAS_HEIGHT}px`;
+        div.style.backgroundPosition = `-${atlasReg.x}px -${atlasReg.y}px`;
+        box.appendChild(div);
+      } else if (rasterSrc) {
+        const img = document.createElement("img");
+        img.className = "visual-icon";
+        img.src = rasterSrc;
+        img.alt = "";
+        img.draggable = false;
+        box.appendChild(img);
+      } else {
+        box.innerHTML = item.svg;
+      }
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.innerHTML = `
+        <div class="id">${itemTitle(item)}</div>
+        <div class="tags">${item.family} · ${item.kind}</div>
+      `;
+
+      card.appendChild(box);
+      card.appendChild(meta);
+      return card;
+    }
+
+    function render() {
+      const q = searchEl.value.trim().toLowerCase();
+      const family = familyEl.value;
+      const kind = kindEl.value;
+
+      const filtered = entries.filter((e) => {
+        if (q && !e.id.toLowerCase().includes(q)) return false;
+        if (family && e.family !== family) return false;
+        if (kind && e.kind !== kind) return false;
+        return true;
+      });
+
+      const grouped = new Map();
+      for (const item of filtered) {
+        const g = assetGroupId(item.id);
+        if (!grouped.has(g)) grouped.set(g, []);
+        grouped.get(g).push(item);
+      }
+
+      groupsEl.innerHTML = "";
+      const groupOrder = [
+        "game_skill_rune",
+        "game_combo_rune",
+        "game_skill_duo",
+        "game_skill_combo",
+        "game_other",
+        "app",
+        "misc",
+      ];
+
+      for (const key of groupOrder) {
+        const items = grouped.get(key);
+        if (!items || !items.length) continue;
+        items.sort((a, b) => a.id.localeCompare(b.id));
+
+        const section = document.createElement("section");
+        section.className = "group";
+
+        const title = document.createElement("h2");
+        title.className = "group-title";
+        title.textContent = `${groupTitleMap[key] || key} (${items.length})`;
+
+        const grid = document.createElement("div");
+        grid.className = "grid";
+        for (const item of items) grid.appendChild(renderCard(item));
+
+        section.appendChild(title);
+        section.appendChild(grid);
+        groupsEl.appendChild(section);
+      }
+
+      statsEl.innerHTML = `<span class="ok">${filtered.length}</span> / ${entries.length} icons shown`;
+    }
+
+    searchEl.addEventListener("input", render);
+    familyEl.addEventListener("change", render);
+    kindEl.addEventListener("change", render);
+    resetEl.addEventListener("click", () => {
+      searchEl.value = "";
+      familyEl.value = "";
+      kindEl.value = "";
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

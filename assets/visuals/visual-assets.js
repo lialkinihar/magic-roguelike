@@ -221,6 +221,21 @@ export const VISUAL_ASSETS = {
   <path d="M30 28c3 1 5 4 4 7" fill="none" stroke="#5c5448" stroke-width="1" opacity="0.5" stroke-linecap="round"/>
 </svg>`,
   },
+  "game_combo_rune_frost": {
+    kind: "icon",
+    family: "game",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 8L20 52l12-8 12 8z" fill="#6edbff" fill-opacity="0.35" stroke="#9aeaff" stroke-width="2"/></svg>`,
+  },
+  "game_combo_rune_lightning": {
+    kind: "icon",
+    family: "game",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M38 6L22 34h14l-8 24 20-32H36z" fill="#ffe8a0" fill-opacity="0.4" stroke="#7ecbff" stroke-width="2"/></svg>`,
+  },
+  "game_combo_rune_fire": {
+    kind: "icon",
+    family: "game",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M32 10c12 8 16 24 8 36-6 9-16 10-24 4 8-4 10-14 4-22-4-8-2-16 12-18z" fill="#ff8c42" fill-opacity="0.45" stroke="#ffb060" stroke-width="2"/></svg>`,
+  },
   "game_skill_duo_qq": {
     kind: "icon",
     family: "game",

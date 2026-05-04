@@ -20,6 +20,21 @@
     "note": "Meteor — E"
   },
   {
+    "file": "frost_rune.png",
+    "skillId": "frost_rune",
+    "note": "Combo strip glyph Q (frost)"
+  },
+  {
+    "file": "lightning_rune.png",
+    "skillId": "lightning_rune",
+    "note": "Combo strip glyph W (lightning)"
+  },
+  {
+    "file": "fire_rune.png",
+    "skillId": "fire_rune",
+    "note": "Combo strip glyph E (fire)"
+  },
+  {
     "file": "duo_qq.png",
     "skillId": "duo_qq",
     "note": "Frost Spear — QQ"
