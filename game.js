@@ -1229,12 +1229,22 @@
       pr.y += pr.vy * dt;
       pr.life -= dt;
       if (pr.life <= 0 || pr.x < -100 || pr.x > WORLD_W + 100 || pr.y < -100 || pr.y > WORLD_H + 100) {
+        if (pr.kind === "ball_lightning") {
+          applyFireballBlast(pr.x, pr.y, pr.blastR * 0.72, pr.hopDmg * 0.55);
+          if (!state.lightningStrikeFx) state.lightningStrikeFx = [];
+          state.lightningStrikeFx.push({ x: pr.x, y: pr.y, life: 0.3 });
+        }
         shots.splice(i, 1);
         continue;
       }
-      const hitR = pr.kind === "fireball" ? 6 : pr.kind === "lightning" ? 3 : 4;
+      const hitR = pr.kind === "fireball" || pr.kind === "ball_lightning" ? 6 : pr.kind === "lightning" ? 3 : 4;
       if (circleHitsBlocks(pr.x, pr.y, hitR)) {
         if (pr.kind === "fireball") applyFireballBlast(pr.x, pr.y, pr.blastR, pr.dmg);
+        else if (pr.kind === "ball_lightning") {
+          applyFireballBlast(pr.x, pr.y, pr.blastR, pr.hopDmg);
+          if (!state.lightningStrikeFx) state.lightningStrikeFx = [];
+          state.lightningStrikeFx.push({ x: pr.x, y: pr.y, life: 0.36 });
+        }
         shots.splice(i, 1);
         continue;
       }
@@ -1288,6 +1298,70 @@
           }
         }
         if (!removed && pr.pierceLeft <= 0) shots.splice(i, 1);
+      } else if (pr.kind === "ball_lightning") {
+        let tgt = null;
+        for (const e of state.enemies) {
+          if (e.id === pr.targetId) {
+            tgt = e;
+            break;
+          }
+        }
+        if (!tgt) {
+          let best = null;
+          let bd = 1e9;
+          for (const e of state.enemies) {
+            if (e.id === pr.lastAnchorId && state.enemies.length > 1) continue;
+            const dd = Math.hypot(e.x - pr.x, e.y - pr.y);
+            if (dd < bd) {
+              bd = dd;
+              best = e;
+            }
+          }
+          if (!best) {
+            bd = 1e9;
+            for (const e of state.enemies) {
+              const dd = Math.hypot(e.x - pr.x, e.y - pr.y);
+              if (dd < bd) {
+                bd = dd;
+                best = e;
+              }
+            }
+          }
+          tgt = best;
+          pr.targetId = best ? best.id : null;
+        }
+        if (!tgt) {
+          pr._noTgtT = (pr._noTgtT || 0) + dt;
+          if (pr._noTgtT > 0.35) {
+            applyFireballBlast(pr.x, pr.y, pr.blastR * 0.72, pr.hopDmg * 0.6);
+            if (!state.lightningStrikeFx) state.lightningStrikeFx = [];
+            state.lightningStrikeFx.push({ x: pr.x, y: pr.y, life: 0.32 });
+            shots.splice(i, 1);
+            continue;
+          }
+        } else {
+          pr._noTgtT = 0;
+          const dx = tgt.x - pr.x;
+          const dy = tgt.y - pr.y;
+          const dist = Math.hypot(dx, dy) || 1e-4;
+          const sp = pr.speed;
+          pr.vx = (dx / dist) * sp;
+          pr.vy = (dy / dist) * sp;
+        }
+        if (tgt && Math.hypot(pr.x - tgt.x, pr.y - tgt.y) < tgt.r + 16) {
+          applyFireballBlast(tgt.x, tgt.y, pr.blastR, pr.hopDmg);
+          if (!state.lightningStrikeFx) state.lightningStrikeFx = [];
+          state.lightningStrikeFx.push({ x: tgt.x, y: tgt.y, life: 0.4 });
+          pr.hopsLeft--;
+          pr.lastAnchorId = tgt.id;
+          pr.targetId = null;
+          pr.x = tgt.x;
+          pr.y = tgt.y;
+          if (pr.hopsLeft <= 0) {
+            shots.splice(i, 1);
+            continue;
+          }
+        }
       }
     }
   }
@@ -1481,6 +1555,49 @@
     state.lightningStrikeFx.push({ x: m.x, y: m.y, life: 0.32 });
   }
 
+  /** Шаровая молния WE: шар скачет между врагами, на каждом приземлении AOE. */
+  function castBallLightningInvoke(comboDamage) {
+    const p = state.player;
+    const hopDmg = Math.max(6, comboDamage * 0.52);
+    const blastR = 78;
+    const speed = 540;
+    const hops = 5;
+    const ax = Math.cos(getPlayerAimAngle());
+    const ay = Math.sin(getPlayerAimAngle());
+    let first = null;
+    let bestS = Infinity;
+    for (const e of state.enemies) {
+      const dx = e.x - p.x;
+      const dy = e.y - p.y;
+      const dist = Math.hypot(dx, dy);
+      if (dist > 560) continue;
+      const inv = 1 / Math.max(dist, 1e-4);
+      const dot = dx * inv * ax + dy * inv * ay;
+      const score = dist * 1.1 - dot * 200;
+      if (score < bestS) {
+        bestS = score;
+        first = e;
+      }
+    }
+    const a = getPlayerAimAngle();
+    const bx = p.x + Math.cos(a) * 30;
+    const by = p.y + Math.sin(a) * 30;
+    state.playerShots.push({
+      kind: "ball_lightning",
+      x: bx,
+      y: by,
+      vx: Math.cos(a) * speed,
+      vy: Math.sin(a) * speed,
+      speed,
+      targetId: first ? first.id : null,
+      lastAnchorId: null,
+      hopsLeft: hops,
+      hopDmg,
+      blastR,
+      life: 4.2,
+    });
+  }
+
   function castInvokeSpell(combo) {
     const d = combo.damage;
     switch (combo.archetype) {
@@ -1508,8 +1625,7 @@
         castLightningNovaInvoke(4, d / 28, 1.05);
         break;
       case "duo_we":
-        castDirectedShot("fireball", d * 0.72, 1.1, 1.1, { blastR: 86 });
-        castLightningNovaInvoke(3, 0.8, 1.1);
+        castBallLightningInvoke(d);
         break;
       case "duo_ee":
         castFireConeInvoke(d / 26, 0.85, 1.05, 1.2);
@@ -2226,6 +2342,25 @@
         ctx.fill();
         ctx.stroke();
         ctx.restore();
+      } else if (pr.kind === "ball_lightning") {
+        const pulse = 0.55 + 0.45 * Math.sin(state.stats.time * 22);
+        ctx.fillStyle = "rgba(160, 100, 255, 0.28)";
+        ctx.beginPath();
+        ctx.arc(pr.x, pr.y, 18 + pulse * 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = "rgba(200, 230, 255, 0.55)";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(pr.x, pr.y, 14 + pulse, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.fillStyle = "rgba(255, 250, 200, 0.9)";
+        ctx.beginPath();
+        ctx.arc(pr.x, pr.y, 7 + pulse * 0.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "rgba(255, 255, 255, 0.95)";
+        ctx.beginPath();
+        ctx.arc(pr.x - 2, pr.y - 2, 3, 0, Math.PI * 2);
+        ctx.fill();
       } else {
         ctx.save();
         ctx.translate(pr.x, pr.y);
