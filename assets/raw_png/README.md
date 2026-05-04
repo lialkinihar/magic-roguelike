@@ -53,6 +53,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `duo_we` | `This icon: BALL LIGHTNING — glowing plasma sphere (violet-cyan-white core) as ONE cohesive ball, NOT a jagged bolt chain alone. Electric arcs wrap the sphere (in front / behind with occlusion). Reads as a hopping AOE orb skill, not thin chain lightning between dots. Chroma #fc03f8 only; no frame, no text, no ice spear.` |
 | `duo_ee` | `This icon: GREAT METEOR — same subject as basic E (single meteor) but the rocky core is CLEARLY LARGER in frame than rune_e meteor (~15–25% bigger silhouette), heavier mass. Much MORE FIRE: vivid orange-red-yellow corona, brighter tail, ember particles. Dark rock cracked open with GLOWING LAVA VEINS (branching molten streaks through the body, not just a smooth surface). NO summoning circle, magic ring, sigil, mandala, or arcane disk on the background — only the meteor + flames/trail on flat chroma. NOT ice, NOT lightning chain, NOT ball lightning. Chroma #fc03f8 only; no frame, no text.` |
 | `combo_eee` | `This icon: COMET OF DESTRUCTION (triple-E invoke) — MASSIVE apocalyptic comet / world-killer meteor, extreme sense of threat and kinetic doom: jagged dark charred rock, enormous scale in frame, blinding plasma shock at the nose, long violent inferno tail with debris and smoke wisps, subtle heat distortion only on the comet NOT on background. NO magic summoning circle, NO rune ring, NO floor glyph, NO mandala, NO UI hoop — flat chroma #fc03f8 only behind the subject. Cinematic premium mobile RPG skill art, readable at 64px. NOT a small cute meteor, NOT ice, NOT lightning. Exactly 500x500 px output. No text, no watermark, no letterboxing.` |
+| `combo_eeq` | `This icon: FLAME GUARD — large SEMI-TRANSPARENT fiery DOME (hemisphere shield): translucent orange-red-yellow fire shell, glowing inner volume, NOT opaque metal. At the BOTTOM: flames curling up around the dome base and along the rim, embers. NO magic circle, NO rune ring on ground, NO ice, NO lightning as main read. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
@@ -67,6 +68,8 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 **`duo_ee` (EE)** — **Great Meteor**: тот же тип объекта, что базовый метеор **E** (`rune_e`), но **заметно крупнее** в кадре, **сильнее огненный** (корона, хвост, искры), тело с **прожилками лавы** в трещинах камня; **без круга призыва / печати на фоне** — только метеор и огонь на `#fc03f8`; не лёд, не молния, не шаровая молния.
 
 **`combo_eee` (EEE)** — **Comet of Destruction**: верхний тир огня — **комета гибели**, в кадре должна **веять угрозой** (масштаб, скорость, хаос хвоста); **без магических кругов** на фоне — только тело кометы и пламя/шлейф на `#fc03f8`, **500×500**.
+
+**`combo_eeq` (EEQ)** — **Flame Guard**: **полупрозрачный огненный купол** (щит), внизу по периметру — **пламя** вокруг основания; без магической печати на земле, фон **`#fc03f8`**.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 

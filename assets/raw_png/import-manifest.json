@@ -53,5 +53,10 @@
     "file": "combo_eee.png",
     "skillId": "combo_eee",
     "note": "Comet of Destruction — EEE"
+  },
+  {
+    "file": "combo_eeq.png",
+    "skillId": "combo_eeq",
+    "note": "Flame Guard — EEQ (fire dome + base flames)"
   }
 ]

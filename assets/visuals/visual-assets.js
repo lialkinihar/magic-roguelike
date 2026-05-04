@@ -508,7 +508,25 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_eeq": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 5l8 3v8c0 5-3 9-8 11-5-2-8-6-8-11V8z" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 5l8 3v8c0 5-3 9-8 11-5-2-8-6-8-11V8z" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="fgDome" cx="50%" cy="65%" r="52%">
+      <stop offset="0%" stop-color="#ffea9a" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#ff8c32" stop-opacity="0.38"/>
+      <stop offset="85%" stop-color="#ff4a18" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ff2200" stop-opacity="0.08"/>
+    </radialGradient>
+    <linearGradient id="fgFlame" x1="50%" y1="100%" x2="50%" y2="55%">
+      <stop offset="0%" stop-color="#ffd060"/>
+      <stop offset="45%" stop-color="#ff7b28"/>
+      <stop offset="100%" stop-color="#ff3a12"/>
+    </linearGradient>
+  </defs>
+  <path d="M8 40 Q8 12 32 8 Q56 12 56 40 Z" fill="url(#fgDome)" stroke="#ffb060" stroke-width="1.2" stroke-opacity="0.5"/>
+  <path d="M10 38 Q32 22 54 38" fill="none" stroke="#fff4c8" stroke-width="1.5" stroke-opacity="0.35" stroke-linecap="round"/>
+  <path d="M6 52 Q14 44 20 50 Q26 42 32 48 Q38 40 44 48 Q50 42 58 52 L58 56 L6 56 Z" fill="url(#fgFlame)" opacity="0.92"/>
+  <path d="M12 50 Q18 46 24 52 M28 50 Q34 44 40 52 M44 48 Q50 46 54 52" fill="none" stroke="#fff8b0" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
+</svg>`,
   },
   "game_skill_combo_eew": {
     kind: "icon",
