@@ -312,11 +312,6 @@ export const VISUAL_ASSETS = {
     family: "game",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <radialGradient id="deebg" cx="45%" cy="38%" r="58%">
-      <stop offset="0%" stop-color="#ff9a4a" stop-opacity="0.35"/>
-      <stop offset="70%" stop-color="#ff4a18" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#1a0a18" stop-opacity="0"/>
-    </radialGradient>
     <linearGradient id="deeBody" x1="20%" y1="0%" x2="78%" y2="100%">
       <stop offset="0%" stop-color="#8a5a42"/>
       <stop offset="45%" stop-color="#4a3028"/>
@@ -328,7 +323,6 @@ export const VISUAL_ASSETS = {
       <stop offset="100%" stop-color="#ff2200"/>
     </linearGradient>
   </defs>
-  <circle cx="34" cy="30" r="26" fill="url(#deebg)"/>
   <path d="M44 6L32 28" stroke="#ffb060" stroke-width="3.2" stroke-linecap="round" opacity="0.55"/>
   <path d="M42 10L34 26" stroke="#ffe0a0" stroke-width="1.4" stroke-linecap="round" opacity="0.7"/>
   <path d="M36 16c14 6 18 22 12 34-6 12-20 16-32 10-12-6-16-22-8-34 8-12 26-14 28-10z" fill="url(#deeBody)" stroke="#3a2218" stroke-width="1.3" stroke-linejoin="round"/>

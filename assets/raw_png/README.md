@@ -50,7 +50,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `duo_qw` | `This icon: rough brutal frost spear — NOT smooth wand or polished hex rod: jagged chipped facets, irregular splinters and side spikes on shaft, deep cracks, coarse glacier ice texture, asymmetric weapon silhouette. Still 100% ice, NO metal. Lightning wraps in 3D with occlusion (in front / behind ice), spiral, NOT flat overlay. Yellow-white. Chroma #fc03f8 only; no frame, no text.` |
 | `duo_qe` | `This icon: METEOR fully COVERED in ICE — dark rock core mostly hidden under thick white-blue frost crust, jagged ice plates and icicles on surface, cyan crystal highlights, frozen comet; dominant frost, NO bare flaming meteor, NO lightning, NO spear. Trail mostly ice shards / cold vapor. Chroma #fc03f8 only; no frame, no text.` |
 | `duo_we` | `This icon: BALL LIGHTNING — glowing plasma sphere (violet-cyan-white core) as ONE cohesive ball, NOT a jagged bolt chain alone. Electric arcs wrap the sphere (in front / behind with occlusion). Reads as a hopping AOE orb skill, not thin chain lightning between dots. Chroma #fc03f8 only; no frame, no text, no ice spear.` |
-| `duo_ee` | `This icon: GREAT METEOR — same subject as basic E (single meteor) but the rocky core is CLEARLY LARGER in frame than rune_e meteor (~15–25% bigger silhouette), heavier mass. Much MORE FIRE: vivid orange-red-yellow corona, brighter tail, ember particles. Dark rock cracked open with GLOWING LAVA VEINS (branching molten streaks through the body, not just a smooth surface). NOT ice, NOT lightning chain, NOT ball lightning. Chroma #fc03f8 only; no frame, no text.` |
+| `duo_ee` | `This icon: GREAT METEOR — same subject as basic E (single meteor) but the rocky core is CLEARLY LARGER in frame than rune_e meteor (~15–25% bigger silhouette), heavier mass. Much MORE FIRE: vivid orange-red-yellow corona, brighter tail, ember particles. Dark rock cracked open with GLOWING LAVA VEINS (branching molten streaks through the body, not just a smooth surface). NO summoning circle, magic ring, sigil, mandala, or arcane disk on the background — only the meteor + flames/trail on flat chroma. NOT ice, NOT lightning chain, NOT ball lightning. Chroma #fc03f8 only; no frame, no text.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
@@ -60,7 +60,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 
 **`duo_we` (WE)** — в игре **Ball Lightning** (шаровая молния): **шар** с обмоткой разрядов; по смыслу скачет между врагами и бьёт **AOE** на каждом прыжке, не «тонкая цепь» без объёма удара.
 
-**`duo_ee` (EE)** — **Great Meteor**: тот же тип объекта, что базовый метеор **E** (`rune_e`), но **заметно крупнее** в кадре, **сильнее огненный** (корона, хвост, искры), тело с **прожилками лавы** в трещинах камня; не лёд, не молния, не шаровая молния.
+**`duo_ee` (EE)** — **Great Meteor**: тот же тип объекта, что базовый метеор **E** (`rune_e`), но **заметно крупнее** в кадре, **сильнее огненный** (корона, хвост, искры), тело с **прожилками лавы** в трещинах камня; **без круга призыва / печати на фоне** — только метеор и огонь на `#fc03f8`; не лёд, не молния, не шаровая молния.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 
