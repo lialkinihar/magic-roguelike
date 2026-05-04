@@ -35,9 +35,9 @@
     "note": "Cryo Meteor — QE (ice-covered meteor)"
   },
   {
-    "file": "duo_ww_v1.png",
+    "file": "duo_ww.png",
     "skillId": "duo_ww",
-    "note": "Chain Storm — WW (variants v1–v5 in raw_png; change file to pick)"
+    "note": "Chain Storm — WW (master duo_ww.png; optional variants duo_ww_v1–v5)"
   },
   {
     "file": "duo_we.png",
