@@ -348,7 +348,25 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_qqq": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 5l8 3v8c0 5-3 9-8 11-5-2-8-6-8-11V8z" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 5l8 3v8c0 5-3 9-8 11-5-2-8-6-8-11V8z" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4v24M10 8l12 16M22 8L10 24M8 16h16" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4v24M10 8l12 16M22 8L10 24M8 16h16" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="qqqIn" cx="50%" cy="48%" r="45%">
+      <stop offset="0%" stop-color="#b8e8ff" stop-opacity="0.45"/>
+      <stop offset="70%" stop-color="#6ec0e8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#3a7090" stop-opacity="0.08"/>
+    </radialGradient>
+    <linearGradient id="qqqSc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8fcff"/>
+      <stop offset="100%" stop-color="#4a9ec8"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="32" cy="36" rx="18" ry="20" fill="url(#qqqIn)"/>
+  <ellipse cx="32" cy="36" rx="7" ry="12" fill="#1a3040" fill-opacity="0.12"/>
+  <path d="M14 38 Q18 12 32 10 Q46 12 50 38 Q48 52 32 54 Q16 52 14 38 Z" fill="url(#qqqSc)" fill-opacity="0.35" stroke="#a8e8ff" stroke-width="1"/>
+  <path d="M18 40 Q22 18 32 16 Q42 18 46 40 Q44 48 32 50 Q20 48 18 40 Z" fill="url(#qqqSc)" fill-opacity="0.5" stroke="#d8f8ff" stroke-width="0.85"/>
+  <path d="M22 42 Q26 24 32 22 Q38 24 42 42 Q40 46 32 47 Q24 46 22 42 Z" fill="url(#qqqSc)" fill-opacity="0.65" stroke="#e8fcff" stroke-width="0.75"/>
+  <path d="M26 40 Q28 30 32 28 Q36 30 38 40 Q36 43 32 44 Q28 43 26 40 Z" fill="#e8fcff" fill-opacity="0.55" stroke="#7ec8e8" stroke-width="0.55"/>
+</svg>`,
   },
   "game_skill_combo_qqw": {
     kind: "icon",

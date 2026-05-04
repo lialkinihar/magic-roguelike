@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T11:30:07.177Z",
+  "generatedAt": "2026-05-04T11:35:20.887Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -78,8 +78,8 @@
       "skillId": "combo_qqq",
       "name": "Cold Embrace",
       "sequence": "QQQ",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_qqw",
