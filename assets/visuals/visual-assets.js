@@ -572,7 +572,29 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_eww": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M8 28h16L16 10z" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 28h16L16 10z" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 10v-4M13 12l-2-4M19 12l2-4" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 10v-4M13 12l-2-4M19 12l2-4" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="ewwFb" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fff4c8"/>
+      <stop offset="45%" stop-color="#ff9a3c"/>
+      <stop offset="100%" stop-color="#c42a08"/>
+    </radialGradient>
+    <linearGradient id="ewwRock" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6a5348"/>
+      <stop offset="100%" stop-color="#2d221c"/>
+    </linearGradient>
+  </defs>
+  <path d="M18 48 L32 22 L46 48 Z" fill="url(#ewwRock)" stroke="#1a1410" stroke-width="1"/>
+  <ellipse cx="32" cy="24" rx="7" ry="2.2" fill="#ff5a28" opacity="0.9"/>
+  <ellipse cx="32" cy="24" rx="4.5" ry="1.1" fill="#ffd060"/>
+  <circle cx="28" cy="14" r="3.2" fill="url(#ewwFb)"/>
+  <path d="M26 16 Q25 19 24 21" fill="none" stroke="#ffcc66" stroke-width="1.2" stroke-linecap="round" opacity="0.75"/>
+  <circle cx="38" cy="12" r="2.6" fill="url(#ewwFb)"/>
+  <path d="M37 14 Q36 17 35 19" fill="none" stroke="#ffaa44" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+  <circle cx="34" cy="8" r="2.2" fill="url(#ewwFb)"/>
+  <path d="M33 10 Q32 12 31 14" fill="none" stroke="#ff8844" stroke-width="0.9" stroke-linecap="round" opacity="0.65"/>
+  <circle cx="22" cy="18" r="2" fill="url(#ewwFb)"/>
+</svg>`,
   },
   "game_skill_combo_ewe": {
     kind: "icon",

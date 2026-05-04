@@ -103,5 +103,10 @@
     "file": "combo_ewq.png",
     "skillId": "combo_ewq",
     "note": "Gale Force — EWQ (rectangular zone + wind along far edge)"
+  },
+  {
+    "file": "combo_eww.png",
+    "skillId": "combo_eww",
+    "note": "Volcano Turret — EWW (small volcano + fireballs from crater)"
   }
 ]

@@ -60,6 +60,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `combo_eqw` | `This icon: FIRE YO-YO — ONLY the yo-yo + thin fiery string in frame: large round fire disk, very thin flaming cord (may exit top edge). NO hand, NO arm, NO fingers, NO glove, NO body parts. NOT meteor, NOT ice, NOT chain lightning. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_ewe` | `This icon: ELEMENTAL FURY — central VORTEX visibly mixing THREE elements: fire (orange-red), ice (cyan-white frost/crystal), lightning (yellow-white zigzag) as one braided spiral core. Around it projectiles FLY OUTWARD: small FIREBALLS, ICE SHARDS, and LIGHTNING bolts in multiple directions. NO full character silhouette, NO single plain meteor. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_ewq` | `This icon: GALE FORCE — RECTANGULAR wind zone (clear rectangle or floor tile in perspective). NO leaves, NO foliage, NO organic debris. Wind is VOLUMETRIC: thick tubular gusts, layered translucent mist shells, soft 3D depth — not only thin flat speed lines. Wind fills the FULL VERTICAL HEIGHT of the zone (bottom to top), not only near the ground: vertical mist columns through the whole prism. ONE horizontal flow direction, concentrated along the FAR LONG SIDE then sweeping forward — cyan-white-aqua mist, subtle dust only. NOT fire, NOT lightning, NOT ice wall, NOT circular tornado only. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
+| `combo_eww` | `This icon: VOLCANO TURRET — a SMALL compact volcanic cone (triangular / low pyramid, dark cracked rock, orange-red lava glow in the crater). Multiple ROUND FIREBALLS with short flame trails launch upward and outward from the crater in different arcs — clearly fire projectiles. Light vent smoke. NOT lightning bolts, NOT ice, NOT giant sky meteor, NOT magic summoning circle on ground. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
@@ -88,6 +89,8 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 **`combo_ewe` (EWE)** — **Elemental Fury**: **вихрь из трёх стихий** (огонь, лёд, молния в одном завихрении); **вокруг** разлетаются **огненные шары**, **ледяные осколки** и **молнии**; без целого персонажа в кадре; фон **`#fc03f8`**.
 
 **`combo_ewq` (EWQ)** — **Gale Force**: **прямоугольная зона**; **без листьев и мусора**; **объёмные** потоки (туманные «столбы», слои), ветер **на всю высоту** зоны, не только у «пола»; общий унос **в одну сторону**, усиление у **дальней** стороны; фон **`#fc03f8`**.
+
+**`combo_eww` (EWW)** — **Volcano Turret**: **небольшой вулкан** (конус, трещины, свечение жерла); из кратера **вылетают огненные шары** с короткими шлейфами; не молния, не метеор с неба; фон **`#fc03f8`**.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 

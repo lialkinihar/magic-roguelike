@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T10:28:29.761Z",
+  "generatedAt": "2026-05-04T10:39:37.821Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -254,8 +254,8 @@
       "skillId": "combo_eww",
       "name": "Volcano Turret",
       "sequence": "EWW",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_ewe",
