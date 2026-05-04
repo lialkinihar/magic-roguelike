@@ -493,7 +493,19 @@ export const VISUAL_ASSETS = {
   "game_skill_combo_eqq": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M6 12h20M6 18h20M6 24h20M6 12v12M12 12v12M18 12v12M26 12v12" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12h20M6 18h20M6 24h20M6 12v12M12 12v12M18 12v12M26 12v12" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4v24M10 8l12 16M22 8L10 24M8 16h16" stroke="#6edbff" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4v24M10 8l12 16M22 8L10 24M8 16h16" stroke="#6edbff" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="iwCryst" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d8f8ff"/>
+      <stop offset="55%" stop-color="#6edbff"/>
+      <stop offset="100%" stop-color="#3a8eb8"/>
+    </linearGradient>
+  </defs>
+  <path d="M10 44 Q10 14 32 8 Q54 14 54 44" fill="none" stroke="url(#iwCryst)" stroke-width="5" stroke-linecap="round" opacity="0.35"/>
+  <path d="M12 42L18 20L24 38L30 16L36 36L42 18L48 40L52 28" fill="none" stroke="#9ae8ff" stroke-width="2.4" stroke-linejoin="miter"/>
+  <path d="M14 40L20 24L26 34L32 20L38 32L44 22L50 36" fill="none" stroke="#6edbff" stroke-width="1.8" stroke-linejoin="miter"/>
+  <path d="M16 38l4-14 6 12 6-14 6 12 6-10 4 10" fill="none" stroke="#c8f6ff" stroke-width="1.2" opacity="0.9"/>
+</svg>`,
   },
   "game_skill_combo_eqw": {
     kind: "icon",

@@ -83,5 +83,10 @@
     "file": "combo_eqe.png",
     "skillId": "combo_eqe",
     "note": "Fire Step — EQE (fiery path + human footprints)"
+  },
+  {
+    "file": "combo_eqq.png",
+    "skillId": "combo_eqq",
+    "note": "Ice Wall — EQQ (horseshoe ice crystal wall)"
   }
 ]
