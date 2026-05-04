@@ -25,6 +25,11 @@
     "note": "Frost Spear — QQ"
   },
   {
+    "file": "duo_qw.png",
+    "skillId": "duo_qw",
+    "note": "Thunderfrost Spear — QW"
+  },
+  {
     "file": "duo_we.png",
     "skillId": "duo_we",
     "note": "Lightning Shockwave — WE (ice spear + lightning)"

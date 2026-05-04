@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-03T22:07:15.156Z",
+  "generatedAt": "2026-05-04T07:57:19.514Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -38,8 +38,8 @@
       "skillId": "duo_qw",
       "name": "Thunderfrost Spear",
       "sequence": "QW",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_duo_qe",
