@@ -667,21 +667,30 @@ export const VISUAL_ASSETS = {
     family: "game",
     svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <radialGradient id="cwwwb" cx="50%" cy="46%" r="62%">
-      <stop offset="0%" stop-color="#9fe0ff" stop-opacity="0.24"/>
-      <stop offset="100%" stop-color="#111a2f" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="cwwws" x1="10%" y1="0%" x2="90%" y2="100%">
-      <stop offset="0%" stop-color="#def8ff"/>
-      <stop offset="100%" stop-color="#63bfff"/>
+    <linearGradient id="cwwwA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c8f0ff"/>
+      <stop offset="40%" stop-color="#5a8eb8"/>
+      <stop offset="100%" stop-color="#3a2060"/>
     </linearGradient>
+    <radialGradient id="cwwwG" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#e8fcff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#1a1030" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <circle cx="32" cy="32" r="24" fill="url(#cwwwb)"/>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M32 12v30M20 42h24M24 28c4-5 12-5 16 0" stroke="#7ecbff" stroke-width="6" opacity="0.22"/>
-    <path d="M32 12v30M20 42h24M24 28c4-5 12-5 16 0" stroke="url(#cwwws)" stroke-width="3.8"/>
-    <path d="M40 8L34 20h5l-2 10 9-14h-5z" stroke="#bdefff" stroke-width="2.6"/>
+  <circle cx="32" cy="32" r="28" fill="url(#cwwwG)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#ffe8a0" stroke-width="1.15" opacity="0.9">
+    <path d="M32 30 L8 8 M32 30 L56 10 M32 30 L4 32 M32 30 L60 34 M32 30 L10 56 M32 30 L54 54 M32 30 L32 4 M32 30 L32 60 M32 30 L18 6 M32 30 L48 8"/>
   </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#7ecbff" stroke-width="0.75" opacity="0.75">
+    <path d="M32 30 L12 14 M32 30 L52 16 M32 30 L14 48 M32 30 L50 46 M32 30 L6 24 M32 30 L58 26"/>
+  </g>
+  <path d="M32 44 L32 24" stroke="url(#cwwwA)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M22 42 h20" stroke="#8ec8e8" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M26 24 h12" stroke="#b8e8ff" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M32 22 L32 12 M28 12 h8" stroke="#d8f8ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="12" r="3.5" fill="none" stroke="#7ecbff" stroke-width="1.4"/>
+  <path d="M30 12 L28 8 L36 8 L34 12" fill="#5a7090" stroke="#c9f0ff" stroke-width="0.6" opacity="0.85"/>
+  <path d="M31 24 L30 20 M33 24 L34 20 M30 28 L29 32 M33 28 L34 32" stroke="#ffe8a0" stroke-width="0.55" opacity="0.65"/>
 </svg>`,
   },
   "game_skill_combo_wwe": {

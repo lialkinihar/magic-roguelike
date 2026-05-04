@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T13:18:38.384Z",
+  "generatedAt": "2026-05-04T13:23:42.189Z",
   "icons": [
     {
       "visualId": "game_skill_rune_q",
@@ -182,8 +182,8 @@
       "skillId": "combo_www",
       "name": "Lightning Anchor",
       "sequence": "WWW",
-      "rasterUrl": null,
-      "source": "svg"
+      "rasterUrl": "/assets/visuals/raster/skill-icons-atlas.png",
+      "source": "atlas"
     },
     {
       "visualId": "game_skill_combo_wwe",

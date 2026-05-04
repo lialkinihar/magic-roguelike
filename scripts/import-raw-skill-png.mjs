@@ -7,6 +7,8 @@
  * Переменные окружения (опционально):
  *   RAW_CHROMA_HEX (по умолчанию fc03f8)
  *   RAW_CHROMA_TOLERANCE (по умолчанию 18)
+ *
+ * В import-manifest.json у строки можно задать chromaHex (например "00ff00") и chromaTolerance — иначе берутся env/дефолты.
  */
 import { mkdir, readFile, writeFile } from "fs/promises";
 import { existsSync } from "fs";
@@ -77,8 +79,17 @@ async function main() {
       continue;
     }
 
+    let chromaHex = DEFAULT_CHROMA;
+    if (typeof row.chromaHex === "string" && row.chromaHex.trim()) {
+      chromaHex = row.chromaHex.trim().replace(/^#/, "");
+    }
+    let chromaTol = DEFAULT_TOLERANCE;
+    if (row.chromaTolerance != null && Number.isFinite(Number(row.chromaTolerance))) {
+      chromaTol = Number(row.chromaTolerance);
+    }
+
     const buf = await readFile(inputPath);
-    const outBuf = await chromaKeyBufferToPngBuffer(buf, DEFAULT_CHROMA, DEFAULT_TOLERANCE);
+    const outBuf = await chromaKeyBufferToPngBuffer(buf, chromaHex, chromaTol);
     const outPath = join(skillsSourceDir, `${skillId}.png`);
     await writeFile(outPath, outBuf);
     console.log("OK", file, "→", `skills-source/${skillId}.png`);

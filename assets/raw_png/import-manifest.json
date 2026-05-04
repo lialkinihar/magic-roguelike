@@ -178,5 +178,11 @@
     "file": "combo_wwq.png",
     "skillId": "combo_wwq",
     "note": "Energy Shield — WWQ (bold visible conformal shell on mage + staff, not faint clone glow)"
+  },
+  {
+    "file": "combo_www.png",
+    "skillId": "combo_www",
+    "chromaHex": "00ff00",
+    "note": "Lightning Anchor — WWW (electric plasma anchor, lightning chains radiate; green screen chroma)"
   }
 ]

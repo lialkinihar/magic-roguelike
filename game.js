@@ -106,7 +106,7 @@
     { id: "combo_wqw", sequence: "WQW", name: "Solar Beam", icon: "⚡", cooldownSec: 8, archetype: "lightning_bolt", damage: 30 },
     { id: "combo_wqe", sequence: "WQE", name: "Lightning Dash", icon: "⚡", cooldownSec: 9, archetype: "lightning_burst", damage: 24 },
     { id: "combo_wwq", sequence: "WWQ", name: "Energy Shield", icon: "⚡", cooldownSec: 9.5, archetype: "chain_ice", damage: 20 },
-    { id: "combo_www", sequence: "WWW", name: "Storm Judgment", icon: "⚡", cooldownSec: 10, archetype: "lightning_nova", damage: 34 },
+    { id: "combo_www", sequence: "WWW", name: "Lightning Anchor", icon: "⚡", cooldownSec: 10, archetype: "lightning_nova", damage: 34 },
     { id: "combo_wwe", sequence: "WWE", name: "Black Hole", icon: "⚡", cooldownSec: 11, archetype: "chain_heavy", damage: 22 },
     { id: "combo_weq", sequence: "WEQ", name: "Supercool", icon: "⚡", cooldownSec: 9.5, archetype: "freeze_burst", damage: 23 },
     { id: "combo_wew", sequence: "WEW", name: "Overload", icon: "⚡", cooldownSec: 10, archetype: "delayed_burst", damage: 34 },

@@ -6,7 +6,9 @@
 
 ## Хромакей
 
-Фон — **ровный** цвет **`#fc03f8`** (без градиента, без «сцены»). Этот цвет снимается при импорте (`npm run icons:import-raw`). Если на объекте остаётся ореол — подстрой **`RAW_CHROMA_TOLERANCE`** (по умолчанию 18) или поправь картинку.
+По умолчанию фон — **ровный** **`#fc03f8`** (без градиента, без «сцены»); цвет снимается при импорте (`npm run icons:import-raw`). Если на объекте остаётся ореол — подстрой **`RAW_CHROMA_TOLERANCE`** (по умолчанию 18) или поправь картинку.
+
+Для **отдельных** файлов в **`import-manifest.json`** у строки можно указать **`chromaHex`** (например **`"00ff00"`** — стандартный зелёный экран) и при необходимости **`chromaTolerance`**; иначе используются **`RAW_CHROMA_HEX`** / глобальный толеранс. На самом объекте **не должно быть** того же цвета, что и хромакей.
 
 ## Стилистика и палитра
 
@@ -75,6 +77,7 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 | `combo_wqw` | `This icon: SOLAR BEAM / WIDE PLASMA CANNON — ONE dominant THICK CHANNELED ENERGY BEAM crossing the frame diagonally (clear forward direction, lower-left toward upper-right). Beam is WIDE enough to read as a heavy plasma bolt at 64px, NOT a hair-thin laser line. Strong FORWARD FLIGHT read: motion streaks / speed smear / stacked ripples behind the trailing edge, brightest leading nose. Inside the beam: RICH LAVA-PLASMA turbulence — orange-yellow molten swirls, magenta-white hot core, cyan rim glow, glowing filaments and ember sparks filling the volume — NOT a hollow tube. Only a FEW SHORT LIGHTNING FORKS (2–4) at the edges. NO character, NO ice, NO summoning circle. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_wwe` | `This icon: BLACK HOLE — cosmic void forming by ABSORBING ELEMENTAL ENERGY. Center: deep BLACK event-horizon disk with thin bright accretion rim (hot white-violet). Around it: visible SPIRALING INWARD STREAMS of THREE elements being SWALLOWED — ICE (cyan-white frost trails, crystal dust), LIGHTNING (yellow-white jagged arcs), FIRE (orange-red ember ribbons) — all curve into the black center and fade as consumed. Reads as gravitational collapse fed by elements, NOT a generic purple portal only, NOT a character. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
 | `combo_wwq` | `This icon: ENERGY SHIELD — WWQ: a stylized WIZARD silhouette (hood, staff) at center, READABLE. A STRONG VISIBLE conformal energy SHELL wraps the whole figure like a SECOND SKIN — must read as a TANGIBLE BARRIER at 64px (bold saturated cyan → electric violet fill roughly half to three-quarters opacity feel, THICK bright outer rim + inner highlight edge), NOT a faint wispy duplicate-glow like a mirror clone. Still hugs hood, shoulders, robe, and staff — NOT a distant bubble, NOT only a flat plate. Mage clearly inside but under a solid-feeling membrane. NO giant lightning bolt as sole subject. Flat chroma #fc03f8 only. Exactly 500x500 px. No text, no watermark.` |
+| `combo_www` | `This icon: LIGHTNING ANCHOR — WWW: a central ANCHOR clearly readable, NOT plain dull steel — the anchor is ELECTRIC / PLASMA-CHARGED (cyan-white, violet-white glow, crackling energy on shank and flukes, hot edge highlights). From the anchor and its ring, MULTIPLE CHAIN-LIGHTNING branches extend OUTWARD in MANY DIRECTIONS (at least 6–8 distinct paths around the frame) — jagged yellow-white bolts with forks, reads as tether chains. NOT one single vertical lightning bolt only, NOT a ship anchor photo on gray. Flat chroma background MUST be standard green screen #00ff00 ONLY — NO green in the subject art. Exactly 500x500 px. No text, no watermark. (Import: set manifest chromaHex "00ff00" for this row.)` |
 
 **`duo_qq` (QQ)** — **копьё целиком изо льда** (без металлических вставок), крупнее и опаснее осколка **`rune_q` (Q)**.
 
@@ -133,6 +136,8 @@ high-end mobile HUD, readable at 64px, no text, no watermark.
 **`combo_wwe` (WWE)** — **Black Hole**: **чёрная дыра** в центре, **кольцо поглощения**; **стихийная энергия** (лёд, молния, огонь) **закручивается внутрь** и **поглощается**; фон **`#fc03f8`**.
 
 **`combo_wwq` (WWQ)** — **Energy Shield**: **заметный** энергетический **слой-оболочка** как **вторая кожа** (яркий контур, плотнее заливка), **не** слабое свечение как у клона; облегает мага и посох; фон **`#fc03f8`**.
+
+**`combo_www` (WWW)** — **Lightning Anchor**: **якорь** с **электрической / плазменной** подсветкой (не «голый металл»); от него **цепи-молнии** уходят **в разные стороны**; мастер на фоне **`#00ff00`** (зелёный экран), в манифесте для этой строки указан **`chromaHex` `00ff00`**.
 
 В конец любого промпта добавь техблок из [`AI_ICON_GUIDE.md`](../visuals/AI_ICON_GUIDE.md) (негатив, без текста и т.д.).
 
