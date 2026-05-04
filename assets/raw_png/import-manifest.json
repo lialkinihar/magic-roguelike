@@ -35,6 +35,11 @@
     "note": "Cryo Meteor — QE (ice-covered meteor)"
   },
   {
+    "file": "duo_ww_v1.png",
+    "skillId": "duo_ww",
+    "note": "Chain Storm — WW (variants v1–v5 in raw_png; change file to pick)"
+  },
+  {
     "file": "duo_we.png",
     "skillId": "duo_we",
     "note": "Ball Lightning — WE (sphere jumping, AOE hops)"
