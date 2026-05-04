@@ -310,7 +310,31 @@ export const VISUAL_ASSETS = {
   "game_skill_duo_ee": {
     kind: "icon",
     family: "game",
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><g transform="scale(2)"><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="1.5" opacity="0.28" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 26c-4-4-6-8-4-12 2-5 4-6 4-10 0 4 2 5 4 10 2 4 0 8-4 12z" stroke="#ff8c42" stroke-width="0.825" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>`,
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="deebg" cx="45%" cy="38%" r="58%">
+      <stop offset="0%" stop-color="#ff9a4a" stop-opacity="0.35"/>
+      <stop offset="70%" stop-color="#ff4a18" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#1a0a18" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="deeBody" x1="20%" y1="0%" x2="78%" y2="100%">
+      <stop offset="0%" stop-color="#8a5a42"/>
+      <stop offset="45%" stop-color="#4a3028"/>
+      <stop offset="100%" stop-color="#2a1814"/>
+    </linearGradient>
+    <linearGradient id="deeLava" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#ff4500"/>
+      <stop offset="50%" stop-color="#ffea6a"/>
+      <stop offset="100%" stop-color="#ff2200"/>
+    </linearGradient>
+  </defs>
+  <circle cx="34" cy="30" r="26" fill="url(#deebg)"/>
+  <path d="M44 6L32 28" stroke="#ffb060" stroke-width="3.2" stroke-linecap="round" opacity="0.55"/>
+  <path d="M42 10L34 26" stroke="#ffe0a0" stroke-width="1.4" stroke-linecap="round" opacity="0.7"/>
+  <path d="M36 16c14 6 18 22 12 34-6 12-20 16-32 10-12-6-16-22-8-34 8-12 26-14 28-10z" fill="url(#deeBody)" stroke="#3a2218" stroke-width="1.3" stroke-linejoin="round"/>
+  <path d="M28 28c4 2 8 1 12-1M26 34c6 3 14 2 18-2M30 40c5 2 10 0 14-3" fill="none" stroke="url(#deeLava)" stroke-width="2.1" stroke-linecap="round" opacity="0.95"/>
+  <path d="M30 30l4 8M38 24l-2 10M34 38l6-4" fill="none" stroke="#ffcc4a" stroke-width="1.2" stroke-linecap="round" opacity="0.85"/>
+</svg>`,
   },
   "game_skill_combo_qqq": {
     kind: "icon",
