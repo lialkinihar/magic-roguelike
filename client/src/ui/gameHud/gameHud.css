@@ -1,0 +1,1302 @@
+/**
+ * Игровой HUD: собственная вёрстка и стили под элементальную тему (:root из theme.css).
+ * Расположение ориентировочно как в браузерной версии игры (коины слева сверху, статблок по центру, док снизу).
+ */
+
+.game-hud {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  pointer-events: none;
+  font-family: inherit;
+}
+
+.game-hud__interactive {
+  pointer-events: auto;
+}
+
+.game-hud__coinBadge {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  z-index: 3;
+  padding: 6px 10px;
+  border-radius: 9px;
+  border: 1px solid rgba(196, 106, 50, 0.45);
+  background: rgba(14, 18, 28, 0.94);
+  color: var(--element-ember);
+  filter: saturate(1.05) brightness(1.06);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.game-hud__coinIconSlot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-hud__upgradesRail {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+.game-hud__cornerActions {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.game-hud__iconButton {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(14, 18, 28, 0.92);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition:
+    filter 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.game-hud__iconButton:hover {
+  border-color: rgba(93, 169, 184, 0.45);
+  filter: brightness(1.06);
+}
+
+.game-hud__topHud {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(920px, 94vw);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 2;
+}
+
+.game-hud__barTrack {
+  position: relative;
+  background: rgba(10, 14, 22, 0.94);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(93, 169, 184, 0.22);
+}
+
+.game-hud__hpTrack {
+  height: 18px;
+}
+
+.game-hud__hpFill {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(var(--hp-fill, 1));
+  transform-origin: left center;
+  transition: transform 0.15s ease;
+  z-index: 0;
+  background: linear-gradient(90deg, #4a2838, var(--element-ember));
+}
+
+.game-hud__armorFill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(93, 169, 184, 0.28), rgba(93, 169, 184, 0.38));
+  transform: scaleX(var(--armor-fill, 0));
+  transform-origin: left center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.game-hud__hpCaption {
+  position: relative;
+  z-index: 1;
+  display: block;
+  line-height: 18px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-shadow:
+    0 0 4px #000,
+    0 1px 2px #000;
+  pointer-events: none;
+}
+
+.game-hud__armorCaption {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(176, 220, 232, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  pointer-events: none;
+}
+
+.game-hud__armorCaption[data-visible="false"] {
+  visibility: hidden;
+}
+
+.game-hud__mechTrack {
+  height: 14px;
+}
+
+.game-hud__mechTrack[data-visible="false"] {
+  display: none;
+}
+
+.game-hud__mechFill {
+  position: absolute;
+  inset: 0;
+  transform: scaleX(var(--mech-fill, 1));
+  transform-origin: left center;
+  transition: transform 0.18s ease;
+  z-index: 0;
+  background: linear-gradient(90deg, #3a2f52, #9a8ad2);
+}
+
+.game-hud__mechCaption {
+  position: relative;
+  z-index: 1;
+  display: block;
+  line-height: 14px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(232, 228, 248, 0.98);
+  text-shadow:
+    0 0 4px #000,
+    0 1px 2px #000;
+  pointer-events: none;
+}
+
+.game-hud__xpTrack {
+  height: 10px;
+}
+
+.game-hud__xpFill {
+  height: 100%;
+  transform: scaleX(var(--xp-fill, 0));
+  transform-origin: left center;
+  transition: transform 0.2s ease;
+  background: linear-gradient(90deg, #174038, var(--element-frost));
+}
+
+.game-hud__bossChip {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--element-ember);
+  filter: saturate(1.1) brightness(1.08);
+  background: rgba(6, 8, 12, 0.72);
+  border: 1px solid rgba(196, 106, 50, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.game-hud__bossChip--mid {
+  left: 50%;
+}
+
+.game-hud__bossChip--end {
+  left: 100%;
+  transform: translate(-100%, -50%);
+}
+
+.game-hud__statsRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  opacity: 0.92;
+  color: var(--text-primary);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+.game-hud__simStrip {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 2px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(93, 169, 184, 0.2);
+  background: rgba(8, 12, 20, 0.72);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+}
+
+.game-hud__simLed {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.game-hud__simLed--live {
+  background: var(--element-frost);
+  box-shadow: 0 0 8px rgba(93, 169, 184, 0.55);
+}
+
+.game-hud__simLed--connecting {
+  background: #d4a24a;
+  animation: game-hud-sim-pulse 0.9s ease-in-out infinite;
+}
+
+.game-hud__simLed--error {
+  background: #c44848;
+  box-shadow: 0 0 8px rgba(196, 72, 72, 0.45);
+}
+
+.game-hud__simLed--offline {
+  background: rgba(120, 130, 150, 0.45);
+}
+
+.game-hud__simStatus {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.game-hud__simStatus--warn {
+  color: rgba(255, 210, 180, 0.95);
+}
+
+@keyframes game-hud-sim-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.game-hud__simSep {
+  opacity: 0.35;
+  font-weight: 400;
+}
+
+.game-hud__simMetric {
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.game-hud__simMetric--muted {
+  font-weight: 600;
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.game-hud__simNoopBtn {
+  margin-left: auto;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(139, 122, 184, 0.45);
+  background: linear-gradient(180deg, rgba(34, 40, 56, 0.95), rgba(20, 26, 38, 0.98));
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: filter 0.12s ease;
+}
+
+.game-hud__simNoopBtn:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.game-hud__simNoopBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.game-hud__simReconnectBtn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(93, 169, 184, 0.45);
+  background: rgba(16, 24, 36, 0.95);
+  color: var(--element-frost);
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.game-hud__simReconnectBtn:hover {
+  filter: brightness(1.08);
+}
+
+.game-hud__simStartBtn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(93, 169, 184, 0.45);
+  background: rgba(14, 28, 24, 0.95);
+  color: #a9ead4;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.game-hud__simStartBtn:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.game-hud__simStartBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.game-hud__simExplain {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(196, 106, 50, 0.32);
+  background: rgba(8, 10, 16, 0.65);
+  font-size: 11px;
+  line-height: 1.39;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.game-hud__buffs {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 24px;
+}
+
+.game-hud__runEndOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 24;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: min(20vh, 140px);
+  pointer-events: none;
+  background: radial-gradient(ellipse 85% 42% at 50% 12%, rgba(6, 10, 18, 0.72), transparent 62%);
+}
+
+.game-hud__runEndCard {
+  max-width: min(440px, 92vw);
+  padding: 16px 22px;
+  border-radius: 12px;
+  border: 1px solid rgba(93, 169, 184, 0.38);
+  background: rgba(10, 14, 22, 0.92);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+.game-hud__runEndTitle {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+}
+
+.game-hud__runEndSub {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.game-hud__toastRail {
+  position: absolute;
+  left: 14px;
+  bottom: 122px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.game-hud__combatHintRail {
+  position: absolute;
+  left: 50%;
+  bottom: 118px;
+  transform: translateX(-50%);
+  z-index: 5;
+  max-width: min(560px, 92vw);
+  text-align: center;
+  pointer-events: none;
+}
+
+.game-hud__combatHint {
+  margin: 0 0 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(93, 169, 184, 0.45);
+  background: rgba(10, 14, 22, 0.94);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.game-hud__phaseHint {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.game-hud__skillDock {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  pointer-events: auto;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+}
+
+.game-hud__skillDockInner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.game-hud__skillDockCore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.game-hud__invokeCooldownRow {
+  width: 100%;
+  min-height: 0;
+}
+
+.game-hud__invokeCooldownRow:not(.game-hud__invokeCooldownRow--active) {
+  display: none;
+}
+
+.game-hud__artifactColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.game-hud__artifactTile {
+  width: 44px;
+  height: 44px;
+  border-radius: 9px;
+  border: 1px solid rgba(139, 122, 184, 0.42);
+  background: linear-gradient(180deg, rgba(26, 32, 44, 0.98), rgba(16, 18, 28, 0.98));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.game-hud__artifactTile--empty {
+  border-style: dashed;
+  opacity: 0.7;
+  color: rgba(200, 190, 230, 0.75);
+}
+
+.game-hud__artifactPassives {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 5px;
+  max-width: 52px;
+}
+
+.game-hud__passiveChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  border: 1px solid rgba(93, 169, 184, 0.28);
+  background: rgba(8, 12, 20, 0.72);
+}
+
+.game-hud__skillDockFab {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.game-hud__combosFab {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(14, 18, 28, 0.92);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition:
+    filter 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.game-hud__combosFab:hover {
+  border-color: rgba(93, 169, 184, 0.45);
+  filter: brightness(1.06);
+}
+
+.game-hud__skillPlate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px 12px;
+  max-width: calc(100vw - 20px);
+  border-radius: 12px;
+  border: 1px solid rgba(139, 122, 184, 0.35);
+  background: rgba(12, 16, 26, 0.92);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 8px 28px rgba(0, 0, 0, 0.4);
+}
+
+.game-hud__ultSlotWrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.game-hud__ultButton {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 10px 12px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgba(139, 122, 184, 0.45);
+  background: linear-gradient(180deg, rgba(26, 30, 44, 0.98), rgba(14, 16, 24, 0.98));
+  color: var(--text-primary);
+  cursor: default;
+}
+
+.game-hud__ultButton:disabled {
+  opacity: 0.92;
+}
+
+.game-hud__ultButton--empty:disabled {
+  opacity: 0.72;
+}
+
+.game-hud__ultEmoji {
+  width: 46px;
+  height: 46px;
+  opacity: 0.78;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-hud__keycap {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(200, 188, 230, 0.88);
+  letter-spacing: 0.02em;
+}
+
+.game-hud__ultButton .game-hud__keycap {
+  font-size: 14px;
+}
+
+.game-hud__slotTitle {
+  font-size: 9px;
+  line-height: 1.15;
+  text-align: center;
+  max-width: 100%;
+  color: rgba(180, 170, 205, 0.78);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.game-hud__recentRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 4px 8px;
+  width: 100%;
+}
+
+.game-hud__recentOrb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55));
+  animation: game-hud-recent-pop 0.22s ease-out;
+}
+
+@keyframes game-hud-recent-pop {
+  from {
+    opacity: 0.45;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.game-hud__mainSlots {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.game-hud__skillButton {
+  position: relative;
+  min-width: 90px;
+  padding: 5px 4px 7px;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 122, 184, 0.38);
+  background: linear-gradient(180deg, rgba(26, 32, 46, 0.98), rgba(16, 18, 28, 0.98));
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font: inherit;
+  transition:
+    border-color 0.12s ease,
+    filter 0.12s ease;
+}
+
+.game-hud__skillButton:hover {
+  border-color: rgba(93, 169, 184, 0.45);
+  filter: brightness(1.05);
+}
+
+.game-hud__skillButton--cooldown {
+  filter: saturate(0.75) brightness(0.84);
+}
+
+.game-hud__skillButton--invoked {
+  border-color: rgba(93, 169, 184, 0.82);
+  box-shadow:
+    0 0 0 1px rgba(93, 169, 184, 0.42),
+    inset 0 0 18px rgba(93, 169, 184, 0.12);
+}
+
+.game-hud__cooldownBadge {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  font-size: 22px;
+  font-weight: 800;
+  color: rgba(236, 230, 245, 0.96);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+  background: linear-gradient(180deg, rgba(10, 12, 18, 0.38), rgba(8, 10, 16, 0.62));
+  pointer-events: none;
+}
+
+.game-hud__invokeInfo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(93, 169, 184, 0.2);
+  background: rgba(8, 12, 20, 0.56);
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.game-hud__skillEmojiSlot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.game-hud__artifactNum {
+  pointer-events: none;
+}
+
+.game-hud__comboSheet {
+  /* Явный размер панели + fixed к viewport (.game-hud без transform не ломает fixed) */
+  --combo-sheet-w: 384px;
+  --combo-sheet-h: 520px;
+
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 14;
+  pointer-events: auto;
+  right: max(12px, env(safe-area-inset-right, 0px));
+  /* Над FAB списка комбо: skillDock bottom 14px + высота кнопки 38px + зазор */
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 60px);
+
+  width: var(--combo-sheet-w);
+  height: var(--combo-sheet-h);
+  max-width: min(var(--combo-sheet-w), calc(100vw - 20px));
+  max-height: min(var(--combo-sheet-h), calc(100vh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 72px));
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+
+  border-radius: 14px;
+  border: 1px solid rgba(139, 122, 184, 0.45);
+  background: rgba(14, 18, 28, 0.97);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 16px 42px rgba(0, 0, 0, 0.5);
+}
+
+@supports (height: 100dvh) {
+  .game-hud__comboSheet {
+    max-height: min(
+      var(--combo-sheet-h),
+      calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 72px)
+    );
+  }
+}
+
+.game-hud__comboSheetHidden {
+  display: none !important;
+}
+
+.game-hud__comboHead {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(93, 169, 184, 0.2);
+  background: rgba(16, 20, 32, 0.88);
+  z-index: 1;
+}
+
+.game-hud__comboHead h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.game-hud__comboDismiss {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  border: 1px solid var(--border-subtle);
+  background: rgba(26, 32, 46, 0.95);
+  color: var(--text-primary);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.game-hud__comboGrid {
+  box-sizing: border-box;
+  width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 10px 12px 14px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.game-hud__comboSectionTitle {
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 2px 0 0;
+  padding: 0 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: rgba(139, 122, 184, 0.92);
+}
+
+.game-hud__comboSectionTitle:not(:first-child) {
+  margin-top: 10px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(93, 169, 184, 0.14);
+}
+
+.game-hud__comboTile {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 8px 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(139, 122, 184, 0.35);
+  background: linear-gradient(180deg, rgba(26, 32, 44, 0.95), rgba(18, 22, 34, 0.92));
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    border-color 0.14s ease,
+    filter 0.14s ease,
+    transform 0.08s ease;
+}
+
+.game-hud__comboTile:hover {
+  border-color: rgba(93, 169, 184, 0.48);
+  filter: brightness(1.05);
+}
+
+.game-hud__comboTile:active {
+  transform: translateY(1px);
+}
+
+.game-hud__comboTile--active {
+  border-color: rgba(93, 169, 184, 0.82);
+  box-shadow:
+    0 0 0 1px rgba(93, 169, 184, 0.4),
+    inset 0 0 14px rgba(93, 169, 184, 0.12);
+}
+
+.game-hud__comboIconSlot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.game-hud__comboMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  min-width: 0;
+}
+
+.game-hud__comboName {
+  max-width: 100%;
+  font-size: 10px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--text-primary);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.game-hud__runeSeq {
+  padding: 3px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(93, 169, 184, 0.22);
+  background: rgba(8, 10, 16, 0.55);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  justify-content: center;
+}
+
+.game-hud__runeChip {
+  font-size: 1em;
+  line-height: 1;
+}
+
+.game-hud__scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 18;
+  background: rgba(4, 6, 10, 0.62);
+  pointer-events: auto;
+}
+
+.game-hud__shop {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  min-width: min(440px, 92vw);
+  max-width: 92vw;
+  max-height: min(82vh, 640px);
+  overflow: hidden auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  padding: 26px 28px 22px;
+  border-radius: 14px;
+  border: 1px solid rgba(139, 122, 184, 0.45);
+  background: rgba(14, 18, 28, 0.97);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 20px 56px rgba(0, 0, 0, 0.55);
+  pointer-events: auto;
+}
+
+.game-hud__shopHidden {
+  display: none !important;
+}
+
+.game-hud__shop h2 {
+  margin: 0 0 10px;
+  font-size: 1.36rem;
+  color: rgba(236, 224, 255, 0.96);
+}
+
+.game-hud__shopHint {
+  margin: 0 0 16px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.game-hud__shopList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.game-hud__shopOffer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(139, 122, 184, 0.38);
+  background: linear-gradient(180deg, rgba(34, 40, 58, 0.98), rgba(22, 28, 42, 0.98));
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  transition:
+    filter 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.game-hud__shopOffer:hover:not(:disabled) {
+  border-color: rgba(93, 169, 184, 0.45);
+  filter: brightness(1.03);
+}
+
+.game-hud__shopOffer:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.game-hud__shopIconPlate {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(93, 169, 184, 0.24);
+  background: rgba(10, 14, 22, 0.9);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.game-hud__shopTexts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.game-hud__shopTexts strong {
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.game-hud__shopTexts em {
+  font-style: normal;
+  font-size: 11px;
+  line-height: 1.25;
+  color: var(--text-muted);
+}
+
+.game-hud__shopPrice {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: var(--element-ember);
+  filter: saturate(1.05) brightness(1.06);
+  font-weight: 700;
+  font-size: 13px;
+  margin-left: 8px;
+}
+
+.game-hud__shopDismiss {
+  margin-top: 4px;
+  align-self: center;
+  padding: 11px 28px;
+  border-radius: 10px;
+  border: 1px solid rgba(139, 122, 184, 0.38);
+  background: linear-gradient(180deg, rgba(42, 48, 64, 0.98), rgba(26, 32, 44, 0.98));
+  color: var(--text-primary);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.game-hud__shopDismiss:hover {
+  border-color: rgba(93, 169, 184, 0.45);
+  filter: brightness(1.05);
+}
+
+/* Hover tooltips для панели скиллов */
+.game-hud__tip-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.game-hud__tip-wrapper--block {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 calc((100% - 16px) / 3);
+  min-width: 0;
+  max-width: calc((100% - 16px) / 3);
+}
+
+.game-hud__tip-wrapper--fab {
+  align-self: center;
+}
+
+.game-hud__tipPopover {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(232px, 28vw, 320px);
+  padding: 8px 10px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(139, 122, 184, 0.45);
+  background: rgba(14, 18, 28, 0.97);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 8px 26px rgba(0, 0, 0, 0.5);
+  color: rgba(214, 208, 232, 0.96);
+  font-size: 11px;
+  line-height: 1.45;
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 24;
+}
+
+.game-hud__tipPopover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: rgba(14, 18, 28, 0.97);
+  border-right: 1px solid rgba(139, 122, 184, 0.35);
+  border-bottom: 1px solid rgba(139, 122, 184, 0.35);
+}
+
+.game-hud__tip-wrapper:is(:hover, :focus-within) .game-hud__tipPopover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.game-hud__tipTitle {
+  display: block;
+  font-weight: 700;
+  color: rgba(236, 230, 245, 0.98);
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.game-hud__tipBodyLine {
+  display: block;
+  white-space: pre-wrap;
+}
+
+.game-hud__tipFooter {
+  display: block;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(93, 169, 184, 0.18);
+  font-weight: 600;
+  color: rgba(180, 218, 230, 0.96);
+}
+
+/* Иконки навыков с активным серверным КД (как в старой панели) */
+.game-hud__invokeCooldownRowInner {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 6px;
+  justify-content: center;
+  width: 100%;
+  max-width: min(560px, 94vw);
+  margin-inline: auto;
+}
+
+.game-hud__invokeCooldownItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 6px;
+  border-radius: 9px;
+  border: 1px solid rgba(139, 122, 184, 0.35);
+  background: rgba(16, 20, 32, 0.86);
+}
+
+.game-hud__invokeCdIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  line-height: 1;
+}
+
+.game-hud__invokeCdBadge {
+  min-width: 30px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(240, 234, 255, 0.96);
+}
+
+.game-hud__ultButton--enabled {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.game-hud__ultButton--enabled:not(:disabled):hover {
+  border-color: rgba(93, 169, 184, 0.58);
+}
+
+.game-hud__ultButton--onCd {
+  filter: saturate(0.76) brightness(0.84);
+}
+
+.game-hud__comboTile--cooldown {
+  filter: saturate(0.75) brightness(0.85);
+}
+
+.game-hud__comboCooldownBadge {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  color: rgba(236, 230, 245, 0.96);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+  background: linear-gradient(180deg, rgba(10, 12, 18, 0.38), rgba(8, 10, 16, 0.58));
+  pointer-events: none;
+}
+
+.game-hud__skillButton:not(:disabled) {
+  cursor: pointer;
+}
+
+.game-hud__skillButton:not(:disabled):active {
+  transform: translateY(1px);
+}

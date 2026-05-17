@@ -57,42 +57,6 @@
       line-height: 1.4;
     }
 
-    .toolbar {
-      display: grid;
-      grid-template-columns: 1fr auto auto auto;
-      gap: 10px;
-      align-items: center;
-      background: rgba(15, 9, 28, 0.86);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 10px;
-      position: sticky;
-      top: 8px;
-      z-index: 20;
-      backdrop-filter: blur(4px);
-    }
-
-    .toolbar input,
-    .toolbar select,
-    .toolbar button {
-      height: 36px;
-      border-radius: 8px;
-      border: 1px solid rgba(143, 111, 210, 0.55);
-      background: #120a22;
-      color: var(--text);
-      font: inherit;
-      padding: 0 10px;
-    }
-
-    .toolbar button {
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .toolbar button:hover {
-      filter: brightness(1.08);
-    }
-
     .stats {
       margin-top: 10px;
       color: var(--muted);
@@ -182,7 +146,8 @@
       flex-shrink: 0;
     }
 
-    .icon-box img.visual-icon {
+    .icon-box img.visual-icon,
+    .icon-box img.preview-visual-icon {
       width: 56px;
       height: 56px;
       max-width: 56px;
@@ -192,10 +157,28 @@
       flex-shrink: 0;
     }
 
-    .icon-box .visual-icon--atlas {
+    .icon-box .visual-icon--atlas,
+    .icon-box .preview-visual-icon {
       width: 56px;
       height: 56px;
       flex-shrink: 0;
+    }
+
+    .icon-box .visual-icon--atlas {
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .icon-box .visual-icon--atlas-tile {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      transform-origin: top left;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      will-change: transform;
     }
 
     .meta {
@@ -220,12 +203,72 @@
       letter-spacing: 0.01em;
     }
 
+    .raw-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 40;
+      background: rgba(5, 3, 12, 0.8);
+      padding: 24px;
+    }
+
+    .raw-modal.open {
+      display: flex;
+    }
+
+    .raw-modal-card {
+      width: min(820px, 96vw);
+      max-height: 90vh;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(10, 7, 20, 0.95);
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .raw-modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .raw-modal-head button {
+      border: 1px solid rgba(143, 111, 210, 0.55);
+      border-radius: 8px;
+      background: #120a22;
+      color: var(--text);
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+
+    #raw-modal-body {
+      width: 100%;
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(124, 96, 184, 0.45);
+      border-radius: 10px;
+      background: #0b0716;
+      overflow: auto;
+    }
+
+    #raw-modal-body img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
     @media (max-width: 860px) {
-      .toolbar {
-        grid-template-columns: 1fr 1fr;
-      }
-      .toolbar button {
-        grid-column: span 2;
+      .wrap {
+        width: 98vw;
       }
     }
   </style>
@@ -235,144 +278,202 @@
     <header class="head">
       <h1 class="title">Preview: All Visual Icons</h1>
       <div class="sub">
-        Клик по карточке копирует `asset id` в буфер обмена. Фильтры помогают согласовать весь набор перед финальной отрисовкой.
+        Клик по карточке показывает исходный raw PNG (если для иконки есть связь в манифесте).
       </div>
     </header>
-
-    <section class="toolbar">
-      <input id="search" type="search" placeholder="Поиск по id (например: game_skill_combo)" />
-      <select id="family">
-        <option value="">Family: all</option>
-      </select>
-      <select id="kind">
-        <option value="">Kind: all</option>
-      </select>
-      <button id="reset" type="button">Сбросить фильтры</button>
-    </section>
 
     <div id="stats" class="stats"></div>
     <section id="groups" class="groups"></section>
   </main>
 
+  <aside id="raw-modal" class="raw-modal" aria-hidden="true">
+    <div class="raw-modal-card">
+      <div class="raw-modal-head">
+        <span id="raw-modal-title">Raw asset</span>
+        <button id="raw-modal-close" type="button">Close</button>
+      </div>
+      <div id="raw-modal-body"></div>
+    </div>
+  </aside>
+
   <script type="module">
     import { VISUAL_ASSETS } from "./registry.js";
-    import { SKILLS_CONFIG } from "../../skills.config.js";
-    import { VISUAL_RASTER_URLS } from "./raster-icons.js";
+    import { SKILLS_CONFIG } from "../../shared/dist/skills.config.js";
+    import { OTHER_CONFIG } from "../../other.config.js";
+    import { IMPORT_MANIFEST } from "../import-manifest.js";
     import {
-      SKILL_ICON_ATLAS_URL,
-      SKILL_ICON_ATLAS_WIDTH,
-      SKILL_ICON_ATLAS_HEIGHT,
-      SKILL_ICON_ATLAS_REGIONS,
-    } from "./skill-icons-atlas.gen.js";
+      ASSETS_ATLAS_URL,
+      ASSETS_ATLAS_WIDTH,
+      ASSETS_ATLAS_HEIGHT,
+      ASSETS_ATLAS_REGIONS,
+    } from "./assets-atlas.gen.js";
+    const manifestRows = IMPORT_MANIFEST;
 
+    /** Иконки только в атласе (нет в VISUAL_ASSETS) — всё равно показываем в превью. */
+    const visAssetIds = new Set(Object.keys(VISUAL_ASSETS));
     const entries = Object.entries(VISUAL_ASSETS).map(([id, data]) => ({ id, ...data }));
-
-    const searchEl = document.getElementById("search");
-    const familyEl = document.getElementById("family");
-    const kindEl = document.getElementById("kind");
-    const resetEl = document.getElementById("reset");
-    const groupsEl = document.getElementById("groups");
-    const statsEl = document.getElementById("stats");
-
-    const unique = (arr) => [...new Set(arr)].sort((a, b) => a.localeCompare(b));
-
-    function fillSelect(select, values) {
-      for (const v of values) {
-        const opt = document.createElement("option");
-        opt.value = v;
-        opt.textContent = `${select.id}: ${v}`;
-        select.appendChild(opt);
-      }
+    const atlasOnlySvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"></svg>`;
+    for (const id of Object.keys(ASSETS_ATLAS_REGIONS)) {
+      if (visAssetIds.has(id)) continue;
+      entries.push({ id, kind: "icon", family: "game", svg: atlasOnlySvg });
     }
 
-    fillSelect(familyEl, unique(entries.map((e) => e.family)));
-    fillSelect(kindEl, unique(entries.map((e) => e.kind)));
+    const groupsEl = document.getElementById("groups");
+    const statsEl = document.getElementById("stats");
+    const rawModalEl = document.getElementById("raw-modal");
+    const rawModalTitleEl = document.getElementById("raw-modal-title");
+    const rawModalBodyEl = document.getElementById("raw-modal-body");
+    const rawModalCloseEl = document.getElementById("raw-modal-close");
 
-    const skillLabelById = new Map();
+    const rawFileByAssetId = new Map();
+    const skillNameByAssetId = new Map();
+
     const allSkills = [
       ...(SKILLS_CONFIG?.singleRuneCombos || []),
       ...(SKILLS_CONFIG?.dualRuneCombos || []),
       ...(SKILLS_CONFIG?.invokeCombos || []),
+      ...(SKILLS_CONFIG?.extraSkillAssets || []),
     ];
     for (const skill of allSkills) {
-      if (!skill?.id || !skill?.name || !skill?.sequence) continue;
-      skillLabelById.set(`game_skill_${skill.id}`, `${skill.name} [${skill.sequence}]`);
+      if (skill?.id && skill?.asset) {
+        if (typeof skill.name === "string" && skill.name) skillNameByAssetId.set(skill.asset, skill.name);
+      }
+    }
+    for (const row of manifestRows) {
+      if (!row || row.source !== "asset_atlas") continue;
+      if (typeof row.file === "string" && typeof row.assetId === "string" && row.assetId) rawFileByAssetId.set(row.assetId, row.file);
     }
 
-    const comboRuneTitle = {
-      game_combo_rune_frost: "Комбо-руна Q (лёд) — frost_rune",
-      game_combo_rune_lightning: "Комбо-руна W (молния) — lightning_rune",
-      game_combo_rune_fire: "Комбо-руна E (огонь) — fire_rune",
-    };
+    const comboRuneTitle = Object.fromEntries(OTHER_CONFIG.comboRuneAssets.map((item) => [item.asset, item.title]));
+    const fixedTitleByAssetId = Object.fromEntries([
+      ...(SKILLS_CONFIG.extraSkillAssets || []).map((item) => [item.asset, item.name]),
+      ...OTHER_CONFIG.appIconAssets.map((item) => [item.asset, item.title]),
+    ]);
 
     function assetGroupId(id) {
       if (id.startsWith("game_combo_rune_")) return "game_combo_rune";
-      if (id.startsWith("game_skill_rune_")) return "game_skill_rune";
+      if (id.startsWith("game_skill_rune_") || id === "game_skill_invoke") return "game_base_skill";
       if (id.startsWith("game_skill_duo_")) return "game_skill_duo";
       if (id.startsWith("game_skill_combo_")) return "game_skill_combo";
       if (id.startsWith("game_")) return "game_other";
       if (id.startsWith("app_")) return "app";
-      return "misc";
+      return "game_other";
     }
 
     const groupTitleMap = {
-      game_combo_rune: "Combo — руны в строке QWE",
-      game_skill_rune: "Game Skills — Rune",
-      game_skill_duo: "Game Skills — Duo",
-      game_skill_combo: "Game Skills — Invoke Combo",
+      game_base_skill: "Base Skills",
+      game_combo_rune: "Runes",
+      game_skill_duo: "Combo Duo Skills",
+      game_skill_combo: "Combo Trio Skills",
       game_other: "Game — Other Icons",
       app: "App — UI Icons",
-      misc: "Misc",
     };
 
-    function copyText(text) {
-      if (!navigator.clipboard || !navigator.clipboard.writeText) return;
-      navigator.clipboard.writeText(text).catch(() => {});
+    function itemTitle(item) {
+      return fixedTitleByAssetId[item.id] || comboRuneTitle[item.id] || skillNameByAssetId.get(item.id) || item.id;
     }
 
-    function itemTitle(item) {
-      return comboRuneTitle[item.id] || skillLabelById.get(item.id) || item.id;
+    function renderPreviewIconElement(item) {
+      const reg = ASSETS_ATLAS_REGIONS[item.id];
+      if (reg && ASSETS_ATLAS_URL) {
+        const outer = document.createElement("div");
+        outer.className = "visual-icon visual-icon--atlas preview-visual-icon";
+        outer.setAttribute("role", "img");
+        outer.setAttribute("aria-hidden", "true");
+
+        const inner = document.createElement("span");
+        inner.className = "visual-icon--atlas-tile";
+        inner.style.width = `${reg.w}px`;
+        inner.style.height = `${reg.h}px`;
+        inner.style.backgroundImage = `url("${ASSETS_ATLAS_URL}")`;
+        inner.style.backgroundRepeat = "no-repeat";
+        inner.style.backgroundSize = `${ASSETS_ATLAS_WIDTH}px ${ASSETS_ATLAS_HEIGHT}px`;
+        inner.style.backgroundPosition = `-${reg.x}px -${reg.y}px`;
+        inner.style.transform = "translate(0px, 0px) scale(1)";
+        outer.appendChild(inner);
+
+        const fit = () => {
+          const b = outer.getBoundingClientRect();
+          const w = Math.max(1, Math.round(b.width));
+          const h = Math.max(1, Math.round(b.height));
+          if (w <= 1 || h <= 1) return false;
+          const scale = Math.min(w / reg.w, h / reg.h);
+          const fittedW = reg.w * scale;
+          const fittedH = reg.h * scale;
+          const ox = (w - fittedW) / 2;
+          const oy = (h - fittedH) / 2;
+          inner.style.transform = `translate(${ox}px, ${oy}px) scale(${scale})`;
+          return true;
+        };
+        let tries = 0;
+        const rafFit = () => {
+          tries += 1;
+          if (!fit() && tries < 12) requestAnimationFrame(rafFit);
+        };
+        requestAnimationFrame(rafFit);
+        if (typeof ResizeObserver !== "undefined") {
+          const ro = new ResizeObserver(() => fit());
+          ro.observe(outer);
+        }
+        return outer;
+      }
+
+      if (item.source === "svg_icons" && item.path) {
+        const img = document.createElement("img");
+        img.className = "visual-icon preview-visual-icon";
+        img.src = item.path;
+        img.alt = "";
+        img.draggable = false;
+        return img;
+      }
+      return null;
+    }
+
+    function openRawModal(assetId) {
+      const file = rawFileByAssetId.get(assetId);
+      rawModalTitleEl.textContent = file ? `${assetId} -> raw_png/${file}` : `${assetId} -> raw not found`;
+      rawModalBodyEl.textContent = "";
+      if (!file) {
+        rawModalBodyEl.textContent = "Для этой иконки нет соответствия в assets/import-manifest.js";
+      } else {
+        const img = document.createElement("img");
+        img.src = `/assets/raw_png/${file}`;
+        img.alt = file;
+        img.onerror = () => {
+          rawModalBodyEl.textContent = `Не удалось загрузить /assets/raw_png/${file}`;
+        };
+        rawModalBodyEl.appendChild(img);
+      }
+      rawModalEl.classList.add("open");
+      rawModalEl.setAttribute("aria-hidden", "false");
+    }
+
+    function closeRawModal() {
+      rawModalEl.classList.remove("open");
+      rawModalEl.setAttribute("aria-hidden", "true");
     }
 
     function renderCard(item) {
       const card = document.createElement("article");
       card.className = "card";
-      card.title = `Copy id: ${item.id}`;
-      card.addEventListener("click", () => copyText(item.id));
+      card.title = `Show raw: ${item.id}`;
+      card.addEventListener("click", () => openRawModal(item.id));
 
       const box = document.createElement("div");
       box.className = "icon-box";
-      const atlasReg =
-        SKILL_ICON_ATLAS_URL && SKILL_ICON_ATLAS_REGIONS[item.id]
-          ? SKILL_ICON_ATLAS_REGIONS[item.id]
-          : null;
-      const rasterSrc = VISUAL_RASTER_URLS[item.id];
-      if (atlasReg) {
-        const div = document.createElement("div");
-        div.className = "visual-icon visual-icon--atlas";
-        div.setAttribute("role", "img");
-        div.style.backgroundImage = `url("${SKILL_ICON_ATLAS_URL}")`;
-        div.style.backgroundRepeat = "no-repeat";
-        div.style.backgroundSize = `${SKILL_ICON_ATLAS_WIDTH}px ${SKILL_ICON_ATLAS_HEIGHT}px`;
-        div.style.backgroundPosition = `-${atlasReg.x}px -${atlasReg.y}px`;
-        box.appendChild(div);
-      } else if (rasterSrc) {
-        const img = document.createElement("img");
-        img.className = "visual-icon";
-        img.src = rasterSrc;
-        img.alt = "";
-        img.draggable = false;
-        box.appendChild(img);
+      const iconEl = renderPreviewIconElement(item);
+      if (iconEl) {
+        box.appendChild(iconEl);
       } else {
-        box.innerHTML = item.svg;
+        box.textContent = "🖼️";
       }
 
       const meta = document.createElement("div");
       meta.className = "meta";
-      meta.innerHTML = `
-        <div class="id">${itemTitle(item)}</div>
-        <div class="tags">${item.family} · ${item.kind}</div>
-      `;
+      const id = document.createElement("div");
+      id.className = "id";
+      id.textContent = itemTitle(item);
+      meta.appendChild(id);
 
       card.appendChild(box);
       card.appendChild(meta);
@@ -380,39 +481,40 @@
     }
 
     function render() {
-      const q = searchEl.value.trim().toLowerCase();
-      const family = familyEl.value;
-      const kind = kindEl.value;
-
-      const filtered = entries.filter((e) => {
-        if (q && !e.id.toLowerCase().includes(q)) return false;
-        if (family && e.family !== family) return false;
-        if (kind && e.kind !== kind) return false;
-        return true;
-      });
-
       const grouped = new Map();
-      for (const item of filtered) {
+      for (const item of entries) {
         const g = assetGroupId(item.id);
         if (!grouped.has(g)) grouped.set(g, []);
         grouped.get(g).push(item);
       }
 
-      groupsEl.innerHTML = "";
+      groupsEl.textContent = "";
       const groupOrder = [
-        "game_skill_rune",
+        "game_base_skill",
         "game_combo_rune",
         "game_skill_duo",
         "game_skill_combo",
         "game_other",
         "app",
-        "misc",
       ];
+
+      const comboRuneOrder = [
+        "game_combo_rune_frost",
+        "game_combo_rune_lightning",
+        "game_combo_rune_fire",
+      ];
+      const baseSkillOrder = ["game_skill_rune_q", "game_skill_rune_w", "game_skill_rune_e", "game_skill_invoke"];
 
       for (const key of groupOrder) {
         const items = grouped.get(key);
         if (!items || !items.length) continue;
-        items.sort((a, b) => a.id.localeCompare(b.id));
+        if (key === "game_base_skill") {
+          items.sort((a, b) => baseSkillOrder.indexOf(a.id) - baseSkillOrder.indexOf(b.id));
+        } else if (key === "game_combo_rune") {
+          items.sort((a, b) => comboRuneOrder.indexOf(a.id) - comboRuneOrder.indexOf(b.id));
+        } else {
+          items.sort((a, b) => a.id.localeCompare(b.id));
+        }
 
         const section = document.createElement("section");
         section.className = "group";
@@ -430,17 +532,16 @@
         groupsEl.appendChild(section);
       }
 
-      statsEl.innerHTML = `<span class="ok">${filtered.length}</span> / ${entries.length} icons shown`;
+      statsEl.textContent = "";
+      const ok = document.createElement("span");
+      ok.className = "ok";
+      ok.textContent = String(entries.length);
+      statsEl.append(ok, " icons shown");
     }
 
-    searchEl.addEventListener("input", render);
-    familyEl.addEventListener("change", render);
-    kindEl.addEventListener("change", render);
-    resetEl.addEventListener("click", () => {
-      searchEl.value = "";
-      familyEl.value = "";
-      kindEl.value = "";
-      render();
+    rawModalCloseEl.addEventListener("click", closeRawModal);
+    rawModalEl.addEventListener("click", (event) => {
+      if (event.target === rawModalEl) closeRawModal();
     });
 
     render();

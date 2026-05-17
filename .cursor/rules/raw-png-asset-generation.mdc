@@ -1,0 +1,67 @@
+---
+description: Canonical prompt and quality rules for raw_png icon generation
+globs: assets/raw_png/**/*
+alwaysApply: false
+---
+
+# Raw PNG Asset Generation Rule
+
+Use this rule whenever generating or refining icon prompts for `assets/raw_png/**/*`.
+
+## Goal
+
+Produce icons that are pipeline-safe and readable in HUD scale:
+- no baked rectangular background,
+- clean silhouette at 64x64,
+- compatible with manifest mapping and atlas packing.
+
+## Technical prompt baseline (always apply)
+
+- Output size: exactly `500x500` pixels, square.
+- Single centered icon/emblem, no text, no watermark, no frame.
+- Prefer solid chroma background for reliable keying (`#00FF00` by default).
+- If icon color conflicts with chroma, pick alternate solid chroma (`#fc03f8`, `#FF00FF`, or `#0000FF`).
+
+Suggested technical block:
+
+```text
+Output image exactly 500x500 pixels, square canvas.
+Single centered game skill icon, readable at small HUD size.
+Solid flat chroma background only (no gradient, no scene).
+No text, no watermark, no frame, no multi-icon composition.
+```
+
+Negative prompt baseline:
+
+```text
+checkerboard, transparency grid, tiled background, subtitle, logo, multiple icons, blurry subject, heavy jpeg compression
+```
+
+## Project mapping contract
+
+- Raw masters live in `assets/raw_png/` (local workspace files).
+- Every generated asset intended for pipeline must map in `assets/import-manifest.js`.
+- Use `assetId` as canonical id in `assets/import-manifest.js`.
+- If naming/mapping is ambiguous, ask for explicit target id before proposing final prompt.
+
+## Style constraints
+
+- Keep triad consistency for `skill_q`, `skill_w`, `skill_e`:
+  - same outer shell style,
+  - only center motif differs (ice / lightning / fire).
+- Keep per-skill prompt intent aligned with existing combo-specific guidance used in this project.
+
+## Pipeline awareness
+
+- Preferred run after adding assets:
+  - `npm run icons:build-assets-atlas`
+- Alternative without chroma stage:
+  - `npm run icons:build-assets-atlas:no-chroma`
+
+## Quality checklist (before accepting prompt/output)
+
+1. Background can be keyed cleanly (no accidental scene gradients).
+2. Icon remains readable at small size (simulate 64x64 mentally).
+3. Subject is single and unambiguous for the target skill/combo.
+4. Prompt and resulting asset are consistent with manifest id.
+5. If constraints conflict, explain and provide corrected prompt variant.

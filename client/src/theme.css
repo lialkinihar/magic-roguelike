@@ -1,0 +1,43 @@
+/* Элементальная палитра: общие токены для DOM и WebGL (--gl-*). */
+:root {
+  color-scheme: dark;
+
+  --void-deep: #05070c;
+  --void-mid: #0a0e16;
+  --void-top: #0f1520;
+  --text-primary: #e6e2d8;
+  --text-muted: rgba(210, 204, 188, 0.72);
+  --text-faint: rgba(180, 172, 158, 0.5);
+
+  --element-frost: #5da9b8;
+  --element-frost-glow: rgba(90, 168, 184, 0.22);
+  --element-storm: #8b7ab8;
+  --element-storm-glow: rgba(130, 118, 175, 0.2);
+  --element-ember: #c46a32;
+  --element-ember-glow: rgba(196, 106, 50, 0.2);
+
+  --surface-veil: rgba(12, 16, 24, 0.82);
+  --surface-panel: rgba(16, 20, 30, 0.92);
+  --border-subtle: rgba(120, 130, 150, 0.28);
+
+  --tri-bar: linear-gradient(
+    90deg,
+    var(--element-frost) 0%,
+    var(--element-frost) 32%,
+    var(--element-storm) 32%,
+    var(--element-storm) 66%,
+    var(--element-ember) 66%,
+    var(--element-ember) 100%
+  );
+
+  /* Three.js stub (hex для THREE.Color#setStyle) */
+  --gl-bg: #0a0d14;
+  --gl-ambient: #3d4a62;
+  --gl-sun: #c4b8a8;
+  --gl-ground: #1a232e;
+  --gl-cube: #5c6d8c;
+
+  /* Модалки стартового экрана (шум + scrim) */
+  --shell-scrim: rgba(4, 6, 10, 0.78);
+  --shell-code-bg: rgba(12, 16, 24, 0.72);
+}

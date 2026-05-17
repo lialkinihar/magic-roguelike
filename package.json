@@ -1,19 +1,30 @@
 {
-  "name": "web-roguelike",
+  "name": "magic-roguelike",
   "private": true,
-  "description": "Локальный сервер для открытия игры в браузере",
+  "description": "Magic Roguelike — Vite React TS client, Node server, shared sim",
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
   "scripts": {
-    "start": "serve . -p 8080",
-    "icons:knockout": "node scripts/refine-icon-alpha.mjs",
-    "icons:alpha": "node scripts/refine-icon-alpha.mjs",
-    "icons:from-svg": "node scripts/export-source-icons-png.mjs",
-    "icons:raster-map": "node scripts/build-raster-icons-map.mjs",
-    "icons:sprite": "node scripts/build-skill-icon-sprite.mjs && node scripts/build-raster-icons-map.mjs",
-    "icons:chroma": "node scripts/chroma-to-alpha.mjs",
-    "icons:import-raw": "node scripts/import-raw-skill-png.mjs"
+    "start": "npm run dev",
+    "dev": "npm run build -w @magic-roguelike/shared && concurrently -k -n shared,server,client -c cyan,magenta,green \"npm run dev -w @magic-roguelike/shared\" \"npm run dev -w @magic-roguelike/server\" \"npm run dev -w @magic-roguelike/client\"",
+    "dev:client": "npm run dev -w @magic-roguelike/client",
+    "dev:server": "npm run dev -w @magic-roguelike/server",
+    "dev:shared": "npm run dev -w @magic-roguelike/shared",
+    "stop": "kill-port 5173 3333",
+    "build": "npm run build -w @magic-roguelike/shared && npm run build -w @magic-roguelike/server && npm run build -w @magic-roguelike/client",
+    "test": "npm run test -w @magic-roguelike/shared",
+    "preview:client": "npm run preview -w @magic-roguelike/client",
+    "icons:registry": "node assets/pipelines/generate-registry.mjs",
+    "icons:build-assets-atlas": "npm run build -w @magic-roguelike/shared && node assets/pipelines/run-game-atlas-pipeline.mjs && npm run icons:registry",
+    "icons:build-assets-atlas:no-chroma": "npm run build -w @magic-roguelike/shared && node assets/pipelines/run-game-atlas-pipeline.mjs --skip-chroma && npm run icons:registry",
+    "icons:pipeline:dry-run": "node assets/pipelines/run-game-atlas-pipeline.mjs --dry-run"
   },
   "devDependencies": {
-    "serve": "^14.2.4",
+    "concurrently": "^9.2.1",
+    "kill-port": "^2.0.1",
     "sharp": "^0.34.5"
   }
 }

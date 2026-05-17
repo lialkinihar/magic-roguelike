@@ -1,1 +1,14 @@
 node_modules/
+
+# сборки workspaces
+**/dist/
+
+# Локальные планы Cursor (чеклисты не коммитим)
+.cursor/plans/
+
+# Серверная SQLite (сейвы комнаты)
+data/
+
+# Локальные мастера иконок (хромакей PNG, черновики) — не коммитить
+assets/raw_png/
+assets/pipeline-work/

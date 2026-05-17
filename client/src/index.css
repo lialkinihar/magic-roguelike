@@ -1,0 +1,31 @@
+:root {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.45;
+  color: var(--text-primary);
+  background-color: var(--void-deep);
+  /* Десктоп: фиксированный минимум вьюпорта, без мобильной вёрстки */
+  --app-min-width: 1280px;
+  --app-min-height: 720px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: var(--app-min-width);
+  min-height: var(--app-min-height);
+}
+
+body {
+  margin: 0;
+  min-width: inherit;
+  min-height: inherit;
+}
+
+#root {
+  min-width: max(100%, var(--app-min-width));
+  min-height: max(100vh, var(--app-min-height));
+  display: flex;
+  flex-direction: column;
+}

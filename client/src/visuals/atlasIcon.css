@@ -1,0 +1,102 @@
+/**
+ * Спрайтовый атлас и размерные модификаторы для иконок в игровом HUD.
+ * Селекторы согласованы с генерацией region-стилей в atlasIconDom (data-asset-id + .visual-icon--atlas-tile).
+ */
+
+.visual-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+img.visual-icon {
+  object-fit: contain;
+}
+
+div.visual-icon.visual-icon--atlas {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.visual-icon--atlas-tile {
+  --atlas-tx: 0px;
+  --atlas-ty: 0px;
+  --atlas-scale: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: var(--tile-reg-w);
+  height: var(--tile-reg-h);
+  background-image: var(--assets-atlas-image);
+  background-repeat: no-repeat;
+  background-size: var(--assets-atlas-w) var(--assets-atlas-h);
+  background-position: calc(-1 * var(--tile-sprite-x)) calc(-1 * var(--tile-sprite-y));
+  transform: translate(var(--atlas-tx), var(--atlas-ty)) scale(var(--atlas-scale));
+  transform-origin: top left;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  will-change: transform;
+}
+
+/* Размеры под слоты HUD */
+.visual-icon--corner-btn {
+  width: 22px;
+  height: 22px;
+}
+
+.visual-icon--artifact {
+  width: 30px;
+  height: 30px;
+}
+
+.visual-icon--passive {
+  width: 20px;
+  height: 20px;
+}
+
+.visual-icon--combos-btn {
+  width: 22px;
+  height: 22px;
+}
+
+.visual-icon.hud-inline-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.visual-icon--skill-main {
+  width: 48px;
+  height: 48px;
+}
+
+.visual-icon--skill-recent {
+  width: 48px;
+  height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+}
+
+.combo-tile-visual {
+  width: 48px;
+  height: 48px;
+  max-width: 48px;
+  max-height: 48px;
+  box-sizing: border-box;
+}
+
+.rune-seq-visual {
+  width: 11px;
+  height: 11px;
+}
+
+.shop-item-visual {
+  width: 28px;
+  height: 28px;
+}
+
+.shop-inline-coin {
+  width: 15px;
+  height: 15px;
+}
